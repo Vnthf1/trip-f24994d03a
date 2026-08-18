@@ -161,6 +161,42 @@
   .t-good      { background: var(--settled-bg);   color: var(--settled); }
   .t-num       { background: var(--accent-soft);  color: var(--accent); }
 
+  /* 지도 */
+  .map {
+    overflow-x: auto;
+    background: var(--surface-2);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 18px 20px;
+    margin: 0 0 16px;
+  }
+  .map pre {
+    margin: 0;
+    font-family: var(--mono);
+    font-size: 12.5px;
+    line-height: 1.65;
+    color: var(--ink-2);
+    white-space: pre;
+  }
+  .map pre b { color: var(--ink); font-weight: 600; }
+  .map pre .hi { color: var(--accent); font-weight: 600; }
+
+  /* 걷기 강도 */
+  .walk {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: .06em;
+    padding: 2px 8px;
+    border-radius: 3px;
+    background: var(--settled-bg);
+    color: var(--settled);
+    white-space: nowrap;
+  }
+  .walk.mid { background: var(--attention-bg); color: var(--attention); }
+  .walk.high { background: var(--critical-bg); color: var(--critical); }
+
   /* 액티비티 카드 */
   .act { background: var(--surface); border: 1px solid var(--rule); border-radius: 4px; padding: 22px 24px; }
   .act h3 { font-size: 18px; font-weight: 600; letter-spacing: -.015em; margin: 0 0 14px; text-wrap: balance; }
@@ -562,7 +598,151 @@
     </div>
   </section>
 
-  <!-- ============ 5. 패스 커버 범위 ============ -->
+  <!-- ============ 5. 저강도 추천안 ============ -->
+  <section id="lowwalk">
+    <div class="sec-head">
+      <h2>스위스 4일 — 걷기를 하루 하나씩</h2>
+      <span class="count">하루에 30분~1시간 코스 하나 · 나머지는 타고 다니기</span>
+    </div>
+    <p class="lede">원칙은 하나입니다. <strong>하루에 걷는 코스 하나만 넣고, 그날의 나머지는 곤돌라·기차·배로 채웁니다.</strong> 걷는 맛은 매일 있지만 종일 걷는 날은 없습니다. 스위스 산악교통이 정상까지 다 데려다주기 때문에 이게 가능합니다.</p>
+
+    <div class="days" style="border-top:1px solid var(--rule-strong)">
+
+      <div class="day" style="border-top:0">
+        <div class="day-when"><b>9/24</b> 목<span>인터라켄 숙박</span></div>
+        <div class="day-body">
+          <div class="plans">
+            <div class="plan pick">
+              <h4>1. 원안 — 융프라우요흐 <span class="cond">맑음</span> <span class="walk mid">도보 1시간</span></h4>
+              <p>오전에 Ost에서 패스를 받고 바로 올라갑니다. 정상은 스핑크스 전망대(엘리베이터)와 얼음궁전, 고원 산책로라 <b>걷는 건 실내와 평지뿐</b>입니다. 3,454m라 어차피 많이 걸으면 안 됩니다.</p>
+              <p><b>오늘의 걷기는 하산길 37번 코스</b>입니다. 아이거글레처에서 클라이네 샤이덱까지 <b>내리막 1시간</b>, 아이거 북벽 바로 아래를 지납니다. 힘들면 그 자리에서 기차 7분으로 바꿔도 됩니다.</p>
+              <p>이후 벵엔에서 잠깐 내려 마을 보고, 라우터브루넨에서 슈타우프바흐 폭포까지.</p>
+            </div>
+            <div class="plan">
+              <h4>2. 예비안 — 쉬니게 플라테 <span class="cond">구름 낀 날</span> <span class="walk">20~40분</span></h4>
+              <p>2,000m라 <b>구름 위로 올라가는 날이 있습니다.</b> 융프라우요흐를 맑은 날로 아끼고 싶을 때 대신 쓰기 좋습니다. 클래식 산악열차 52분 자체가 관광이고, 정상 알파인 식물원 산책은 짧습니다.</p>
+            </div>
+            <div class="plan">
+              <h4>3. 예비안 — 튠 호수 유람선 <span class="cond">비</span> <span class="walk">40분</span></h4>
+              <p>선착장이 <b>인터라켄 West</b>라 숙소 앞입니다. 배에 앉아 45분 가서 슈피츠 항구 마을을 보고 기차로 돌아옵니다. 산이 안 보여도 호수는 예쁩니다.</p>
+            </div>
+            <div class="plan">
+              <h4>저녁 · 하더쿨룸 <span class="cond">체력 남으면</span></h4>
+              <p>융프라우요흐를 다녀온 날이라 무리일 수 있습니다. 지치면 미루세요 — 9/25와 9/27에 또 기회가 있습니다.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="day">
+        <div class="day-when"><b>9/25</b> 금<span>인터라켄 숙박</span></div>
+        <div class="day-body">
+          <div class="plans">
+            <div class="plan pick">
+              <h4>1. 원안 — 패러글라이딩 + 튠 호수 <span class="cond">맑음</span> <span class="walk">40분</span></h4>
+              <p>비행은 10~20분이지만 픽업 포함 오전 반나절입니다. <b>착륙장 회에마테가 숙소 근처</b>라 내려서 걸어옵니다.</p>
+              <p>오후는 튠 호수 유람선으로 슈피츠. <b>오전에 하늘을 날고 오후에 물 위에 앉아 있는</b> 구성이라 어제 1시간 걸은 다리를 쉬게 합니다. 슈피츠 항구 마을 산책 40분이 오늘의 걷기 전부입니다.</p>
+            </div>
+            <div class="plan">
+              <h4>2. 예비안 — 융프라우요흐 <span class="cond">어제 흐렸으면</span> <span class="walk mid">1시간</span></h4>
+              <p>맑은 날을 정상에 쓰는 게 우선입니다. 패러글라이딩을 오후나 9/27로 미루세요.</p>
+            </div>
+            <div class="plan">
+              <h4>3. 예비안 — 브리엔츠 호수 <span class="cond">비행 취소 · 흐림</span> <span class="walk">30분</span></h4>
+              <p>선착장은 <b>인터라켄 Ost</b>(기차 3분). 이젤발트 하선 → 기스바흐 폭포 → 브리엔츠 마을. 배에 앉아 가는 코스입니다.</p>
+            </div>
+            <div class="plan pick">
+              <h4>저녁 · 하더쿨룸 <span class="cond">이 날이 최적</span> <span class="walk">0</span></h4>
+              <p>오전 반나절 + 오후 앉아 있기라 <b>저녁에 체력이 남는 유일한 날</b>입니다. 푸니쿨라라 걷지 않고, 파노라마 레스토랑에서 저녁까지 먹을 수 있습니다.</p>
+              <p><b>18:30~19:00에 올라가세요</b> — 일몰이 19:30 전후, 마지막 상행 20:40입니다. 두 호수에 불이 들어오는 걸 봅니다. 올라갈 때 <b>하행 막차 시각을 확인</b>하세요.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="day">
+        <div class="day-when"><b>9/26</b> 토<span>그린델발트 숙박</span></div>
+        <div class="day-body">
+          <div class="plans">
+            <div class="plan pick">
+              <h4>1. 원안 — 피르스트 + 바흐알프제 → 오후 스파 <span class="cond">맑음</span> <span class="walk mid">왕복 2시간</span></h4>
+              <p>곤돌라가 <b>숙소에서 도보 2분</b>입니다. 클리프 워크(무료) 보고 <b>바흐알프제 왕복 2시간</b>, 하산은 카트와 트로티바이크로 앉아서. <b>오후 2시면 끝납니다.</b></p>
+              <p>4일 중 <b>제대로 걷는 유일한 날</b>인데, 오후를 스파에서 통째로 쉬니 균형이 맞습니다. 바람 없는 아침이면 호수에 산이 통째로 비칩니다. 길은 완만해서 운동화로 됩니다.</p>
+            </div>
+            <div class="plan">
+              <h4>2. 예비안 — 멘리헨 <span class="cond">덜 걷고 싶으면</span> <span class="walk">로열 워크 45분</span></h4>
+              <p>그린델발트 터미널에서 곤돌라 직행. 짧은 로열 워크만 하고 곤돌라로 내려오면 <b>오전 11시에 끝납니다.</b> 액티비티는 없지만 아이거·묀히·융프라우가 정면입니다.</p>
+              <p>더 걷고 싶어지면 그 자리에서 <b>파노라마 트레일 1시간 30분</b>으로 늘려 클라이네 샤이덱까지 갈 수 있습니다. 거의 평지라 부담이 적습니다.</p>
+            </div>
+            <div class="plan">
+              <h4>3. 예비안 — 스파에 하루 <span class="cond">흐림 · 비</span> <span class="walk">0</span></h4>
+              <p>산이 구름에 가리면 올라가도 안 보입니다. 느긋하게 넘어와 마을 산책하고 800㎡ 스파에 하루를 쓰세요. 피르스트는 인터라켄에서도 갈 수 있습니다.</p>
+            </div>
+            <div class="plan">
+              <h4>저녁 · 호텔에서 <span class="cond">고정</span></h4>
+              <p>그린델발트에 있어서 하더쿨룸은 안 됩니다. <b>체크인할 때 게스트카드를 받으세요</b> — 산악버스 126·127·128이 무료가 됩니다.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="day">
+        <div class="day-when"><b>9/27</b> 일<span>인터라켄 숙박</span></div>
+        <div class="day-body">
+          <div class="plans">
+            <div class="plan pick">
+              <h4>1. 원안 — 뮈렌 + 김멜발트 + 트뤼멜바흐 <span class="cond">맑음</span> <span class="walk">도보 30분</span></h4>
+              <p>라우터브루넨 → 케이블카 → 그뤼치알프 → 산악열차 → 뮈렌. <b>올라가는 건 전부 타고 갑니다.</b> 마을 산책과 올멘후벨 푸니쿨라(무료)가 기본, 쉴트호른은 선택(50% 할인).</p>
+              <p><b>오늘의 걷기는 뮈렌 → 김멜발트 30분</b>입니다. 내내 내리막이고 계곡 건너 벵엔과 융프라우가 계속 보입니다. 4일 중 가장 짧고 쉬운 코스라 마지막 날에 딱 맞습니다.</p>
+              <p>김멜발트에서 케이블카 → 슈테헬베르크 → 포스트버스로 돌아오는 길에 <b>트뤼멜바흐 폭포</b>를 붙입니다.</p>
+            </div>
+            <div class="plan">
+              <h4>2. 예비안 — 트뤼멜바흐 + 라우터브루넨 <span class="cond">비 오는 날</span> <span class="walk">30분</span></h4>
+              <p><b>비 오는 날의 정답입니다.</b> 트뤼멜바흐는 산 <b>내부</b>를 깎고 흐르는 폭포라 날씨가 상관없고, 오히려 <b>비가 오면 수량이 늘어 더 웅장</b>합니다. 터널 엘리베이터로 올라가며 보는 구조라 젖지도 않습니다.</p>
+              <p>라우터브루넨 계곡은 폭포가 72개나 걸린 U자곡이라 흐린 날에도 볼 만합니다. 가는 버스는 패스 무료, 입장료만 CHF 14입니다.</p>
+            </div>
+            <div class="plan">
+              <h4>3. 예비안 — 통째로 쉬기 <span class="cond">지쳤으면</span> <span class="walk">0</span></h4>
+              <p>여행 열흘째이고 <b>내일 07:20 출발</b>입니다. 늦잠, 회에마테 잔디밭, 콥에서 장보기, 숙소 저녁. 이 하루가 이탈리아 3일의 체력이 됩니다.</p>
+              <p>날씨가 이제야 좋아졌는데 <b>융프라우요흐를 아직 못 갔다면 오늘이 마지막</b>입니다. 그때는 쉬는 걸 포기하고 올라가세요.</p>
+            </div>
+            <div class="plan">
+              <h4>저녁 · 하더쿨룸 <span class="cond">아직 안 갔으면 마지막 기회</span></h4>
+              <p>가능하지만 <b>짐을 미리 다 싸두고</b> 가세요. 내일 아침이 이릅니다. 20:30까지는 내려와야 마음이 편합니다.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="findings" style="margin-top:22px">
+
+      <article class="finding is-good">
+        <span class="tag t-good">배분</span>
+        <h3>걷는 코스를 하루에 하나씩 흩어놨습니다</h3>
+        <p>네 개를 몰아넣지 않고 하루씩 나눴습니다. <strong>9/24 37번 코스 1시간</strong>(내리막) → <strong>9/25 슈피츠 마을 40분</strong>(쉬는 날) → <strong>9/26 바흐알프제 왕복 2시간</strong>(오후 스파와 세트) → <strong>9/27 김멜발트 30분</strong>(가장 짧게 마무리).</p>
+        <p>중간에 <strong>9/25는 하늘과 물 위에 있는 날</strong>이라 다리가 쉽니다. 가장 긴 9/26은 오후를 통째로 스파에서 보내니 그날 안에서 균형이 맞습니다. 마지막 9/27은 다음날 새벽 출발을 감안해 제일 짧은 코스로 뒀습니다.</p>
+      </article>
+
+      <article class="finding is-attention">
+        <span class="tag t-attention">현장 조정</span>
+        <h3>모든 코스는 그 자리에서 줄이거나 늘릴 수 있습니다</h3>
+        <p>스위스 산악교통의 장점이 이겁니다. <strong>37번 코스</strong>는 아이거글레처에서 힘들다 싶으면 그냥 기차 7분으로 바꾸면 됩니다. <strong>바흐알프제</strong>는 중간에 돌아 나와도 되고, 반대로 <strong>멘리헨 로열 워크 45분</strong>은 그 자리에서 파노라마 트레일 1시간 30분으로 늘릴 수 있습니다.</p>
+        <p>그러니 아침에 몸 상태를 보고 정하세요. <strong>걷기로 정해놓고 안 걸어도 아무 손해가 없습니다.</strong></p>
+      </article>
+
+      <article class="finding is-good">
+        <span class="tag t-good">비 오는 날</span>
+        <h3>트뤼멜바흐 폭포가 비 오는 날의 정답입니다</h3>
+        <p>산 <strong>내부</strong>를 깎고 흐르는 폭포라 날씨와 무관하고, 오히려 <strong>비가 오면 수량이 늘어 더 웅장</strong>합니다. 터널 엘리베이터를 타고 올라가며 보는 구조라 젖지도 않습니다. 융프라우·아이거·묀히의 빙하 녹은 물이 바위 안쪽으로 쏟아집니다.</p>
+        <p>가는 버스는 패스 무료, <strong>입장료만 CHF 14</strong>입니다. 비 예보가 뜬 날 어느 날짜에든 끼워 넣으세요. 흐린 날 대체재로는 이것 말고 <strong>호수 유람선</strong>(배 안에 앉아 있음)과 <strong>스파</strong>가 있습니다.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ============ 6. 패스 커버 범위 ============ -->
   <section id="passcover">
     <div class="sec-head">
       <h2>VIP패스로 어디까지 되나</h2>
@@ -631,6 +811,45 @@
       <span class="count">코스는 원안 그대로 · 운영 정보를 붙였습니다</span>
     </div>
     <p class="lede">정리해두신 일곱 가지를 그대로 두고, <strong>2026년 운영 기간 · 패스 커버 범위 · 숙소가 West라서 달라지는 점</strong>을 확인해서 붙였습니다. 날짜에 못 박지 않았으니 날씨 보고 골라 쓰세요.</p>
+
+    <p class="subhead" style="margin-top:0">지형 — 여기만 알면 헷갈릴 일이 없습니다</p>
+    <div class="map">
+<pre>  <b>① 클라이네 샤이덱은 환승역, 멘리헨은 옆으로 빠지는 봉우리</b>
+
+              <b>멘리헨</b> 2,343m
+             ╱     │      ╲
+    (곤돌라)╱      │       ╲ <span class="hi">능선 도보 1시간 30분</span>
+           ╱  (케이블카)     ╲  = 파노라마 트레일
+   그린델발트      │           ╲
+     터미널     <b>벵엔</b>        <b>클라이네 샤이덱</b> 2,061m
+                  │            ╱          ╲
+                  │      (기차)            (기차)
+             <b>라우터브루넨</b>  아이거글레처      그린델발트
+                                 │
+                            <b>융프라우요흐</b> 3,454m
+
+   → 융프라우요흐에서 내려오면 <span class="hi">클라이네 샤이덱은 무조건 지납니다</span>
+   → <span class="hi">멘리헨은 기차가 안 갑니다</span>. 일부러 찾아가야 합니다</pre>
+    </div>
+
+    <div class="map">
+<pre>  <b>② 뮈렌과 벵엔은 계곡을 사이에 두고 마주봅니다</b>
+
+      서쪽 절벽                          동쪽 절벽
+
+   쉴트호른 2,970m                    멘리헨 2,343m
+        │                                  │
+    <b>뮈렌</b> 1,638m  ←── 마주봄 ──→      <b>벵엔</b> 1,274m
+        │                                  │
+    그뤼치알프                             │
+        │ (케이블카)                  (기차)│
+        └────── <b>라우터브루넨</b> 800m ──────┘
+                      │
+                슈타우프바흐 폭포
+
+   → 겹치는 건 <span class="hi">라우터브루넨 통과와 폭포</span>뿐입니다
+   → 벵엔은 경유지, <span class="hi">뮈렌이 목적지</span>입니다</pre>
+    </div>
 
     <div class="findings">
 
