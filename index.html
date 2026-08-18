@@ -78,7 +78,6 @@
     background: var(--ground);
     color: var(--ink);
     font-family: var(--sans);
-    font-weight: 400;
     font-size: 16px;
     line-height: 1.7;
     -webkit-font-smoothing: antialiased;
@@ -91,50 +90,32 @@
 
   .masthead { padding: 72px 0 40px; border-bottom: 2px solid var(--ink); }
   .eyebrow {
-    font-family: var(--mono);
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: .16em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin: 0 0 20px;
+    font-family: var(--mono); font-size: 11px; font-weight: 600;
+    letter-spacing: .16em; text-transform: uppercase;
+    color: var(--accent); margin: 0 0 20px;
   }
   .masthead h1 {
-    font-size: clamp(34px, 6vw, 54px);
-    font-weight: 600;
-    letter-spacing: -.025em;
-    line-height: 1.12;
-    text-wrap: balance;
-    margin: 0 0 20px;
+    font-size: clamp(34px, 6vw, 54px); font-weight: 600;
+    letter-spacing: -.025em; line-height: 1.12;
+    text-wrap: balance; margin: 0 0 20px;
   }
   .masthead p { max-width: var(--measure); font-size: 17px; color: var(--ink-2); margin: 0; }
   .stamps {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px 32px;
-    margin-top: 32px;
-    font-family: var(--mono);
-    font-size: 12.5px;
-    color: var(--ink-2);
+    display: flex; flex-wrap: wrap; gap: 10px 32px; margin-top: 32px;
+    font-family: var(--mono); font-size: 12.5px; color: var(--ink-2);
   }
   .stamps b { color: var(--ink); font-weight: 600; }
 
   /* ---------- sections ---------- */
 
   section { padding-top: 64px; }
-
   .sec-head {
-    display: flex;
-    align-items: baseline;
-    gap: 14px;
-    padding-bottom: 14px;
-    margin-bottom: 28px;
-    border-bottom: 1px solid var(--rule-strong);
-    flex-wrap: wrap;
+    display: flex; align-items: baseline; gap: 14px;
+    padding-bottom: 14px; margin-bottom: 28px;
+    border-bottom: 1px solid var(--rule-strong); flex-wrap: wrap;
   }
   .sec-head h2 { font-size: 25px; font-weight: 600; letter-spacing: -.02em; margin: 0; }
   .sec-head .count { font-family: var(--mono); font-size: 12px; font-weight: 500; color: var(--ink-3); letter-spacing: .04em; }
-
   .lede { max-width: var(--measure); color: var(--ink-2); margin: 0 0 28px; }
 
   p { margin: 0 0 16px; max-width: var(--measure); }
@@ -144,10 +125,10 @@
   code, .num { font-family: var(--mono); font-variant-numeric: tabular-nums; }
   code { font-size: .88em; background: var(--surface-2); padding: 1px 5px; border-radius: 3px; }
 
-  /* ---------- confirmed rail strip ---------- */
+  /* ---------- rails ---------- */
 
   .rails { display: grid; gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: 4px; overflow: hidden; }
-  .rail { background: var(--surface); display: grid; grid-template-columns: 96px 1fr 200px; gap: 20px; padding: 18px 22px; align-items: start; }
+  .rail { background: var(--surface); display: grid; grid-template-columns: 96px 1fr 190px; gap: 20px; padding: 18px 22px; align-items: start; }
   .rail-date { font-family: var(--mono); font-size: 15px; font-weight: 600; font-variant-numeric: tabular-nums; color: var(--accent); letter-spacing: -.02em; }
   .rail-date small { display: block; font-size: 11px; font-weight: 400; color: var(--ink-3); letter-spacing: 0; }
   .rail-main { font-size: 15px; }
@@ -159,7 +140,7 @@
   .rail-cost b { display: block; color: var(--ink); font-size: 15px; font-weight: 600; }
   .rail-cost small { display: block; font-size: 11px; color: var(--ink-3); margin-top: 2px; }
 
-  /* ---------- finding cards ---------- */
+  /* ---------- findings ---------- */
 
   .findings { display: grid; gap: 18px; }
   .finding { background: var(--surface); border: 1px solid var(--rule); border-left: 3px solid var(--rule-strong); border-radius: 4px; padding: 22px 24px; }
@@ -171,16 +152,9 @@
   .finding p:last-child { margin-bottom: 0; }
 
   .tag {
-    display: inline-block;
-    font-family: var(--mono);
-    font-size: 10.5px;
-    font-weight: 600;
-    letter-spacing: .1em;
-    text-transform: uppercase;
-    padding: 3px 8px;
-    border-radius: 3px;
-    margin-bottom: 12px;
-    white-space: nowrap;
+    display: inline-block; font-family: var(--mono); font-size: 10.5px; font-weight: 600;
+    letter-spacing: .1em; text-transform: uppercase;
+    padding: 3px 8px; border-radius: 3px; margin-bottom: 12px; white-space: nowrap;
   }
   .t-critical  { background: var(--critical-bg);  color: var(--critical); }
   .t-attention { background: var(--attention-bg); color: var(--attention); }
@@ -188,35 +162,23 @@
 
   .fix { margin-top: 14px; padding: 12px 16px; background: var(--accent-soft); border-radius: 3px; font-size: 14.5px; max-width: none; }
   .fix b {
-    font-family: var(--mono);
-    font-size: 10.5px;
-    font-weight: 600;
-    letter-spacing: .1em;
-    text-transform: uppercase;
-    color: var(--accent);
-    display: block;
-    margin-bottom: 4px;
+    font-family: var(--mono); font-size: 10.5px; font-weight: 600; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--accent); display: block; margin-bottom: 4px;
   }
 
   /* ---------- tables ---------- */
 
   .scroll { overflow-x: auto; border: 1px solid var(--rule); border-radius: 4px; background: var(--surface); }
-  table { width: 100%; border-collapse: collapse; font-size: 14.5px; min-width: 620px; }
-  th, td { text-align: left; padding: 12px 16px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  table { width: 100%; border-collapse: collapse; font-size: 14.5px; min-width: 660px; }
+  th, td { text-align: left; padding: 11px 16px; border-bottom: 1px solid var(--rule); vertical-align: top; }
   th {
-    font-family: var(--mono);
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: .1em;
-    text-transform: uppercase;
-    color: var(--ink-3);
-    background: var(--surface-2);
-    white-space: nowrap;
+    font-family: var(--mono); font-size: 11px; font-weight: 600; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--ink-3); background: var(--surface-2); white-space: nowrap;
   }
   tbody tr:last-child td { border-bottom: 0; }
   td.mono, th.mono { font-family: var(--mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
   td.right, th.right { text-align: right; }
-  .sub-row td { background: var(--surface-2); font-weight: 600; }
+  .sub-row td { background: var(--surface-2); font-weight: 600; font-size: 13px; }
   .grand td { background: var(--accent-soft); font-weight: 600; font-size: 15.5px; }
 
   .pill { display: inline-block; font-family: var(--mono); font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 20px; white-space: nowrap; }
@@ -227,25 +189,50 @@
   /* ---------- itinerary ---------- */
 
   .days { display: grid; gap: 0; }
-  .day { display: grid; grid-template-columns: 138px 1fr; gap: 28px; padding: 26px 0; border-top: 1px solid var(--rule); }
+  .day { display: grid; grid-template-columns: 138px 1fr; gap: 28px; padding: 30px 0; border-top: 1px solid var(--rule); }
   .day:last-child { border-bottom: 1px solid var(--rule); }
   .day-when { font-family: var(--mono); font-size: 13px; font-variant-numeric: tabular-nums; color: var(--ink-2); line-height: 1.6; }
   .day-when b { display: block; font-size: 18px; font-weight: 600; color: var(--ink); letter-spacing: -.02em; }
   .day-when span { display: block; font-size: 12px; color: var(--ink-3); margin-top: 4px; }
-  .day-body h3 { font-size: 16.5px; font-weight: 600; margin: 0 0 12px; letter-spacing: -.01em; }
+  .day-body > h3 { font-size: 17px; font-weight: 600; margin: 0 0 14px; letter-spacing: -.01em; }
 
-  .checks { list-style: none; margin: 0 0 14px; padding: 0; display: grid; gap: 8px; }
-  .checks:last-child { margin-bottom: 0; }
+  /* 고정 앵커 */
+  .anchor {
+    background: var(--surface-2);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 4px 4px 0;
+    padding: 12px 16px;
+    margin-bottom: 16px;
+  }
+  .anchor .lbl {
+    font-family: var(--mono); font-size: 10px; font-weight: 600; letter-spacing: .12em;
+    text-transform: uppercase; color: var(--accent); display: block; margin-bottom: 6px;
+  }
+  .anchor ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 5px; }
+  .anchor li { font-family: var(--mono); font-size: 13.5px; font-variant-numeric: tabular-nums; color: var(--ink); }
+  .anchor li em { font-style: normal; font-family: var(--sans); font-size: 13px; color: var(--ink-2); }
+  .anchor.loose { border-left-color: var(--rule-strong); }
+  .anchor.loose .lbl { color: var(--ink-3); }
+
+  /* 플랜 선택지 */
+  .plans { display: grid; gap: 10px; margin: 0 0 16px; }
+  .plan { border: 1px solid var(--rule); border-radius: 4px; padding: 14px 16px; background: var(--surface); }
+  .plan h4 { margin: 0 0 6px; font-size: 14.5px; font-weight: 600; display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px; }
+  .plan h4 .cond {
+    font-family: var(--mono); font-size: 10.5px; font-weight: 600; letter-spacing: .08em;
+    text-transform: uppercase; color: var(--ink-3);
+    background: var(--surface-2); padding: 2px 7px; border-radius: 3px;
+  }
+  .plan.pick { border-color: var(--accent); background: var(--accent-soft); }
+  .plan.pick h4 .cond { background: var(--surface); color: var(--accent); }
+  .plan p { font-size: 14px; margin: 0; color: var(--ink-2); max-width: none; }
+  .plan p + p { margin-top: 6px; }
+
+  .checks { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
   .checks li { position: relative; padding-left: 24px; font-size: 14.5px; color: var(--ink-2); max-width: var(--measure); }
   .checks li::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: .58em;
-    width: 10px;
-    height: 10px;
-    border: 1.5px solid var(--rule-strong);
-    border-radius: 2px;
+    content: ""; position: absolute; left: 0; top: .58em; width: 10px; height: 10px;
+    border: 1.5px solid var(--rule-strong); border-radius: 2px;
   }
   .checks li b { color: var(--ink); font-weight: 600; }
   .checks li.hot { color: var(--ink); }
@@ -253,48 +240,29 @@
   .checks li.ok { color: var(--ink-3); }
   .checks li.ok::before { border-color: var(--settled); background: var(--settled); }
   .checks li.ok::after {
-    content: "";
-    position: absolute;
-    left: 3px;
-    top: .78em;
-    width: 5px;
-    height: 2.5px;
-    border-left: 1.5px solid var(--surface);
-    border-bottom: 1.5px solid var(--surface);
+    content: ""; position: absolute; left: 3px; top: .78em; width: 5px; height: 2.5px;
+    border-left: 1.5px solid var(--surface); border-bottom: 1.5px solid var(--surface);
     transform: rotate(-45deg);
   }
   .checks li.ok b { color: var(--ink-2); font-weight: 500; }
 
   .subhead {
-    font-family: var(--mono);
-    font-size: 10.5px;
-    font-weight: 600;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-    color: var(--ink-3);
-    margin: 18px 0 10px;
+    font-family: var(--mono); font-size: 10.5px; font-weight: 600; letter-spacing: .12em;
+    text-transform: uppercase; color: var(--ink-3); margin: 20px 0 10px;
   }
+  .subhead:first-child { margin-top: 0; }
 
-  /* ---------- prep grid ---------- */
+  /* ---------- prep ---------- */
 
   .prep {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1px;
-    background: var(--rule);
-    border: 1px solid var(--rule);
-    border-radius: 4px;
-    overflow: hidden;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1px; background: var(--rule); border: 1px solid var(--rule);
+    border-radius: 4px; overflow: hidden;
   }
   .prep-cell { background: var(--surface); padding: 20px 22px; }
   .prep-cell h3 {
-    font-family: var(--mono);
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: .1em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin: 0 0 12px;
+    font-family: var(--mono); font-size: 11px; font-weight: 600; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--accent); margin: 0 0 12px;
   }
   .prep-cell ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; }
   .prep-cell li { font-size: 14px; color: var(--ink-2); padding-left: 16px; position: relative; }
@@ -305,13 +273,8 @@
 
   .sources { margin-top: 72px; padding-top: 28px; border-top: 1px solid var(--rule); font-size: 13px; color: var(--ink-3); }
   .sources h2 {
-    font-family: var(--mono);
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-    color: var(--ink-3);
-    margin: 0 0 14px;
+    font-family: var(--mono); font-size: 11px; font-weight: 600; letter-spacing: .12em;
+    text-transform: uppercase; color: var(--ink-3); margin: 0 0 14px;
   }
   .sources ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 6px; }
   .sources a { color: var(--ink-2); }
@@ -321,14 +284,12 @@
     .masthead { padding-top: 48px; }
     .rail { grid-template-columns: 1fr; gap: 8px; }
     .rail-cost { text-align: left; }
-    .day { grid-template-columns: 1fr; gap: 12px; }
+    .day { grid-template-columns: 1fr; gap: 14px; }
     .day-when b { display: inline; margin-right: 8px; }
     .day-when span { display: inline; }
   }
 
-  @media (prefers-reduced-motion: reduce) {
-    * { animation: none !important; transition: none !important; }
-  }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
 </style>
 
 <div class="page">
@@ -336,7 +297,8 @@
   <header class="masthead">
     <p class="eyebrow">D-31 · 출발 전 점검</p>
     <h1>독일 · 스위스 · 이탈리아<br>출발 점검</h1>
-    <p>9월 18일 프랑크푸르트 인 → 9월 30일 밀라노 아웃, 12박 13일 · 2인. 예매한 티켓 전부와 체크리스트를 대조해서 <strong>확정된 것</strong>, <strong>아직 안 된 것</strong>, <strong>새로 나온 위험</strong>으로 나눴습니다.</p>
+    <p>9월 18일 프랑크푸르트 인 → 9월 30일 밀라노 아웃, 12박 13일 · 2인.
+      <strong>기차 시각만 고정</strong>이고 나머지는 그날 날씨와 체력에 맞춰 고르는 구조로 짰습니다. 모든 금액은 <strong>2인 기준</strong>입니다.</p>
     <div class="stamps">
       <span>점검일 <b>8월 18일</b></span>
       <span>출발까지 <b>31일</b></span>
@@ -349,9 +311,9 @@
   <section id="confirmed">
     <div class="sec-head">
       <h2>확정된 티켓</h2>
-      <span class="count">6건 · 티켓 실물 대조 완료</span>
+      <span class="count">6건 · 전부 2인 예약 · 금액은 2인 총액</span>
     </div>
-    <p class="lede">장거리 구간은 전부 끝나 있습니다. 각 티켓에서 당일 실수하기 쉬운 지점만 뽑았습니다.</p>
+    <p class="lede">이 여섯 개가 여행의 뼈대이자, 유일하게 못 바꾸는 시각입니다. 나머지 일정은 이 사이를 채우는 것뿐입니다.</p>
 
     <div class="rails">
 
@@ -359,9 +321,9 @@
         <div class="rail-date">9/19<small>토</small></div>
         <div class="rail-main">
           <b>프랑크푸르트 → 베를린</b>
-          <span class="times">06:15 Frankfurt Hbf → 10:23 Berlin Hbf · 2등석</span>
+          <span class="times">06:15 Frankfurt Hbf → 10:23 Berlin Hbf</span>
           <span class="note warn">에어푸르트(Erfurt Hbf) 환승 · 08:27 도착 → 08:46 출발, 갈아탈 시간 19분</span>
-          <span class="note">ICE 696 → ICE 1604 · 열차 지정(Zugbindung) · 좌석 미지정 · 환불 불가</span>
+          <span class="note">ICE 696 → ICE 1604 · 2등석 · 열차 지정 · 좌석 미지정 · 환불 불가</span>
         </div>
         <div class="rail-cost"><b>€39.98</b><small>2인</small></div>
       </div>
@@ -371,7 +333,7 @@
         <div class="rail-main">
           <b>베를린 → 뮌헨</b>
           <span class="times">10:37 Berlin Hbf (tief) → 14:46 München Hbf · 직통 4시간 9분</span>
-          <span class="note warn">출발이 <b>지하 플랫폼(tief)</b>입니다. S반은 지상에 도착하니 층 이동 시간을 따로 잡으세요</span>
+          <span class="note warn">출발이 <b>지하 플랫폼(tief)</b>입니다. S반은 지상 도착이니 층 이동 시간을 따로 잡으세요</span>
           <span class="note">2등석 · 좌석 예약 포함</span>
         </div>
         <div class="rail-cost"><b>€110.98</b><small>2인</small></div>
@@ -381,8 +343,8 @@
         <div class="rail-date">9/22<small>화</small></div>
         <div class="rail-main">
           <b>뮌헨 → 루체른</b>
-          <span class="times">16:48 München Hbf Gl.27–36 → 21:25 Luzern · 환승 1회, 4시간 37분</span>
-          <span class="note warn">27–36번은 <b>슈타른베르크 별관</b>(본관 밖). 26번 승강장이 철거공사로 막혀 우회해야 하니 짐 들고 10–15분 잡으세요</span>
+          <span class="times">16:48 München Hbf Gl.27–36 → 21:25 Luzern · 환승 1회</span>
+          <span class="note warn">27–36번은 <b>슈타른베르크 별관</b>(본관 밖). 26번 승강장이 공사로 막혀 우회해야 하니 짐 들고 10–15분</span>
           <span class="note">1등석 · 좌석 예약 포함</span>
         </div>
         <div class="rail-cost"><b>€161.78</b><small>2인</small></div>
@@ -392,11 +354,11 @@
         <div class="rail-date">9/23<small>수</small></div>
         <div class="rail-main">
           <b>세이버데이 패스</b>
-          <span class="times">하루 무제한 · 루체른 → 리기 → 인터라켄 → 베른 · 다음날 05:00까지 유효</span>
-          <span class="note">CHF 52는 <b>하프페어카드 없는 사람용 가격</b>이 맞습니다(있으면 CHF 29부터). 추가로 살 것 없습니다</span>
+          <span class="times">하루 무제한 · <b>다음날 05:00까지</b> 유효</span>
+          <span class="note">CHF 52는 하프페어카드 <b>없는</b> 사람용 가격이 맞습니다(있으면 CHF 29부터). 추가로 살 것 없습니다</span>
           <span class="note">루체른–인터라켄 익스프레스는 좌석 예약 의무 아님(선택 CHF 16) · 호수 뷰는 진행방향 오른쪽</span>
         </div>
-        <div class="rail-cost"><b>CHF 52</b><small>1인 기준</small></div>
+        <div class="rail-cost"><b>CHF 104</b><small>2인 · 인당 52</small></div>
       </div>
 
       <div class="rail">
@@ -404,7 +366,7 @@
         <div class="rail-main">
           <b>인터라켄 → 밀라노</b>
           <span class="times">07:33 Interlaken West → 07:48 Spiez → 08:05 → 10:50 Milano Centrale</span>
-          <span class="note warn">출발역이 <b>인터라켄 West</b>입니다(Ost 아님). 슈피츠 환승은 17분 · 좌석 5호차</span>
+          <span class="note warn">숙소가 <b>West 바로 앞</b>이라 07:20에 나서면 됩니다. 슈피츠 환승 17분 · 좌석 5호차</span>
           <span class="note">2등석 Smart · 좌석 예약 포함</span>
         </div>
         <div class="rail-cost"><b>CHF 114.40</b><small>2인</small></div>
@@ -423,403 +385,621 @@
     </div>
   </section>
 
-  <!-- ============ 2. 급한 것 ============ -->
-  <section id="urgent">
+  <!-- ============ 2. 남은 일 ============ -->
+  <section id="todo">
     <div class="sec-head">
-      <h2>지금 처리해야 할 것</h2>
-      <span class="count">예약 1건 · 숙소·티켓은 전부 끝났습니다</span>
+      <h2>출발 전에 남은 일</h2>
+      <span class="count">예약 1건 · 확인 2건</span>
     </div>
 
     <div class="findings">
 
       <article class="finding is-attention">
-        <span class="tag t-attention">예약 · 9/25</span>
-        <h3>패러글라이딩은 지금 잡아야 합니다</h3>
-        <p>9월도 <strong>오전 슬롯은 3–5일 전에 마감</strong>됩니다. 오전 첫 타임이 바람이 가장 잔잔하고, 날씨 취소가 흔하니 <strong>예비일이 뒤에 남는 날</strong>로 잡아야 합니다.</p>
-        <p>CHF 190 내외, 사진·영상은 별도 CHF 40, 무료 취소는 보통 24시간 전까지입니다. 이륙은 베아텐베르크, <strong>착륙은 회에마테</strong> — 숙소가 인터라켄 West라 착륙장이 도보 거리입니다.</p>
+        <span class="tag t-attention">예약 · 지금</span>
+        <h3>패러글라이딩만 아직 안 잡혔습니다</h3>
+        <p>9월도 <strong>오전 슬롯은 3–5일 전에 마감</strong>됩니다. 오전 첫 타임이 바람이 가장 잔잔하고, 날씨 취소가 흔하니 <strong>뒤에 예비일이 남는 날</strong>로 잡아야 합니다.</p>
+        <p>CHF 190 내외 × 2 = <strong>CHF 380</strong>, 사진·영상은 별도 CHF 40 × 2. 무료 취소는 보통 24시간 전까지입니다. 이륙은 베아텐베르크, <strong>착륙은 회에마테</strong> — 숙소가 인터라켄 West라 착륙장이 걸어서 갈 거리입니다.</p>
         <div class="fix">
-          <b>이렇게 하세요</b>
-          <strong>9/25(금) 오전으로 예약하고 9/26–27을 예비일로</strong> 남기세요. 마지막 날에 잡으면 취소됐을 때 만회할 수 없습니다.
+          <b>추천</b>
+          <strong>9/25(금) 오전으로 잡고 9/27을 예비일로.</strong> 9/26은 그린델발트에 있으니 예비일로 못 씁니다. 마지막 날 9/27까지 밀리면 그날 흐릴 때 만회가 안 되니, 9/25를 1순위로 두세요.
         </div>
       </article>
 
       <article class="finding is-good">
-        <span class="tag t-good">추가 비용 없음</span>
+        <span class="tag t-good">확인 완료</span>
         <h3>융프라우요흐 좌석 예약은 VIP패스에 포함됩니다</h3>
-        <p>구조를 확인했습니다. 일반 융프라우 트래블패스는 <strong>아이거글레처까지만</strong> 커버하고 정상 구간은 “연결 티켓”을 따로 삽니다. 이 연결 티켓이 비수기 <span class="num">CHF 63</span>인데 <strong>5/1~10/31은 CHF 89이고, 공식 안내에 “좌석 예약 포함”이라고 명시</strong>돼 있습니다. 의무 기간에는 예약비가 티켓 값에 이미 들어가 있는 구조입니다.</p>
-        <p>동신항운 VIP패스는 <strong>융프라우요흐 왕복 1회권이 통째로 포함</strong>된 상품이므로, 좌석 예약도 그 안에 함께 들어갑니다. <strong>CHF 10을 따로 낼 일이 없습니다.</strong></p>
+        <p>일반 융프라우 트래블패스는 <strong>아이거글레처까지만</strong> 커버하고 정상 구간은 “연결 티켓”을 따로 삽니다. 이 연결 티켓이 비수기 <span class="num">CHF 63</span>인데 <strong>5/1~10/31은 CHF 89이고 공식 안내에 “좌석 예약 포함”이라고 명시</strong>돼 있습니다. 의무 기간에는 예약비가 티켓 값에 이미 들어가 있습니다.</p>
+        <p>동신항운 VIP패스는 <strong>융프라우요흐 왕복 1회권이 통째로 포함</strong>된 상품이라, 좌석 예약도 그 안에 함께 들어갑니다. <strong>CHF 10을 따로 낼 일이 없습니다.</strong></p>
         <div class="fix">
-          <b>다만 시간대는 지정해야 합니다</b>
-          돈이 안 들 뿐, <strong>몇 시 차를 탈지는 정해서 등록</strong>해야 합니다. 정원 관리가 목적인 제도라 그렇습니다. 9/24 발권할 때 창구에서 같이 처리하거나, 가는 날 아침에 잡으면 됩니다. <strong>전날까지 무료 취소, 출발 45분 전까지 시간 변경</strong>이 되니 날씨 보고 정하는 방식 그대로 가시면 됩니다. 개찰구는 출발 10분 전까지 통과.
+          <b>대신 시간대는 지정해야 합니다</b>
+          돈이 안 들 뿐, 몇 시 차를 탈지는 정해서 등록해야 합니다. 발권할 때 창구에서 같이 처리하면 되고, <strong>전날까지 무료 취소·출발 45분 전까지 변경</strong>이라 날씨 보고 정하는 방식 그대로 가시면 됩니다.
+        </div>
+      </article>
+
+      <article class="finding is-critical">
+        <span class="tag t-critical">확인 완료 · 주의</span>
+        <h3>인터라켄 West에서는 VIP패스 발권이 안 됩니다</h3>
+        <p>여러 자료가 일치합니다. 발권 가능한 곳은 <strong>인터라켄 오스트 · 빌더스빌 · 그린델발트 · 그린델발트 터미널 · 라우터브루넨</strong>이고, <strong>인터라켄 베스트는 제외</strong>입니다. 숙소가 West라 <strong>기차로 한 정거장(3분)</strong> 가야 합니다.</p>
+        <p>그리고 발권 후기에서 반복해서 나오는 함정이 하나 있습니다. <strong>날짜를 정확히 말하지 않으면 “오늘부터” 개시되는 패스로 발권됩니다.</strong> 9/24에 받는데 9/24~27로 써야 하니 그대로 맞지만, 만약 개시일을 미룰 생각이라면 반드시 짚어서 말해야 합니다.</p>
+        <div class="fix">
+          <b>창구에서 말할 것 세 가지</b>
+          ① <strong>패스 개시일과 사용 일수</strong>(9월 24일부터 4일) ② <strong>융프라우요흐 왕복을 쓸 날짜와 시간대</strong> ③ <strong>인터라켄 West–Ost 구간이 패스에 포함되는지</strong>. 쿠폰은 이메일로 받아 <strong>인원수만큼 종이로 출력</strong>해 가고, 여권을 함께 내면 됩니다.
         </div>
       </article>
 
     </div>
   </section>
 
-  <!-- ============ 3. 새 위험 ============ -->
+  <!-- ============ 3. 위험 ============ -->
   <section id="risks">
     <div class="sec-head">
-      <h2>티켓을 읽고 새로 나온 위험</h2>
-      <span class="count">4건 · 당일 놓치기 쉬운 것</span>
+      <h2>당일 놓치기 쉬운 것</h2>
+      <span class="count">4건</span>
     </div>
-    <p class="lede">예매는 다 됐지만, 티켓에 적힌 조건 때문에 당일 동선이 바뀌어야 하는 항목입니다.</p>
+    <p class="lede">예매는 다 됐지만, 티켓 조건 때문에 동선이 바뀌어야 하는 항목입니다.</p>
 
     <div class="findings">
 
       <article class="finding is-attention">
         <span class="tag t-attention">9/22 · 환승</span>
         <h3>뮌헨 27–36번 승강장은 역 본관 밖입니다</h3>
-        <p>루체른행이 서는 <code>Gl. 27–36</code>은 <strong>슈타른베르크 별관(Starnberger Flügelbahnhof)</strong>으로, 본관 지붕 밖 북쪽에 따로 있습니다. 원래는 26번 승강장 끝으로 건너가는데, <strong>2025년 11월부터 철거공사로 26번이 막혀</strong> 아눌프슈트라세 출구로 나가 역 건물 바깥으로 돌아야 합니다.</p>
+        <p>루체른행이 서는 <code>Gl. 27–36</code>은 <strong>슈타른베르크 별관</strong>으로 본관 지붕 밖 북쪽에 따로 있습니다. 원래는 26번 승강장 끝으로 건너가는데 <strong>2025년 11월부터 철거공사로 26번이 막혀</strong>, 아눌프슈트라세 출구로 나가 건물 바깥으로 돌아야 합니다.</p>
         <div class="fix">
-          <b>이렇게 하세요</b>
-          짐이 있으면 <strong>10–15분</strong>은 걸립니다. 16:48 열차인데 짐 보관함에서 캐리어까지 찾아야 하니 <strong>16:15에는 역에 도착</strong>하세요. 도착해서 바로 27–36번 방향 표지를 찾는 게 먼저입니다.
-        </div>
-      </article>
-
-      <article class="finding is-attention">
-        <span class="tag t-attention">9/28 · 새벽 출발</span>
-        <h3>07:33 출발 — 숙소가 West라 이건 오히려 유리합니다</h3>
-        <p>출발역이 <strong>인터라켄 West</strong>이고 숙소가 바로 앞이라, 이동 시간이 사실상 없습니다. <strong>07:20에 나서면</strong> 충분하고 기상은 6시 반 정도면 됩니다.</p>
-        <p>남는 문제는 <strong>조식</strong>입니다. 07:20 출발이면 숙소 조식 시간과 겹치지 않을 가능성이 큽니다.</p>
-        <div class="fix">
-          <b>전날 밤에 할 것</b>
-          짐을 9/27 밤에 완전히 싸두고, 숙소에 <strong>아침 도시락이나 빵을 미리 받을 수 있는지</strong> 물어두세요. 슈피츠 환승은 <strong>17분</strong>이라 여유가 없으니, 5호차 좌석 위치를 플랫폼 섹터 표시로 미리 확인하세요.
+          <b>대응</b>
+          짐이 있으면 <strong>10–15분</strong>입니다. 짐 보관함에서 캐리어까지 찾아야 하니 <strong>16:15에는 역 도착</strong>. 도착하자마자 27–36번 방향 표지부터 찾으세요.
         </div>
       </article>
 
       <article class="finding is-critical">
-        <span class="tag t-critical">9/29 · 일정 충돌</span>
+        <span class="tag t-critical">9/29 · 시간 충돌</span>
         <h3>“아카데미아 다리 일몰”과 “배 타고 귀환”은 같이 못 합니다</h3>
-        <p>귀환 열차가 <strong>19:48 · Basic 요금(변경·환불 불가)</strong>입니다. 9월 말 베네치아 일몰은 <span class="num">19:00</span> 전후인데, 아카데미아에서 1번 바포레토로 산타루치아역까지는 <strong>25–30분</strong>이 걸립니다. 일몰을 다리 위에서 다 보고 배를 타면 도착이 <span class="num">19:35~19:45</span>가 되고, 이 열차는 놓치면 되돌릴 방법이 없습니다.</p>
+        <p>귀환이 <strong>19:48 · Basic 요금(변경·환불 불가)</strong>입니다. 9월 말 베네치아 일몰은 <span class="num">19:00</span> 전후인데, 아카데미아에서 1번 바포레토로 산타루치아역까지 <strong>25–30분</strong>입니다. 일몰을 다리에서 다 보고 배를 타면 <span class="num">19:35~19:45</span> 도착이라 위험합니다.</p>
         <div class="fix">
           <b>절충안</b>
-          <strong>18:40~18:45에 아카데미아 정류장에서 1번을 타세요.</strong> 대운하의 매직아워와 일몰을 <strong>배 위에서</strong> 보게 되고, <span class="num">19:10~19:15</span>에 Ferrovia에 내리면 역이 바로 앞입니다. 두 가지를 다 살리는 유일한 조합입니다. 승선 전 <strong>흰색 기계에 태그</strong>하는 것 잊지 마세요.
+          <strong>18:40~18:45에 아카데미아 정류장에서 1번을 타세요.</strong> 대운하 매직아워와 일몰을 <strong>배 위에서</strong> 보게 되고 <span class="num">19:10~19:15</span>에 Ferrovia에 내리면 역이 바로 앞입니다. 승선 전 <strong>흰색 기계에 태그</strong> 잊지 마세요.
         </div>
       </article>
 
       <article class="finding is-attention">
         <span class="tag t-attention">9/28 · 사전 확인</span>
         <h3>도모도솔라–밀라노 공사 공지를 출발 전에 봐야 합니다</h3>
-        <p>티켓은 슈피츠 → 심플론 터널 → 도모도솔라 → 밀라노 경로입니다. 이 구간은 <strong>2024–2028년 4미터 회랑 공사</strong> 중이고, 2026년에도 6~7월에 실제로 대체버스가 운행했습니다. 가을 단기 공사는 촉박하게 공지되는 편입니다.</p>
+        <p>티켓 경로가 슈피츠 → 심플론 터널 → 도모도솔라 → 밀라노입니다. 이 구간은 <strong>2024–2028년 공사</strong> 중이고 2026년에도 6~7월에 실제로 대체버스가 운행했습니다. 가을 단기 공사는 촉박하게 공지됩니다.</p>
         <div class="fix">
-          <b>이렇게 하세요</b>
-          출발 <strong>일주일 전과 전날</strong>, <code>sbb.ch</code> 유럽 운행변경 페이지를 확인하세요. 대체버스로 바뀌면 지정 좌석은 무의미해지고 <strong>버스는 예약이 의무</strong>라 재예약이 필요합니다. 도모도솔라 버스 정류장은 Piazza G. Matteotti(역에서 도보 3분), 밀라노는 Piazza IV Novembre입니다.
+          <b>대응</b>
+          출발 <strong>일주일 전과 전날</strong> <code>sbb.ch</code> 유럽 운행변경 페이지 확인. 대체버스로 바뀌면 지정 좌석이 무의미해지고 <strong>버스는 예약 의무</strong>라 재예약이 필요합니다.
         </div>
       </article>
 
-    </div>
-  </section>
-
-  <!-- ============ 4. 교통비 ============ -->
-  <section id="budget">
-    <div class="sec-head">
-      <h2>교통비 총정리</h2>
-      <span class="count">2인 기준 · 결제 완료분과 남은 분</span>
-    </div>
-    <p class="lede">장거리는 다 끝났고, 남은 건 <strong>도시 안에서 쓰는 돈</strong>입니다. 이게 빠져 있던 부분입니다.</p>
-
-    <div class="scroll">
-      <table>
-        <thead>
-          <tr><th>구분</th><th>항목</th><th class="mono right">2인 금액</th><th>메모</th></tr>
-        </thead>
-        <tbody>
-          <tr class="sub-row"><td colspan="4">결제 완료 — 장거리 6건</td></tr>
-          <tr><td class="mono">9/19</td><td>프랑크푸르트 → 베를린</td><td class="mono right">€39.98</td><td>ICE · 좌석 미지정</td></tr>
-          <tr><td class="mono">9/21</td><td>베를린 → 뮌헨</td><td class="mono right">€110.98</td><td>좌석 포함</td></tr>
-          <tr><td class="mono">9/22</td><td>뮌헨 → 루체른</td><td class="mono right">€161.78</td><td>1등석 · 좌석 포함</td></tr>
-          <tr><td class="mono">9/23</td><td>세이버데이 패스</td><td class="mono right">CHF 52~104</td><td>하프페어 없는 사람 가격 · 추가 구매 불필요</td></tr>
-          <tr><td class="mono">9/28</td><td>인터라켄 → 밀라노</td><td class="mono right">CHF 114.40</td><td>좌석 지정 완료</td></tr>
-          <tr><td class="mono">9/29</td><td>베네치아 → 밀라노</td><td class="mono right">$64</td><td>Frecciarossa · Basic</td></tr>
-          <tr class="sub-row"><td colspan="3">소계 (환산 약)</td><td class="mono">₩1,090,000 내외</td></tr>
-
-          <tr class="sub-row"><td colspan="4">아직 안 산 것 — 도시 교통</td></tr>
-          <tr><td class="mono">9/18</td><td>공항 → 프랑크푸르트 중앙역</td><td class="mono right">€13.80</td><td>S8/S9 · <strong>€6.90</strong>로 인상</td></tr>
-          <tr><td class="mono">9/19–21</td><td>베를린 24시간권 AB <strong>×2장</strong></td><td class="mono right">€44.80</td><td><strong>1장으로는 부족합니다</strong></td></tr>
-          <tr><td class="mono">9/21–22</td><td>뮌헨 1일권(Zone M) ×2일</td><td class="mono right">€40.40</td><td>1인 €10.10 · 다음날 06:00까지</td></tr>
-          <tr><td class="mono">9/24–27</td><td>융프라우 VIP패스 4일</td><td class="mono right">CHF 490</td><td>현지 발권 · 할인쿠폰 필요</td></tr>
-          <tr><td class="mono">9/24–27</td><td>융프라우요흐 좌석 예약</td><td class="mono right">CHF 0</td><td><span class="pill p-done">패스 포함</span> 시간대만 지정하면 됩니다</td></tr>
-          <tr><td class="mono">9/29</td><td>밀라노 → 베로나 지역열차</td><td class="mono right">€27</td><td>당일 구매 · <strong>각인 필수</strong></td></tr>
-          <tr><td class="mono">9/29</td><td>베로나 시내버스 왕복</td><td class="mono right">€8</td><td>21·23·24·31번 / 복귀 73·103·105번</td></tr>
-          <tr><td class="mono">9/29</td><td>베로나 → 베네치아 지역열차</td><td class="mono right">€21</td><td>당일 구매 · 각인 필수</td></tr>
-          <tr><td class="mono">9/29</td><td>베네치아 바포레토 1번</td><td class="mono right">€19</td><td>75분권 · 승선 전 태그</td></tr>
-          <tr><td class="mono">9/28–30</td><td>밀라노 시내 교통</td><td class="mono right">€26~30</td><td><strong>2026년부터 종이표 폐지</strong></td></tr>
-          <tr><td class="mono">9/30</td><td>말펜사 익스프레스</td><td class="mono right">€26</td><td>중앙역 → 공항 약 50분</td></tr>
-          <tr class="grand"><td colspan="2">남은 교통비 합계</td><td class="mono right">약 ₩1,110,000</td><td>VIP패스 CHF 490 포함</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="findings" style="margin-top:22px">
       <article class="finding is-attention">
-        <span class="tag t-attention">계산 착오</span>
+        <span class="tag t-attention">9/19–21 · 요금</span>
         <h3>베를린 24시간권은 2장이 필요합니다</h3>
-        <p>메모에 “9/21 열차가 24시간 교통권 안에 드는지 확인 → 됨”이라고 되어 있는데, <strong>1장으로는 안 됩니다.</strong> 24시간권은 개시 시각부터 정확히 24시간입니다.</p>
-        <p>9/19 <span class="num">10:40</span>쯤 첫 장을 끊으면 9/20 <span class="num">10:40</span>에 끝납니다. 그러면 <strong>9/20 하루가 통째로 비고</strong>, 9/21 아침 기차도 못 탑니다. 9/20 오전에 두 번째 장을 끊어야 9/21 <span class="num">10:37</span> 기차까지 덮입니다.</p>
-        <p>7일권(AB)은 1인 €44 수준이라 24시간권 2장(€22.40)보다 비쌉니다. <strong>2장씩 끊는 게 정답</strong>입니다. BVG 앱이나 Jelbi 앱으로 사면 “지금 개시”를 눌러 1분도 안 버립니다.</p>
+        <p>24시간권은 개시 시각부터 정확히 24시간입니다. 9/19 <span class="num">10:40</span>쯤 첫 장을 끊으면 9/20 <span class="num">10:40</span>에 끝나서 <strong>9/20 하루가 통째로 비고</strong> 9/21 아침 기차도 못 탑니다.</p>
+        <p>9/20 오전에 두 번째 장을 끊어야 9/21 <span class="num">10:37</span>까지 덮입니다. 7일권(1인 €44 수준)보다 <strong>24시간권 2장(1인 €22.40)</strong>이 쌉니다. BVG 앱이나 Jelbi 앱으로 사면 “지금 개시”를 눌러 1분도 안 버립니다.</p>
       </article>
 
-      <article class="finding is-attention">
-        <span class="tag t-attention">제도 변경</span>
-        <h3>밀라노는 2026년부터 종이 교통권을 안 팝니다</h3>
-        <p>2026년 1월 1일부터 <strong>ATM 종이 티켓의 판매와 사용이 모두 중단</strong>됐습니다. 충전식 RicaricaMi 카드, 앱 디지털 티켓, 또는 <strong>개찰구에 컨택리스 카드·스마트폰을 그냥 태그</strong>하는 방식만 됩니다.</p>
-        <p>여행자에게는 <strong>컨택리스 태그가 가장 간단합니다.</strong> 24시간 단위로 이용 횟수를 계산해 자동으로 제일 싼 요금을 청구합니다(여러 번 타면 1일권 €7.60 상한). 티켓을 살 필요조차 없습니다.</p>
-        <p>어차피 두오모·갤러리아·브레라는 다 걸어 다닐 거리라 <strong>컨택리스로 그때그때 타는 쪽</strong>을 권합니다. <strong>말펜사 익스프레스는 별개</strong>라 중앙역 기계에서 따로 사야 합니다.</p>
-      </article>
     </div>
   </section>
 
-  <!-- ============ 5. 날짜별 체크리스트 ============ -->
+  <!-- ============ 4. 추천 ============ -->
+  <section id="ideas">
+    <div class="sec-head">
+      <h2>제가 더하고 싶은 것</h2>
+      <span class="count">추천 8가지</span>
+    </div>
+    <p class="lede">계획을 다 읽고 나서, 넣으면 좋겠다 싶은 것들입니다.</p>
+
+    <div class="findings">
+
+      <article class="finding is-good">
+        <span class="tag t-good">추천 01 · 9/20</span>
+        <h3>이스트 사이드 갤러리를 베르크하인 직전에 붙이세요</h3>
+        <p>베르크하인을 일요일 낮으로 옮기신 게 신의 한 수입니다. 통과율이 가장 높은 시간대인 데다 토요일 밤을 안 태워도 됩니다.</p>
+        <p>그런데 <strong>이스트 사이드 갤러리와 베르크하인이 걸어서 15분 거리</strong>입니다(둘 다 Warschauer Str. / Ostbahnhof 권역). 100번 버스 코스에서 빠지는 곳이라 따로 가야 하는데, <strong>일요일 오후에 갤러리 → 베르크하인</strong>으로 묶으면 한 번 움직여서 둘 다 해결됩니다.</p>
+      </article>
+
+      <article class="finding is-good">
+        <span class="tag t-good">추천 02 · 스위스</span>
+        <h3>인터라켄 5일 중 하루는 아무 계획도 넣지 마세요</h3>
+        <p>12박 13일에 도시를 여섯 번 옮기고, 그중 이동일만 여섯 날입니다. 9/23은 하루 종일 기차, 9/28은 새벽 출발입니다.</p>
+        <p>산은 날씨가 정하는 거라 어차피 계획대로 안 됩니다. <strong>흐린 날 하나를 통째로 비워두고</strong> 늦잠 · 마을 산책 · 콥에서 장 봐서 숙소 저녁 · 하더쿨룸 야경 정도로 두세요. 이 하루가 뒤쪽 이탈리아 일정의 체력을 만듭니다.</p>
+      </article>
+
+      <article class="finding is-good">
+        <span class="tag t-good">추천 03 · 9/26</span>
+        <h3>그린델발트 1박은 피르스트 + 스파로 묶으세요</h3>
+        <p>숙소가 <strong>피르스트 곤돌라에서 도보 2분</strong>이고 <strong>800㎡ 스파</strong>가 있습니다. 이 조합을 안 쓰면 굳이 하루 옮긴 의미가 없습니다.</p>
+        <p>낮에 피르스트 클리프 워크 → 바흐알프제 왕복 2시간 → 트로티바이크나 카트로 하산 → 저녁에 스파. 하루가 딱 떨어집니다. <strong>큰 짐은 인터라켄에 두고 1박치만</strong> 들고 가세요.</p>
+      </article>
+
+      <article class="finding is-good">
+        <span class="tag t-good">추천 04 · 9/28</span>
+        <h3>두오모 테라스를 일몰 슬롯으로 잡으세요</h3>
+        <p><span class="num">10:50</span>에 밀라노에 도착하니 첫날이 통째로 남습니다. 테라스는 <strong>마지막 입장 18:10, 19:00 폐장</strong>이고 9월 말 밀라노 일몰은 <span class="num">19:20</span> 전후입니다.</p>
+        <p><strong>17:30~18:00 슬롯</strong>을 잡으면 황금빛에 물든 첨탑과 마돈니나를 보고, 내려와서 갤러리아를 지나 나빌리 운하로 저녁을 가면 동선이 한 줄로 이어집니다. 성수기엔 3–5일 전 매진이고 <strong>구매 후 시간 변경이 안 되니</strong> 날짜가 확정된 지금 예매하세요.</p>
+      </article>
+
+      <article class="finding is-good">
+        <span class="tag t-good">추천 05 · 9/29</span>
+        <h3>베로나는 당일 아침에 결정해도 됩니다</h3>
+        <p>밀라노→베로나, 베로나→베네치아 모두 <strong>지역열차라 당일 창구·기계에서 사면 되고 가격도 고정</strong>입니다. 미리 안 사도 손해가 없습니다.</p>
+        <p>그러니 <strong>전날 밤 컨디션을 보고 아침에 정하세요.</strong> 멀쩡하면 07:00에 나가 베로나를 찍고, 지치면 09:00에 베네치아로 직행해서 하루를 느긋하게 쓰면 됩니다. 어느 쪽이든 19:48 귀환은 그대로입니다.</p>
+      </article>
+
+      <article class="finding is-good">
+        <span class="tag t-good">추천 06 · 스위스</span>
+        <h3>저녁은 콥·미그로에서 사서 숙소에서 드세요</h3>
+        <p>스위스 식당은 한 끼 CHF 30부터입니다. 5박이면 두 명이 저녁만으로 CHF 300이 넘습니다.</p>
+        <p>마트는 보통 <strong>저녁 6시반~7시에 문을 닫고 일요일은 휴무</strong>입니다. 산에서 늦게 내려오면 살 곳이 없으니, <strong>9/26 토요일 저녁까지 일요일치를 미리</strong> 사두세요. 역 안 매장은 일요일에도 여는 경우가 있으니 인터라켄 Ost 쪽을 기억해두면 좋습니다.</p>
+      </article>
+
+      <article class="finding is-good">
+        <span class="tag t-good">추천 07 · 9/22</span>
+        <h3>뮌헨 인형극은 12시 말고 11시로</h3>
+        <p>11시와 12시 두 번 하는데 <strong>12시에 사람이 훨씬 많습니다.</strong> 11시에 보면 명당을 쉽게 잡고, 바로 옆 성 베드로 교회 전망대(€5)에 올라간 뒤 빅투알리엔 시장에서 점심까지 자연스럽게 이어집니다.</p>
+        <p>그러면 오후에 여유가 생겨서 <strong>16:15 역 도착</strong>이라는 빠듯한 마감에 쫓기지 않습니다.</p>
+      </article>
+
+      <article class="finding is-good">
+        <span class="tag t-good">추천 08 · 9/30</span>
+        <h3>최후의 만찬을 뺀 자리는 브레라로 채우세요</h3>
+        <p>12시 체크아웃부터 17:30까지 다섯 시간 반이 빕니다. 짐을 맡기고 걸어 다니기 좋은 조합이 있습니다.</p>
+        <p><strong>스포르체스코 성 안뜰(무료) → 셈피오네 공원 → 브레라 지구 골목과 미술관 정원 → 스타벅스 리저브 로스터리</strong>. 전부 도보권이고 마지막에 중앙역으로 돌아오기도 쉽습니다. 산타 마리아 델레 그라치에 <strong>성당 자체는 무료 입장</strong>이니, 벽화는 못 봐도 건물은 보고 오실 수 있습니다.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ============ 5. 날짜별 ============ -->
   <section id="itinerary">
     <div class="sec-head">
-      <h2>날짜별 체크리스트</h2>
-      <span class="count">답이 나온 항목은 체크 · 붉은 표시는 놓치면 곤란</span>
+      <h2>날짜별 계획</h2>
+      <span class="count">고정은 기차뿐 · 나머지는 선택지</span>
     </div>
+    <p class="lede">각 날짜마다 <strong>못 바꾸는 시각</strong>을 맨 위에 두고, 그 사이는 <strong>순서만 정하고 시각은 안 박은</strong> 선택지로 뒀습니다. 여행 중에는 이 페이지에서 “고정” 칸만 지키면 됩니다.</p>
 
     <div class="days">
 
+      <!-- 9/18 -->
       <div class="day">
         <div class="day-when"><b>9/18</b> 금<span>프랑크푸르트 1박</span></div>
         <div class="day-body">
-          <h3>17:40 도착</h3>
-          <p class="subhead">답 나온 것</p>
+          <h3>도착일 · 무리하지 않는 게 목표</h3>
+          <div class="anchor">
+            <span class="lbl">고정</span>
+            <ul>
+              <li>17:40 <em>프랑크푸르트 공항 도착</em></li>
+              <li>내일 06:15 <em>기차 — 05:45 역 도착</em></li>
+            </ul>
+          </div>
+          <p class="subhead">도착 후 흐름</p>
+          <p style="font-size:14.5px;color:var(--ink-2)">입국심사(EES 생체등록으로 평소보다 김) → 터미널 1 지하 <b>Regionalbahnhof</b>에서 S8/S9 → 중앙역 11~15분 → 남쪽 출구 도보 2~3분. <b>숙소 도착 19:30~20:30 사이</b>로 보시면 됩니다.</p>
+          <div class="plans">
+            <div class="plan pick">
+              <h4>그냥 자기 <span class="cond">추천</span></h4>
+              <p>내일 4시 반에 일어나야 합니다. 숙소 근처에서 간단히 먹고 일찍 눕는 게 13일 전체로 보면 남는 장사입니다. 중앙역 지하 상가가 늦게까지 열어서 저녁 해결은 됩니다.</p>
+            </div>
+            <div class="plan">
+              <h4>뢰머 광장 야경 <span class="cond">체력 남으면</span></h4>
+              <p>중앙역에서 U반 5분. 광장 야경만 보고 오면 1시간 반 정도입니다. 사과와인(Apfelwein)과 그뤼네 조세를 맛보려면 작센하우젠 지구로.</p>
+            </div>
+          </div>
           <ul class="checks">
-            <li class="ok"><b>공항 → 중앙역</b> — 터미널 1 지하 Regionalbahnhof에서 S8/S9, 11–15분, 15분 간격. 요금은 <b>€6.90</b>으로 올랐습니다(메모의 €6.30은 옛 가격)</li>
-            <li class="ok"><b>중앙역 → 숙소</b> — 남쪽 출구 도보 2–3분</li>
-            <li class="ok"><b>내일 조식</b> — 역내 베이커리 05시 오픈. 06:15 기차니 05:45 도착해서 사면 됩니다. 독일 기차 음식은 기대하지 마세요</li>
-          </ul>
-          <p class="subhead">아직 남은 것</p>
-          <ul class="checks">
-            <li class="hot"><b>입국 심사가 길어집니다</b> — 2026년 4월 10일부터 솅겐 전역 EES가 가동돼 첫 입국 때 <b>지문 4개 + 얼굴 촬영</b>을 합니다. 숙소 도착이 19:30보다 늦어질 수 있습니다. ETIAS는 아직 시행 전이라 신청 불필요(출발 직전 재확인)</li>
-            <li><b>주변 볼거리</b> — 뢰머 광장(중앙역에서 U반 5분)과 마인강변 정도. 저녁 7시 반 도착이면 광장 야경 잠깐이 현실적입니다</li>
-            <li><b>저녁</b> — 프랑크푸르트는 사과와인(Apfelwein)과 그뤼네 조세가 명물이고 작센하우젠 지구가 중심입니다. 다만 <b>중앙역 북쪽 일대는 밤에 분위기가 좋지 않으니</b> 숙소 남쪽으로 잡으세요. 시차로 바로 잘 경우를 대비해 <b>가벼운 선택지</b>도 하나</li>
+            <li class="hot"><b>중앙역 북쪽 일대는 밤에 분위기가 좋지 않습니다</b> — 돌아다닐 거면 숙소 남쪽으로</li>
+            <li><b>내일 조식</b>은 역내 베이커리에서. 05시 오픈이라 05:45 도착이면 여유롭습니다. 독일 기차 음식은 기대하지 마세요</li>
+            <li class="ok"><b>ETIAS는 아직 시행 전</b>이라 신청 불필요. 출발 직전 한 번만 재확인</li>
           </ul>
         </div>
       </div>
 
+      <!-- 9/19 -->
       <div class="day">
         <div class="day-when"><b>9/19</b> 토<span>→ 베를린 2박</span></div>
         <div class="day-body">
-          <h3>06:15 출발 · 10:23 도착 · 밤샘</h3>
-          <p class="subhead">답 나온 것</p>
+          <h3>베를린 첫날 · 밤은 비워둠</h3>
+          <div class="anchor">
+            <span class="lbl">고정</span>
+            <ul>
+              <li>06:15 <em>프랑크푸르트 출발</em></li>
+              <li>08:27 → 08:46 <em>에어푸르트 환승 — 알람 08:15</em></li>
+              <li>10:23 <em>베를린 도착</em></li>
+            </ul>
+          </div>
+          <p class="subhead">낮 — 순서만 정하고 시각은 두지 마세요</p>
+          <p style="font-size:14.5px;color:var(--ink-2)">중앙역 → S3/S5/S7/S9로 알렉산더플라츠(20분) → 숙소에 짐 → <b>100번 버스</b> 한 바퀴(1시간) → 브란덴부르크 문에서 내려 <b>유대인 학살 추모비</b>(도보 3분) → 점심 → 저녁에 <b>Woof</b>(쇠네베르크, 30분)</p>
+          <div class="plans">
+            <div class="plan pick">
+              <h4>토요일 밤은 일찍 들어오기 <span class="cond">권장</span></h4>
+              <p>베르크하인을 일요일로 옮기셨으니 오늘 밤을 태울 이유가 없습니다. Woof에서 놀다 적당히 들어와 자면, 내일 낮 컨디션이 완전히 달라집니다.</p>
+              <p>금·토 밤은 U반·S반이 <b>24시간 운행</b>이라 몇 시에 들어와도 됩니다.</p>
+            </div>
+            <div class="plan">
+              <h4>체크포인트 찰리를 오늘 <span class="cond">여유 있으면</span></h4>
+              <p>U6 Kochstr. 하차. 100번 버스 노선에서 빠지는 곳이라 따로 가야 합니다. 이스트 사이드 갤러리는 내일 베르크하인과 묶는 게 효율적이니 오늘은 이쪽만.</p>
+            </div>
+          </div>
           <ul class="checks">
-            <li class="ok"><b>05:45 역 도착</b> (30분 전)</li>
-            <li class="hot"><b>알람은 08:15에</b> — 환승역은 <b>에어푸르트(Erfurt Hbf)</b>, 08:27 도착 → 08:46 출발. 갈아탈 시간이 <b>19분</b>뿐입니다. 20분 이상 지연이 예상되면 열차 지정이 자동 해제돼 다음 열차를 타도 됩니다</li>
-            <li class="ok"><b>중앙역 → 알렉산더플라츠</b> — 지상 플랫폼에서 S3/S5/S7/S9, 20분</li>
-            <li class="ok"><b>100번 버스</b> — 알렉산더플라츠 → TV타워 → 박물관섬 → 대성당 → 운터 덴 린덴 → 브란덴부르크 문 → 국회의사당 → 전승기념탑 → 동물원역. 한 바퀴 1시간</li>
-            <li class="ok"><b>Woof</b> — 쇠네베르크, 30분 소요, 입장료 없거나 €5 내외</li>
-            <li class="ok"><b>Woof → 베르크하인</b> — 새벽 대기 포함 35–45분</li>
-          </ul>
-          <p class="subhead">아직 남은 것</p>
-          <ul class="checks">
-            <li class="hot"><b>24시간권을 2장 사세요</b> — 1장은 9/20 낮에 끊깁니다</li>
-            <li class="hot"><b>100번 버스로는 리스트의 절반을 못 갑니다</b> — 체크포인트 찰리(U6 Kochstr.)와 이스트 사이드 갤러리(S반 Warschauer Str.)는 노선 밖입니다. 유대인 학살 추모비만 브란덴부르크 문에서 도보 3분이라 묶입니다. <b>버스 코스 + 지하철로 두 곳 따로</b>가 필요합니다</li>
-            <li><b>점심 후보</b> — Curry 36(Mehringdamm), Mustafa's Gemüse Kebap(같은 역, 줄 김), Konnopke's Imbiss(프렌츠라우어베르크). 100번 노선과는 떨어져 있으니 하나를 코스에 끼워 넣으세요</li>
-            <li class="hot"><b>Woof 한식당에 미리 연락</b></li>
-            <li class="hot"><b>베르크하인은 현금</b> — 입장 €25 내외, 가르데로베 €3 현금 전용, 재입장 €5. 카드 수용 여부는 정보가 엇갈리니 <b>1인 €40 정도 현금</b>으로 잡으세요</li>
-            <li class="hot"><b>문 통과는 타이밍</b> — 토요일 23:59–02:00이 가장 나쁘고, <b>일요일 새벽 04:00–08:00</b>이 제일 좋습니다. Woof에서 늦게까지 있다 넘어가는 게 유리합니다</li>
-            <li><b>카메라에 스티커를 붙입니다</b> — 떼거나 촬영하면 즉시 퇴장에 장기 출입금지. 보관증 번호는 <b>사진 말고 손으로 적으세요</b>. 큰 가방은 보관 거부되니 짐은 숙소에</li>
-            <li class="ok"><b>새벽 귀가</b> — 금·토 밤은 U반·S반이 24시간 운행합니다. 베르크하인(Ostbahnhof)에서 알렉산더플라츠는 S반 5분</li>
+            <li class="hot"><b>24시간권 첫 장을 도착 직후 개시</b> — 앱으로 사면 “지금 개시”를 눌러 시간을 안 버립니다</li>
+            <li class="hot"><b>Woof 한식당에 미리 연락</b> — 출발 전에 해두세요</li>
+            <li><b>점심 후보</b> — Curry 36 / Mustafa's Gemüse Kebap(둘 다 Mehringdamm), Konnopke's Imbiss(프렌츠라우어베르크). 100번 노선과 떨어져 있으니 하나만 코스에 끼우세요</li>
+            <li class="ok"><b>100번 버스 코스</b> — 알렉산더플라츠 → TV타워 → 박물관섬 → 대성당 → 운터 덴 린덴 → 브란덴부르크 문 → 국회의사당 → 전승기념탑 → 동물원역</li>
           </ul>
         </div>
       </div>
 
+      <!-- 9/20 -->
       <div class="day">
         <div class="day-when"><b>9/20</b> 일<span>베를린</span></div>
         <div class="day-body">
-          <h3>회복일 · 저녁 선택지</h3>
+          <h3>베르크하인 데이</h3>
+          <div class="anchor loose">
+            <span class="lbl">사실상 고정</span>
+            <ul>
+              <li>오전 중 <em>24시간권 두 번째 장 개시 — 안 하면 내일 기차를 못 탑니다</em></li>
+              <li>04:00–08:00 또는 12:00–18:00 <em>베르크하인 문이 가장 무른 시간대</em></li>
+            </ul>
+          </div>
+          <p class="subhead">추천 흐름</p>
+          <p style="font-size:14.5px;color:var(--ink-2)">늦은 조식 → <b>이스트 사이드 갤러리</b>(S반 Warschauer Str.) → 걸어서 15분 <b>베르크하인</b> → 저녁까지. 한 번 움직여서 둘 다 됩니다.</p>
+          <div class="plans">
+            <div class="plan pick">
+              <h4>낮 12시~오후 <span class="cond">통과율 최고</span></h4>
+              <p>일요일 낮은 줄이 짧고 문이 가장 무릅니다. 토요일 자정~새벽 2시가 최악이라는 걸 감안하면 정확히 반대편을 고르신 겁니다.</p>
+            </div>
+            <div class="plan">
+              <h4>바발리 스파를 먼저 <span class="cond">몸이 무거우면</span></h4>
+              <p>오전에 스파로 몸을 풀고 오후에 베르크하인으로 가는 조합도 됩니다. 입장료·수건 대여 여부·이동 시간을 현지에서 확인하세요.</p>
+            </div>
+          </div>
           <ul class="checks">
-            <li class="hot"><b>두 번째 24시간권을 오전에 개시</b> — 9/21 10:37 기차까지 덮으려면 9/20 오전 중에 끊어야 합니다</li>
-            <li>호텔 조식 마감 시간 확인 (밤샘 후 조식이 목표라면)</li>
-            <li><b>더 보일러</b> — 운영시간·입장료 확인</li>
-            <li><b>바발리 스파</b> — 입장료, 수건·가운 대여 여부, 이동시간. 밤샘 다음날 회복용으로는 이쪽이 낫습니다</li>
-            <li class="ok"><b>베르크하인 재입장</b> — Klubnacht가 <b>월요일 아침까지</b> 이어지므로 계획이 성립합니다</li>
+            <li class="hot"><b>현금 준비</b> — 입장 €25 내외 × 2, 가르데로베 €3 현금 전용, 재입장 €5. 카드 수용 여부는 정보가 엇갈리니 <b>1인 €40</b>은 현금으로</li>
+            <li class="hot"><b>카메라에 스티커를 붙입니다</b> — 떼거나 촬영하면 즉시 퇴장에 장기 출입금지. 보관증 번호는 <b>사진 말고 손으로 적으세요</b></li>
+            <li><b>큰 가방은 보관 거부</b>됩니다. 짐은 숙소에 두고 가볍게</li>
+            <li><b>더 보일러</b>도 후보 — 운영시간·입장료 확인해두면 선택지가 늘어납니다</li>
           </ul>
         </div>
       </div>
 
+      <!-- 9/21 -->
       <div class="day">
         <div class="day-when"><b>9/21</b> 월<span>→ 뮌헨 1박</span></div>
         <div class="day-body">
-          <h3>10:37 출발 · 14:46 도착 · 옥토버페스트</h3>
-          <p class="subhead">답 나온 것</p>
+          <h3>옥토버페스트 · 오늘은 시각이 중요합니다</h3>
+          <div class="anchor">
+            <span class="lbl">고정</span>
+            <ul>
+              <li>09:45 <em>숙소 출발 — 중앙역 지하 플랫폼까지 여유 포함</em></li>
+              <li>10:37 <em>베를린 출발</em> · 14:46 <em>뮌헨 도착</em></li>
+              <li>15:30~16:00 <em>텐트 도착 — 이게 오늘의 승부처</em></li>
+            </ul>
+          </div>
+          <p class="subhead">왜 시각이 중요한가</p>
+          <p style="font-size:14.5px;color:var(--ink-2)"><b>17~18시는 오후 예약과 저녁 예약이 교대하는 시간이라 대부분의 텐트가 정문을 닫습니다.</b> 평일 무예약 좌석은 14~15시면 소진됩니다. 원래 계획의 “17:30 입성”은 가장 나쁜 타이밍이라, 도착하자마자 달려야 합니다.</p>
+          <p style="font-size:14.5px;color:var(--ink-2)">14:46 도착 → U2 두 정거장 → 15:10 숙소에 짐만 → 15:25 출발 → <b>15:50 텐트</b>. 이러면 교대 전에 들어가서 그대로 눌러앉을 수 있습니다.</p>
+          <div class="plans">
+            <div class="plan pick">
+              <h4>큰 텐트 무예약 진입 <span class="cond">1순위</span></h4>
+              <p>빈 테이블을 찾지 말고 <b>이미 앉은 테이블의 빈자리</b>를 노리세요. 2인이라 오히려 유리합니다. “Ist hier noch frei?”로 물어보며 돌면 됩니다. 텐트 입장료는 무료입니다.</p>
+            </div>
+            <div class="plan">
+              <h4>Oide Wiesn <span class="cond">밀렸을 때</span></h4>
+              <p>항상 <b>1/3이 무예약</b>으로 남습니다. 소액의 입장료가 있지만 자리 확률이 훨씬 높습니다. 10:00~23:30 운영.</p>
+            </div>
+          </div>
           <ul class="checks">
-            <li class="ok"><b>숙소에서 09:45 출발</b> — 알렉산더플라츠 → 중앙역 S반 10분, <b>지하 플랫폼(tief)</b>까지 층 이동 5분, 여유 10분</li>
-            <li class="ok"><b>뮌헨역 → 숙소</b> — U2 두 정거장</li>
-            <li class="ok"><b>축제장</b> — U3/U6 Goetheplatz 또는 U4/U5 Theresienwiese</li>
-            <li class="ok"><b>교통권</b> — Zone M 1일권 1인 €10.10, 다음날 06:00까지 유효. 테레지엔비제는 M구역 안</li>
-            <li class="ok"><b>텐트 입장료 무료</b> · 운영 10:00–23:30, 라스트오더 22:30</li>
-            <li class="ok"><b>놀이기구는 현금</b> — 대관람차 €10–12, 올림피아 루핑 €12.50, 회전그네 €6–9</li>
-          </ul>
-          <p class="subhead">아직 남은 것</p>
-          <ul class="checks">
-            <li class="hot"><b>15:30~16:00에 텐트 도착</b> — 17~18시는 오후 예약과 저녁 예약이 교대하는 시간이라 대부분의 텐트가 <b>정문을 닫습니다</b>. 평일 무예약 좌석은 14–15시면 소진됩니다. 계획의 “17:30 입성”은 가장 나쁜 타이밍입니다</li>
-            <li><b>2인은 오히려 유리합니다</b> — 빈 테이블을 찾지 말고 이미 앉은 테이블에 “Ist hier noch frei?”로 물어보며 도세요. 밀리면 <b>Oide Wiesn</b>(항상 1/3이 무예약)</li>
-            <li><b>브로이로슬 게이 데이 확인</b> — 통상 축제 <b>첫 일요일</b>(9/20)이라 9/21 월요일은 해당이 아닐 수 있습니다. 텐트 일정 확인</li>
-            <li>기차 타기 전 중앙역 지하 상점에서 간식 사기</li>
-            <li>글로켄바흐 지구(도이체 아이헤) 가는 법, 지하철 막차 시간</li>
+            <li class="hot"><b>놀이기구는 현금 전용</b> — 대관람차 €10–12, 올림피아 루핑 €12.50, 회전그네 €6–9. 1인 €25 정도 현금으로</li>
+            <li class="ok"><b>교통권</b> — Zone M 1일권 1인 €10.10, 다음날 06:00까지. 테레지엔비제는 M구역 안입니다</li>
+            <li><b>브로이로슬 게이 데이 확인</b> — 통상 축제 <b>첫 일요일</b>(9/20)이라 월요일은 해당이 아닐 수 있습니다</li>
+            <li>밤에 글로켄바흐 지구(도이체 아이헤)로 이동 — 지하철 막차 시간 확인</li>
+            <li>텐트 운영 10:00–23:30, 라스트오더 22:30</li>
           </ul>
         </div>
       </div>
 
+      <!-- 9/22 -->
       <div class="day">
         <div class="day-when"><b>9/22</b> 화<span>→ 루체른 1박</span></div>
         <div class="day-body">
-          <h3>뮌헨 오전 관광 · 16:48 출발 · 21:25 도착</h3>
+          <h3>뮌헨 오전 · 저녁은 이동에 다 씁니다</h3>
+          <div class="anchor">
+            <span class="lbl">고정</span>
+            <ul>
+              <li>16:15 <em>뮌헨 중앙역 도착 — 27–36번 승강장까지 10~15분</em></li>
+              <li>16:48 <em>출발</em> · 21:25 <em>루체른 도착</em></li>
+            </ul>
+          </div>
+          <p class="subhead">오전 코스 — 걸어서 다 이어집니다</p>
+          <p style="font-size:14.5px;color:var(--ink-2)">숙소 → 오데온 광장 → <b>영국정원</b>(아이스바흐 서핑) → 마리엔 광장 <b>11시 인형극</b> → <b>성 베드로 교회</b> 전망대(€5) → <b>빅투알리엔 시장</b> 점심 → 짐 찾아서 역</p>
+          <div class="plans">
+            <div class="plan pick">
+              <h4>인형극은 11시 <span class="cond">추천</span></h4>
+              <p>12시는 사람이 훨씬 많습니다. 11시에 보면 명당도 쉽고 오후가 여유로워져서 16:15 마감에 안 쫓깁니다. 5분 전 시청사 정면 확보.</p>
+            </div>
+            <div class="plan">
+              <h4>짐을 숙소에 맡기기 <span class="cond">권장</span></h4>
+              <p>뮌헨 중앙역 락커는 €6인데 <b>축제 기간엔 만석일 수 있습니다.</b> 체크아웃 때 숙소에 맡겨두는 편이 안전합니다.</p>
+            </div>
+          </div>
           <ul class="checks">
-            <li class="hot"><b>16:15에는 역 도착</b> — 27–36번은 본관 밖 슈타른베르크 별관이고, 26번 승강장 폐쇄로 우회해야 합니다. 짐까지 있으면 10–15분</li>
-            <li class="hot"><b>루체른 도착이 21:25입니다</b> — 에어비앤비 체크인이 15시로 되어 있으니 <b>늦은 셀프 체크인이 되는지 호스트에게 확인해두세요</b></li>
-            <li class="hot"><b>“루체른 야경·저녁 식당” 계획은 성립하지 않습니다</b> — 도착이 밤 9시 반입니다. 마트나 역 푸드코트로 바꾸고, 카펠교 야경은 숙소 가는 길에 스치는 정도로 잡으세요</li>
-            <li class="ok"><b>시청사 인형극</b> 11:00·12:00 무료 — 5분 전 시청사 정면 확보</li>
-            <li class="ok"><b>성 베드로 교회 전망대</b> €5 · 영국정원 아이스바흐 서핑 · 빅투알리엔 시장</li>
-            <li><b>짐 보관</b> — 뮌헨 중앙역 €6인데 <b>축제 기간엔 만석일 수 있습니다.</b> 대안(사설 보관소)을 하나 알아두세요</li>
-            <li>루체른역 → 숙소 경로와 소요시간 확인 (밤에 처음 가는 길입니다)</li>
+            <li class="hot"><b>루체른 도착이 21:25입니다</b> — “야경·저녁 식당” 계획은 성립하지 않습니다. 마트나 역 푸드코트로 잡고 카펠교는 숙소 가는 길에 스치는 정도로</li>
+            <li class="hot"><b>늦은 셀프 체크인이 되는지 호스트에게 확인</b> — 에어비앤비 체크인이 15시로 되어 있습니다</li>
+            <li>루체른역 → 숙소 경로를 미리 봐두세요. 밤에 처음 가는 길입니다</li>
           </ul>
         </div>
       </div>
 
+      <!-- 9/23 -->
       <div class="day">
         <div class="day-when"><b>9/23</b> 수<span>→ 인터라켄 West</span></div>
         <div class="day-body">
-          <h3>세이버데이 패스 하루 · 리기 + 골든패스 + 베른</h3>
-          <p class="subhead">시간표 — 이대로면 셋 다 됩니다</p>
+          <h3>세이버데이 패스 하루 · 셋 다 됩니다</h3>
+          <div class="anchor">
+            <span class="lbl">고정</span>
+            <ul>
+              <li>세이버데이 패스 <em>— 다음날 05:00까지 유효. 늦어도 괜찮습니다</em></li>
+              <li>인터라켄 West 숙소 <em>체크인</em></li>
+            </ul>
+          </div>
+          <div class="plans">
+            <div class="plan pick">
+              <h4>리기 + 골든패스 + 베른 <span class="cond">맑음</span></h4>
+              <p><b>08:00</b> 루체른 → 아르트골다우(30분) → 리기 쿨름(37분) · <b>09:20~10:20</b> 정상 → 비츠나우 하산 → <b>12:30</b> 루체른</p>
+              <p><b>13:06</b> 골든패스 → <b>14:55</b> 인터라켄 Ost → West 숙소에 짐 · <b>15:30</b> West → <b>16:22</b> 베른</p>
+              <p><b>16:30~20:00</b> 베른 구시가와 저녁 → <b>20:04</b> → <b>20:56</b> West</p>
+            </div>
+            <div class="plan">
+              <h4>리기 짧게 <span class="cond">시간 빠듯할 때</span></h4>
+              <p>비츠나우 하산을 빼고 <b>아르트골다우 왕복</b>만 하면 1시간 이상 벌립니다. 정상 풍경은 똑같습니다.</p>
+            </div>
+            <div class="plan">
+              <h4>리기 스킵 <span class="cond">비 오면</span></h4>
+              <p>산 위가 구름이면 올라가도 아무것도 안 보입니다. 루체른 시내(카펠교·빈사의 사자상)만 보고 <b>일찍 인터라켄으로</b> 넘어와 베른을 느긋하게 쓰세요.</p>
+            </div>
+          </div>
           <ul class="checks">
-            <li class="ok"><b>08:00</b> 루체른 출발 → 아르트골다우(기차 30분) → <b>리기 쿨름</b>(등산열차 37분)</li>
-            <li class="ok"><b>09:20~10:20</b> 정상 1시간 → 비츠나우로 하산(배 또는 기차) → <b>12:30</b> 루체른 복귀</li>
-            <li class="ok"><b>13:06</b> 루체른–인터라켄 익스프레스 → <b>14:55</b> 인터라켄 Ost → West → 숙소에 짐</li>
-            <li class="ok"><b>15:30</b> 인터라켄 West 출발 → <b>16:22</b> 베른 (직통 IC, 약 50분)</li>
-            <li class="ok"><b>16:30~20:00</b> 베른 구시가 + 저녁 → <b>20:04</b> 출발 → <b>20:56</b> 인터라켄 West</li>
-          </ul>
-          <p class="subhead">확인할 것</p>
-          <ul class="checks">
-            <li class="hot"><b>베른은 넣으세요.</b> 숙소가 인터라켄 <b>West</b>라 베른까지 <b>직통 IC 50분, 매시간</b>입니다. 세이버데이패스로 커버되니 추가 비용도 없습니다. 베른에서 3시간 반이면 시계탑·대성당·아레강·곰공원에 저녁까지 됩니다</li>
-            <li class="ok"><b>패스는 다음날 05:00까지 유효</b>합니다. 베른에서 늦게 나와도 문제없습니다</li>
-            <li class="hot"><b>플랫폼 이름 주의</b> — 아르트골다우에서는 <b>“Arth-Goldau RB”</b>를 찾으세요. 일반 플랫폼과 다른 곳입니다</li>
-            <li><b>짐은 루체른역 코인락커</b> — 리기 왕복 후 찾아서 인터라켄행이 동선상 맞습니다. 위치와 요금 미리 확인</li>
-            <li class="ok"><b>파노라마 열차</b> — 예약 의무 아님. CHF 16에 선택 예약 가능(2등석 2량만 예약석). 호수 뷰는 <b>진행방향 오른쪽</b></li>
-            <li>점심 — 리기 정상 식당은 비쌉니다. 루체른에서 사 올라가는 편이 낫습니다</li>
-            <li>리기를 더 짧게 하고 싶으면 <b>아르트골다우 왕복</b>만 하세요. 비츠나우 하산을 빼면 1시간 이상 벌립니다</li>
+            <li class="hot"><b>베른은 넣으세요.</b> 숙소가 <b>West</b>라 베른까지 직통 IC <b>50분, 매시간</b>입니다. 패스로 커버되니 추가 비용 0. 3시간 반이면 시계탑·대성당·아레강·곰공원에 저녁까지 됩니다</li>
+            <li class="hot"><b>플랫폼 이름 주의</b> — 아르트골다우에서는 <b>“Arth-Goldau RB”</b>를 찾으세요. 일반 플랫폼과 다릅니다</li>
+            <li><b>짐은 루체른역 코인락커</b>에. 리기 왕복 후 찾아서 인터라켄행이 동선상 맞습니다</li>
+            <li class="ok"><b>파노라마 열차</b> 예약 의무 아님. 선택 CHF 16(2등석 2량만 예약석). 호수 뷰는 <b>진행방향 오른쪽</b></li>
+            <li>점심은 루체른에서 사서 올라가세요. 리기 정상 식당은 비쌉니다</li>
           </ul>
         </div>
       </div>
 
+      <!-- 9/24 -->
       <div class="day">
         <div class="day-when"><b>9/24</b> 목<span>인터라켄</span></div>
         <div class="day-body">
-          <h3>VIP패스 발권 · 날씨 좋으면 융프라우요흐</h3>
+          <h3>VIP패스 발권 · 날씨 좋으면 바로 융프라우요흐</h3>
+          <div class="anchor">
+            <span class="lbl">고정</span>
+            <ul>
+              <li>인터라켄 <b>Ost</b>에서 발권 <em>— West에서는 안 됩니다. 기차 3분</em></li>
+              <li>쿠폰 종이 인쇄본 + 여권 <em>— 인원수만큼</em></li>
+            </ul>
+          </div>
+          <p class="subhead">창구에서 말할 것</p>
+          <p style="font-size:14.5px;color:var(--ink-2)">① <b>패스 개시일과 일수</b>(9월 24일부터 4일) — 정확히 말 안 하면 “오늘부터”로 발권됩니다 ② <b>융프라우요흐를 쓸 날짜와 시간대</b> ③ <b>West–Ost 구간 포함 여부</b></p>
+          <div class="plans">
+            <div class="plan pick">
+              <h4>오늘 융프라우요흐 <span class="cond">맑으면 무조건</span></h4>
+              <p>그린델발트 터미널 → <b>아이거 익스프레스</b> → 아이거글레처 → 산악열차(약 45분). 내려올 때는 클라이네 샤이덱 → 벵엔 → 라우터브루넨으로 다른 길을 타세요.</p>
+              <p>개찰구는 <b>출발 10분 전까지</b> 통과. 3,454m라 방한복 필수입니다.</p>
+            </div>
+            <div class="plan">
+              <h4>발권만 하고 저지대 <span class="cond">흐림</span></h4>
+              <p>정상이 구름이면 아껴두세요. 대신 하더쿨룸(해질녘 야경), 브리엔츠 호수 유람선, 인터라켄 마을 산책으로 하루를 채우고 융프라우요흐는 다음 맑은 날로 미룹니다.</p>
+            </div>
+          </div>
           <ul class="checks">
-            <li class="hot"><b>할인쿠폰 종이 인쇄본 + 여권</b> 지참. 발권은 <b>인터라켄 오스트</b>에서 — 숙소가 West라 <b>기차로 한 정거장(3분)</b> 가야 합니다. 베스트 역에서는 발권이 안 됩니다</li>
+            <li class="ok"><b>좌석 예약은 패스에 포함</b> — 추가 요금 없습니다. 탈 시간대만 지정하면 되고, 전날까지 무료 취소 · 45분 전까지 변경</li>
+            <li class="ok"><b>바우처 1장 포함</b> — 융프라우요흐 컵라면(CHF 7.90) 또는 눈썰매 중 택1</li>
             <li>창구 오픈 시간을 전날 확인하세요. 아침 첫 일정이 밀립니다</li>
-            <li class="ok"><b>융프라우요흐 좌석 예약은 패스에 포함</b> — 추가 요금 없습니다. 다만 <b>탈 시간대는 지정</b>해야 하니 발권할 때 같이 처리하세요. 전날까지 무료 취소, 45분 전까지 변경</li>
-            <li><b>West–Ost 구간이 패스에 포함되는지도 같이 확인</b> — 자료상 포함이지만 BLS 노선이라 해마다 달라집니다. 산에 가는 날마다 쓰는 구간이라 미리 확인해두면 좋습니다. <b>인터라켄 시내버스는 패스 대상이 아닙니다</b></li>
-            <li class="ok"><b>V-Cableway 코스</b> — 올라갈 때 그린델발트 터미널 → 아이거 익스프레스 → 아이거글레처 → 산악열차(약 45분). 내려올 때 클라이네 샤이덱 → 벵엔 → 라우터브루넨</li>
-            <li>개찰구는 <b>출발 10분 전까지</b> 통과</li>
-            <li class="ok"><b>패스에 바우처 1장 포함</b> — 융프라우요흐 컵라면(CHF 7.90) 또는 눈썰매 중 택1</li>
-            <li>3,454m입니다. <b>방한복</b>과 고산 두통 대비</li>
-            <li>식사는 콥·미그로 마트 활용 (스위스 식당은 1끼 CHF 30부터)</li>
+            <li class="hot"><b>인터라켄 시내버스는 패스 대상이 아닙니다</b> — 이동은 기차로</li>
           </ul>
         </div>
       </div>
 
+      <!-- 9/25 -->
       <div class="day">
         <div class="day-when"><b>9/25</b> 금<span>인터라켄</span></div>
         <div class="day-body">
-          <h3>패러글라이딩 유력일</h3>
+          <h3>패러글라이딩 1순위</h3>
+          <div class="anchor loose">
+            <span class="lbl">잡아둘 것</span>
+            <ul>
+              <li>오전 <em>패러글라이딩 — 바람이 가장 잔잔한 시간대</em></li>
+              <li><em>착륙장 회에마테는 숙소에서 걸어서 갑니다</em></li>
+            </ul>
+          </div>
+          <div class="plans">
+            <div class="plan pick">
+              <h4>오전 패러글라이딩 + 오후 저지대 <span class="cond">맑음</span></h4>
+              <p>비행은 10~20분이지만 픽업·이동 포함 반나절입니다. 오후는 무리하지 말고 뮈렌이나 라우터브루넨 폭포 정도로.</p>
+            </div>
+            <div class="plan">
+              <h4>취소되면 <span class="cond">날씨</span></h4>
+              <p>예비일은 <b>9/27</b>입니다(9/26은 그린델발트). 취소 통보를 받으면 바로 9/27 오전으로 재예약하세요.</p>
+            </div>
+            <div class="plan">
+              <h4>융프라우요흐를 오늘로 <span class="cond">어제 흐렸다면</span></h4>
+              <p>패러글라이딩을 오후나 9/27로 미루고 정상을 먼저 가세요. 맑은 날을 산에 쓰는 게 우선순위입니다.</p>
+            </div>
+          </div>
           <ul class="checks">
-            <li class="hot"><b>패러글라이딩을 이 날 오전으로</b> — 9/26–27을 예비일로 남겨야 날씨 취소 시 만회할 수 있습니다. CHF 190 내외, 사진·영상 별도 CHF 40, 무료 취소는 보통 24시간 전까지</li>
-            <li>9월도 오전 슬롯은 3–5일 전 마감됩니다. <b>지금 예약하세요</b></li>
-            <li class="ok"><b>이륙은 베아텐베르크, 착륙은 회에마테</b>(인터라켄 시내 광장)</li>
-            <li>흐리면 대체: 브리엔츠 호수 유람선(이젤발트 하차), 튠 호수(슈피츠 + 오버호펜 성), 쉬니케 플라테</li>
-            <li>하더쿨룸은 해질녘에 — 인터라켄 마을과 두 호수 야경</li>
+            <li><b>흐린 날 대체 메뉴</b> — 브리엔츠 호수 유람선(이젤발트 하차), 튠 호수(슈피츠 + 오버호펜 성), 쉬니게 플라테, 하더쿨룸 야경</li>
+            <li class="hot"><b>내일 일요일치 장을 오늘·내일 미리</b> — 스위스 마트는 일요일 휴무이고 평일도 저녁 6시반~7시에 닫습니다</li>
+            <li>사진·영상은 별도 CHF 40 × 2입니다. 탈 때 결정하시면 됩니다</li>
           </ul>
         </div>
       </div>
 
+      <!-- 9/26 -->
       <div class="day">
         <div class="day-when"><b>9/26</b> 토<span>그린델발트 1박</span></div>
         <div class="day-body">
-          <h3>숙소 이동 · 피르스트</h3>
+          <h3>숙소 이동 · 피르스트와 스파</h3>
+          <div class="anchor">
+            <span class="lbl">고정</span>
+            <ul>
+              <li>그린델발트 숙소 <em>1박 — 체크인 통상 15:00</em></li>
+              <li><em>큰 짐은 인터라켄에 두고 1박치만</em></li>
+            </ul>
+          </div>
+          <p class="subhead">추천 흐름</p>
+          <p style="font-size:14.5px;color:var(--ink-2)">인터라켄 → 그린델발트(편도 35분, 패스 커버) → 숙소에 짐 → <b>피르스트 곤돌라는 숙소에서 도보 2분</b> → 클리프 워크(무료) → 바흐알프제 왕복 2시간 → 트로티바이크나 카트로 하산 → 저녁에 <b>스파</b></p>
+          <div class="plans">
+            <div class="plan pick">
+              <h4>피르스트 풀코스 + 스파 <span class="cond">맑음</span></h4>
+              <p>곤돌라가 코앞이라 이 조합이 가장 자연스럽습니다. 하산은 카트를 중간(보르트)까지만 타고 거기서 트로티바이크로 갈아타면 풍경이 제일 좋습니다.</p>
+            </div>
+            <div class="plan">
+              <h4>스파에 하루 쓰기 <span class="cond">흐림 · 피곤</span></h4>
+              <p>800㎡ 규모입니다. 산이 안 보이는 날이면 차라리 여기서 쉬고, 다음날 인터라켄으로 돌아가 저지대를 도는 편이 낫습니다.</p>
+            </div>
+            <div class="plan">
+              <h4>융프라우요흐를 오늘로 <span class="cond">아직 못 갔다면</span></h4>
+              <p>가능하지만 주의할 게 있습니다. <b>숙소는 그린델발트 터미널에서 약 2km</b> 떨어져 있어 아이거 익스프레스 승강장까지 이동이 필요합니다. 셔틀이 있는지 체크인 때 물어보세요.</p>
+            </div>
+          </div>
           <ul class="checks">
-            <li class="ok"><b>베르크벨트는 피르스트 곤돌라에서 도보 2분</b>입니다 — 이 날 피르스트를 넣으면 동선이 완벽합니다</li>
-            <li class="hot"><b>단, 그린델발트 터미널(아이거 익스프레스 승강장)에서는 약 2km 떨어져 있습니다.</b> 융프라우요흐를 이 날로 옮길 생각이라면 이동 시간을 감안하세요. 호텔 셔틀이 있는지 문의</li>
-            <li class="ok"><b>인터라켄 ↔ 그린델발트</b> 편도 35분, VIP패스로 커버됩니다. 큰 짐은 인터라켄에 두고 <b>1박치만 가볍게</b> 가세요</li>
-            <li class="ok"><b>피르스트 코스</b> — 곤돌라 → 클리프 워크(무료) → 바흐알프제 왕복 2시간 → 카트 또는 트로티바이크 하산. 구간별 요금과 VIP패스 커버 범위를 발권 때 확인</li>
-            <li><b>Fire &amp; Ice 스파</b>(800㎡)가 있습니다. 하이킹 후 저녁 일정으로</li>
-            <li>체크인 시각 확인 (통상 15:00)</li>
+            <li>피르스트 구간별 요금과 VIP패스 커버 범위를 발권 때 확인해두면 당일 헷갈리지 않습니다</li>
+            <li class="hot"><b>토요일 저녁까지 일요일치 장보기</b> — 내일은 마트가 닫습니다</li>
           </ul>
         </div>
       </div>
 
+      <!-- 9/27 -->
       <div class="day">
         <div class="day-when"><b>9/27</b> 일<span>인터라켄</span></div>
         <div class="day-body">
-          <h3>스위스 마지막 날 · 내일 새벽 출발</h3>
+          <h3>스위스 마지막 날 · 내일이 이릅니다</h3>
+          <div class="anchor">
+            <span class="lbl">고정</span>
+            <ul>
+              <li>인터라켄 West 숙소 <em>복귀</em></li>
+              <li>밤 <em>짐 완전히 싸두기 — 내일 07:20 출발</em></li>
+            </ul>
+          </div>
+          <div class="plans">
+            <div class="plan pick">
+              <h4>뮈렌 · 김멜발트 <span class="cond">맑음</span></h4>
+              <p>라우터브루넨 → 케이블카 → 그뤼치알프 → 산악열차 → 뮈렌. 하산은 <b>뮈렌 → 김멜발트 도보 30분</b>(쉬운 내리막) → 케이블카 → 슈테헬베르크 → 포스트버스. 올멘후벨은 패스 무료, 쉴트호른은 50% 할인입니다.</p>
+            </div>
+            <div class="plan">
+              <h4>비워두기 <span class="cond">추천</span></h4>
+              <p>여기까지 열흘째이고 내일은 새벽 출발입니다. 늦잠 자고 마을 산책하고 하더쿨룸 정도만 해도 충분합니다. 이 하루가 이탈리아 3일의 체력이 됩니다.</p>
+            </div>
+            <div class="plan">
+              <h4>못 한 것 몰아서 <span class="cond">날씨 좋고 쌩쌩하면</span></h4>
+              <p>융프라우요흐를 아직 못 갔다면 오늘이 마지막입니다. 패러글라이딩이 밀렸다면 오전에.</p>
+            </div>
+          </div>
           <ul class="checks">
-            <li class="hot"><b>짐을 오늘 밤에 완전히 싸두세요</b> — 내일 07:20에 숙소를 나섭니다</li>
-            <li class="hot"><b>숙소에 아침 도시락·빵을 미리 받을 수 있는지 물어보세요</b> — 조식 시간과 07:33 열차가 겹치지 않습니다</li>
-            <li>VIP패스 마지막 날입니다. 남은 것 중 하나: 뮈렌–김멜발트 하이킹, 쉴트호른(50% 할인), 올멘후벨(무료), 라우터브루넨 폭포</li>
-            <li class="ok"><b>뮈렌 코스</b> — 라우터브루넨 → 케이블카 → 그뤼치알프 → 산악열차 → 뮈렌. 하산은 뮈렌 → 김멜발트 도보 30분 → 케이블카 → 슈테헬베르크 → 포스트버스</li>
-            <li><b>너무 멀리 가지 마세요</b> — 내일 아침이 이릅니다. 오후 늦게는 인터라켄 쪽으로 돌아와 있는 편이 안전합니다</li>
+            <li class="hot"><b>오후 늦게는 인터라켄 쪽으로 돌아와 있으세요</b> — 멀리서 늦게 내려오면 내일 새벽이 힘들어집니다</li>
+            <li class="hot"><b>숙소에 아침 도시락·빵을 받을 수 있는지 물어보세요</b> — 07:20 출발이라 조식 시간과 안 겹칩니다</li>
+            <li>일요일이라 마트가 닫습니다. 저녁거리는 어제 사둔 걸로</li>
           </ul>
         </div>
       </div>
 
+      <!-- 9/28 -->
       <div class="day">
         <div class="day-when"><b>9/28</b> 월<span>→ 밀라노 2박</span></div>
         <div class="day-body">
-          <h3>07:33 출발 · 10:50 도착 · 밀라노 하루 통째로</h3>
+          <h3>이른 출발 · 밀라노가 하루 통째로 남습니다</h3>
+          <div class="anchor">
+            <span class="lbl">고정</span>
+            <ul>
+              <li>07:20 <em>숙소 출발 — West역이 바로 앞</em></li>
+              <li>07:33 <em>Interlaken West</em> · 07:48→08:05 <em>Spiez 환승(17분)</em></li>
+              <li>10:50 <em>Milano Centrale 도착 · 체크인 10시부터 가능</em></li>
+            </ul>
+          </div>
+          <p class="subhead">오후 흐름</p>
+          <p style="font-size:14.5px;color:var(--ink-2)">숙소에 짐 → 점심 → <b>두오모 내부</b> → <b>테라스(17:30~18:00 슬롯 추천)</b> → 갤러리아 → 루이니 판제로티 → <b>나빌리 운하 아페리티보</b></p>
+          <div class="plans">
+            <div class="plan pick">
+              <h4>테라스를 일몰 슬롯으로 <span class="cond">추천</span></h4>
+              <p>마지막 입장 <b>18:10</b>, 폐장 19:00. 9월 말 일몰이 19:20 전후라 17:30~18:00에 올라가면 황금빛 첨탑을 봅니다. <b>구매 후 시간 변경 불가</b>이고 성수기 3–5일 전 매진이니 지금 예매하세요.</p>
+            </div>
+            <div class="plan">
+              <h4>오전에 두오모, 오후에 브레라 <span class="cond">9/30이 걱정되면</span></h4>
+              <p>마지막 날 오전에 뭘 넣을지 아직 안 정하셨다면, 오늘 두오모를 일찍 끝내고 브레라를 오늘로 당겨도 됩니다. 그럼 9/30이 가벼워집니다.</p>
+            </div>
+          </div>
           <ul class="checks">
-            <li class="hot"><b>06:45 숙소 출발 → 07:15 인터라켄 West</b>. Ost가 아닙니다</li>
-            <li class="hot"><b>출발 전 <code>sbb.ch</code> 유럽 운행변경 공지 확인</b> — 도모도솔라–밀라노 공사 구간입니다. 대체버스로 바뀌면 좌석이 무의미해지고 버스는 예약 의무입니다</li>
-            <li class="ok"><b>슈피츠 환승 17분</b>(07:48 → 08:05) · <b>5호차</b>. 플랫폼 섹터 표시로 위치를 미리 잡으세요</li>
-            <li class="ok"><b>10:50 밀라노 중앙역 도착, 체크인 10시부터 가능</b> — 짐 풀고 바로 관광 시작할 수 있습니다</li>
-            <li class="hot"><b>두오모 테라스를 이 날 오후로</b> — 마지막 입장 18:10, 19:00 폐장이라 시간이 넉넉합니다. 시간대 지정이고 <b>구매 후 변경 불가</b>이며 성수기엔 3–5일 전 매진되니 <b>미리 예매</b>하세요</li>
-            <li class="ok"><b>어깨·무릎 가리는 복장</b> 필수 (두오모 내부·테라스)</li>
-            <li>동선: 두오모 + 테라스 → 갤러리아(황소 문양) → 루이니 판제로티 → 저녁은 나빌리 운하 아페리티보</li>
-            <li>시내 교통은 <b>컨택리스 카드 태그</b>로 (종이표 폐지)</li>
+            <li class="hot"><b>출발 전 <code>sbb.ch</code> 유럽 운행변경 공지 확인</b> — 도모도솔라 공사 구간입니다</li>
+            <li class="ok"><b>슈피츠 환승 17분</b> — 5호차 위치를 플랫폼 섹터 표시로 미리 잡으세요</li>
+            <li class="ok"><b>어깨·무릎 가리는 복장</b> 필수(두오모 내부·테라스)</li>
+            <li class="hot"><b>시내 교통은 컨택리스 카드 태그</b> — 2026년부터 종이표가 폐지됐습니다</li>
           </ul>
         </div>
       </div>
 
+      <!-- 9/29 -->
       <div class="day">
-        <div class="day-when"><b>9/29</b> 화<span>베로나 + 베네치아</span></div>
+        <div class="day-when"><b>9/29</b> 화<span>당일치기</span></div>
         <div class="day-body">
-          <h3>당일치기 · 19:48 귀환 고정</h3>
-          <p class="subhead">답 나온 것</p>
+          <h3>귀환만 고정, 나머지는 아침에 결정</h3>
+          <div class="anchor">
+            <span class="lbl">고정</span>
+            <ul>
+              <li>18:40~18:45 <em>아카데미아에서 1번 바포레토 승선</em></li>
+              <li>19:20 <em>산타루치아역 도착 목표</em></li>
+              <li>19:48 <em>출발 — Basic 요금, 놓치면 끝</em></li>
+            </ul>
+          </div>
+          <div class="plans">
+            <div class="plan pick">
+              <h4>베로나 + 베네치아 <span class="cond">컨디션 좋으면</span></h4>
+              <p><b>07:00~08:00</b> 밀라노 출발 → 08:50 베로나 → 4시간 → <b>13:00</b> 베네치아행 → 14:20 도착 → 베네치아 4시간 반</p>
+              <p>베로나 동선: Porta Nuova D2에서 21·23·24·31번 → Castelvecchio A1 하차(13분) → 카스텔베키오 다리 → 아레나 광장(도보 5분) → 에르베 광장(10분) → 카스텔 산 피에트로(도보 7분, 걸어 올라가기). 복귀는 Santo Stefano/Ponte Pietra A에서 73·103·105번 → Porta Nuova A1(20분)</p>
+            </div>
+            <div class="plan">
+              <h4>베네치아만 <span class="cond">지쳤으면</span></h4>
+              <p><b>09:00</b>쯤 출발해서 베네치아를 느긋하게. 어차피 지역열차는 당일 구매라 <b>아침에 결정해도 손해가 없습니다.</b> 전날 밤 컨디션을 보고 정하세요.</p>
+            </div>
+          </div>
           <ul class="checks">
-            <li class="ok"><b>07:00~08:00 밀라노 출발</b> — 지역열차 주황/빨강 기계에서 Verona, €13.5, 1시간 50분. <b>승차 전 초록·흰색 각인기</b>에 넣기(자유석)</li>
-            <li class="ok"><b>베로나 동선</b> — Porta Nuova역 D2에서 21·23·24·31번 → Castelvecchio A1 하차(13분). 카스텔베키오 다리 → 아레나 광장(도보 5분) → 에르베 광장(10분) → 카스텔 산 피에트로(다리에서 도보 7분, 걸어 올라가기)</li>
-            <li class="ok"><b>복귀 버스</b> — Santo Stefano / Ponte Pietra A에서 73·103·105번 → Porta Nuova A1 하차(20분)</li>
-            <li class="ok"><b>아마로네 리조또</b> — 구글맵에 찍어둔 2곳</li>
-            <li class="ok"><b>19:48 산타루치아 출발</b> Frecciarossa, 22:15 밀라노 도착</li>
-            <li class="ok"><b>베네치아 입장료 불필요</b> — 2026년 접근세는 7/26에 종료됐습니다. €5×2도 QR 발급도 필요 없습니다</li>
-          </ul>
-          <p class="subhead">조정이 필요한 것</p>
-          <ul class="checks">
-            <li class="hot"><b>18:40~18:45에 아카데미아에서 1번 바포레토</b>(€9.5) — 일몰을 배 위에서 보고 19:10경 Ferrovia 도착. 다리 위에서 일몰을 다 보고 타면 열차를 놓칠 위험이 있고, <b>Basic 요금이라 놓치면 끝</b>입니다</li>
-            <li class="hot"><b>바포레토도 승선 전 흰색 기계에 태그</b> — 검표원이 수시로 돕니다</li>
-            <li><b>베로나 체류는 4시간</b>으로 잡으세요 — 08:50 도착 → 13:00 출발이면 베네치아에서 4시간 반이 남습니다</li>
-            <li class="hot"><b>광장·다리 계단에서 음식을 먹으면 벌금</b>입니다. 비둘기 모이도 마찬가지. 서서 먹거나 허용된 벤치에서</li>
-            <li>가성비 식사 — We Love Italy(컵 파스타 €8–10), L'Antico Forno(조각 피자 €4–6), Bar Alla Toletta(트라메치니 €2–3)</li>
-            <li>전망 — 산 조르조 마조레 종탑 €6–8, 예약 불필요, 산마르코 종탑보다 뷰가 낫습니다</li>
+            <li class="ok"><b>베네치아 입장료 불필요</b> — 2026년 접근세는 7/26에 종료됐습니다. €5×2도 QR도 필요 없습니다</li>
+            <li class="hot"><b>지역열차는 승차 전 초록·흰색 각인기</b>에 넣으세요. 바포레토도 승선 전 <b>흰색 기계에 태그</b></li>
+            <li class="hot"><b>광장·다리 계단에서 음식 먹으면 벌금</b>입니다. 비둘기 모이도 마찬가지</li>
+            <li><b>베네치아 동선</b> — 산타루치아 → 도보로 리알토 → 아카데미아 다리 → 산마르코 → 다시 아카데미아에서 배</li>
+            <li><b>전망</b> — 산 조르조 마조레 종탑 €6–8, 예약 불필요, 산마르코 종탑보다 뷰가 낫습니다</li>
+            <li><b>가성비 식사</b> — We Love Italy(컵 파스타 €8–10), L'Antico Forno(조각 피자 €4–6), Bar Alla Toletta(트라메치니 €2–3)</li>
           </ul>
         </div>
       </div>
 
+      <!-- 9/30 -->
       <div class="day">
         <div class="day-when"><b>9/30</b> 수<span>귀국</span></div>
         <div class="day-body">
-          <h3>12시 체크아웃 · 22:00 말펜사 출발</h3>
+          <h3>다섯 시간 반이 빕니다</h3>
+          <div class="anchor">
+            <span class="lbl">고정</span>
+            <ul>
+              <li>12:00 <em>체크아웃 · 호텔이나 사설 보관소에 짐</em></li>
+              <li>17:50~18:00 <em>말펜사 익스프레스 — 소요 50분, 30분 간격</em></li>
+              <li>19:00 <em>공항 도착 목표</em> · 22:00 <em>출발</em></li>
+            </ul>
+          </div>
+          <div class="plans">
+            <div class="plan pick">
+              <h4>스포르체스코 + 브레라 <span class="cond">추천</span></h4>
+              <p>스포르체스코 성 안뜰(무료) → 셈피오네 공원 → <b>브레라 지구</b> 골목과 미술관 정원 → 스타벅스 리저브 로스터리. 전부 도보권이고 중앙역 복귀도 쉽습니다.</p>
+              <p>산타 마리아 델레 그라치에 <b>성당 자체는 무료 입장</b>이니 벽화는 못 봐도 건물은 보고 오실 수 있습니다.</p>
+            </div>
+            <div class="plan">
+              <h4>쇼핑 <span class="cond">면세 환급 있으면</span></h4>
+              <p>10 꼬르소 꼬모, 몬테나폴레오네 거리. 다만 <b>Tax Free 서류 처리에 공항에서 시간이 걸립니다</b> — 여유 30분을 더 잡으세요.</p>
+            </div>
+          </div>
           <ul class="checks">
-            <li class="ok"><b>최후의 만찬은 하지 않기로 결정</b> — 오전이 통째로 비었습니다</li>
-            <li><b>빈 오전 채우기</b> — 산타 마리아 델레 그라치에 <b>성당 자체는 무료 입장</b>(벽화는 별도). 스포르체스코 성 안뜰 + 셈피오네 공원, 브레라 지구와 미술관 정원, 스타벅스 리저브 로스터리, 10 꼬르소 꼬모</li>
-            <li><b>스포르체스코 성 “평일 공짜”는 부정확합니다</b> — 안뜰은 항상 무료지만 박물관은 조건부입니다. 무료 시간대를 따로 확인하세요</li>
-            <li>호텔 짐 보관 가능 여부 확인. 안 되면 중앙역 밖 Piazza Luigi di Savoia 사설 보관소</li>
-            <li class="hot"><b>17:50~18:00 말펜사 익스프레스</b> — 22:00 국제선이면 19:00 공항 도착이 목표입니다. 소요 50분, 30분 간격, €13. 메모의 “19시 출발”은 늦습니다</li>
             <li class="hot"><b>이탈리아 철도 파업 공지를 며칠 전에 확인</b> — 막히면 버스(€10, 1시간, 30분–1시간 간격)로 갈아탈 수 있게</li>
-            <li><b>항공사 터미널(T1/T2) 확인</b> · 라운지 이용 가능 여부</li>
-            <li><b>출국 시 세금 환급(Tax Free)</b> — 쇼핑했다면 공항에서 서류 처리에 시간이 걸립니다. 환급 창구 위치를 미리 보고 <b>여유 30분</b>을 더 잡으세요</li>
+            <li class="hot"><b>항공사 터미널(T1/T2) 확인</b> · 라운지 이용 가능 여부</li>
+            <li>짐 보관 — 호텔이 안 되면 중앙역 밖 Piazza Luigi di Savoia 사설 보관소</li>
+            <li><b>스포르체스코 “평일 공짜”는 부정확합니다</b> — 안뜰은 항상 무료지만 박물관은 조건부입니다</li>
             <li class="ok"><b>밀라노 도시세 현장 결제</b> — 현금 준비</li>
           </ul>
         </div>
@@ -828,20 +1008,72 @@
     </div>
   </section>
 
-  <!-- ============ 6. 준비물 ============ -->
+  <!-- ============ 6. 비용 ============ -->
+  <section id="budget">
+    <div class="sec-head">
+      <h2>비용 정리</h2>
+      <span class="count">전부 2인 기준</span>
+    </div>
+    <p class="lede">단가와 2인 총액을 나눠 적었습니다. 예매하신 티켓은 전부 2인 예약임을 확인했습니다.</p>
+
+    <div class="scroll">
+      <table>
+        <thead>
+          <tr><th>날짜</th><th>항목</th><th class="mono right">단가</th><th class="mono right">2인</th><th>메모</th></tr>
+        </thead>
+        <tbody>
+          <tr class="sub-row"><td colspan="5">결제 완료 · 장거리 교통</td></tr>
+          <tr><td class="mono">9/19</td><td>프랑크푸르트 → 베를린</td><td class="mono right">—</td><td class="mono right">€39.98</td><td>2인 1건</td></tr>
+          <tr><td class="mono">9/21</td><td>베를린 → 뮌헨</td><td class="mono right">—</td><td class="mono right">€110.98</td><td>티켓 95.98 + 좌석 11 + 수수료 4</td></tr>
+          <tr><td class="mono">9/22</td><td>뮌헨 → 루체른</td><td class="mono right">—</td><td class="mono right">€161.78</td><td>1등석 · 티켓 143.98 + 좌석 13.80 + 수수료 4</td></tr>
+          <tr><td class="mono">9/23</td><td>세이버데이 패스</td><td class="mono right">CHF 52</td><td class="mono right">CHF 104</td><td>하프페어 없는 사람용 가격</td></tr>
+          <tr><td class="mono">9/28</td><td>인터라켄 → 밀라노</td><td class="mono right">CHF 57.20</td><td class="mono right">CHF 114.40</td><td>West–Spiez 10.20 + Spiez–밀라노 47</td></tr>
+          <tr><td class="mono">9/29</td><td>베네치아 → 밀라노</td><td class="mono right">—</td><td class="mono right">$64</td><td>Frecciarossa · Basic</td></tr>
+          <tr class="sub-row"><td colspan="3">소계</td><td class="mono right" colspan="2">약 ₩1,090,000</td></tr>
+
+          <tr class="sub-row"><td colspan="5">남은 것 · 도시 교통</td></tr>
+          <tr><td class="mono">9/18</td><td>공항 → 프랑크푸르트 중앙역</td><td class="mono right">€6.90</td><td class="mono right">€13.80</td><td>€6.30에서 인상됨</td></tr>
+          <tr><td class="mono">9/19–21</td><td>베를린 24시간권 AB <b>×2장</b></td><td class="mono right">€11.20</td><td class="mono right">€44.80</td><td>1인 2장씩 필요</td></tr>
+          <tr><td class="mono">9/21–22</td><td>뮌헨 1일권 Zone M <b>×2일</b></td><td class="mono right">€10.10</td><td class="mono right">€40.40</td><td>다음날 06:00까지 유효</td></tr>
+          <tr><td class="mono">9/24–27</td><td>융프라우 VIP패스 4일</td><td class="mono right">CHF 245</td><td class="mono right">CHF 490</td><td>현지 발권 · 융프라우요흐 왕복 포함</td></tr>
+          <tr><td class="mono">9/24–27</td><td>융프라우요흐 좌석 예약</td><td class="mono right">CHF 0</td><td class="mono right">CHF 0</td><td><span class="pill p-done">패스 포함</span></td></tr>
+          <tr><td class="mono">9/29</td><td>밀라노 → 베로나 지역열차</td><td class="mono right">€13.50</td><td class="mono right">€27</td><td>당일 구매 · 각인 필수</td></tr>
+          <tr><td class="mono">9/29</td><td>베로나 시내버스 왕복</td><td class="mono right">€2</td><td class="mono right">€8</td><td>편도 ×2회 ×2인</td></tr>
+          <tr><td class="mono">9/29</td><td>베로나 → 베네치아 지역열차</td><td class="mono right">€10.50</td><td class="mono right">€21</td><td>당일 구매 · 각인 필수</td></tr>
+          <tr><td class="mono">9/29</td><td>베네치아 바포레토 1번</td><td class="mono right">€9.50</td><td class="mono right">€19</td><td>75분권 · 승선 전 태그</td></tr>
+          <tr><td class="mono">9/28–30</td><td>밀라노 시내 교통</td><td class="mono right">€7.60/일</td><td class="mono right">€30</td><td>컨택리스 태그 · 2일 기준</td></tr>
+          <tr><td class="mono">9/30</td><td>말펜사 익스프레스</td><td class="mono right">€13</td><td class="mono right">€26</td><td>중앙역 → 공항 약 50분</td></tr>
+          <tr class="sub-row"><td colspan="3">소계</td><td class="mono right" colspan="2">약 ₩1,110,000</td></tr>
+
+          <tr class="sub-row"><td colspan="5">남은 것 · 액티비티와 입장료</td></tr>
+          <tr><td class="mono">9/20</td><td>베르크하인 입장</td><td class="mono right">€25</td><td class="mono right">€50</td><td>현금 · 가르데로베 €3, 재입장 €5 별도</td></tr>
+          <tr><td class="mono">9/21</td><td>옥토버페스트 놀이기구</td><td class="mono right">€25</td><td class="mono right">€50</td><td>현금 전용 · 대략치</td></tr>
+          <tr><td class="mono">9/22</td><td>성 베드로 교회 전망대</td><td class="mono right">€5</td><td class="mono right">€10</td><td>인형극은 무료</td></tr>
+          <tr><td class="mono">9/25</td><td>패러글라이딩</td><td class="mono right">CHF 190</td><td class="mono right">CHF 380</td><td>사진·영상 +CHF 40 ×2</td></tr>
+          <tr><td class="mono">9/28</td><td>두오모 내부 + 테라스</td><td class="mono right">€16~20</td><td class="mono right">€32~40</td><td>계단/엘리베이터에 따라</td></tr>
+          <tr><td class="mono">9/29</td><td>산 조르조 마조레 종탑</td><td class="mono right">€7</td><td class="mono right">€14</td><td>선택 · 예약 불필요</td></tr>
+          <tr><td class="mono">9/30</td><td>밀라노 도시세</td><td class="mono right">—</td><td class="mono right">₩30,000</td><td>숙소에서 현금</td></tr>
+          <tr class="grand"><td colspan="3">남은 비용 합계</td><td class="mono right" colspan="2">약 ₩1,900,000</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p style="margin-top:20px;font-size:14.5px;color:var(--ink-2)">식비·숙박은 뺀 금액입니다. 스위스 5일은 마트를 쓰면 하루 두 명 CHF 40 안쪽으로도 되지만 식당을 쓰면 CHF 80~100씩 나갑니다. 이 차이가 5일이면 <strong>CHF 200~300</strong>이라 위 표의 어지간한 항목보다 큽니다.</p>
+  </section>
+
+  <!-- ============ 7. 준비물 ============ -->
   <section id="prep">
     <div class="sec-head">
       <h2>계획에 없던 준비물</h2>
       <span class="count">출발 전 처리</span>
     </div>
-    <p class="lede">메모 전체를 훑었을 때 한 번도 나오지 않은 항목들입니다.</p>
 
     <div class="prep">
       <div class="prep-cell">
         <h3>전기 · 통신</h3>
         <ul>
-          <li><b>스위스는 J타입</b> 콘센트입니다. 독일·이탈리아(C/F)와 달라서 구형 숙소에서는 한국 돼지코가 안 들어갈 수 있습니다. <b>멀티 어댑터</b>를 챙기세요</li>
-          <li><b>스위스는 EU가 아닙니다.</b> 유럽 eSIM 중 스위스가 빠진 상품이 많은데 5박을 스위스에서 보냅니다. 커버 범위를 반드시 확인하세요</li>
+          <li><b>스위스는 J타입</b> 콘센트입니다. 독일·이탈리아(C/F)와 달라 구형 숙소에서는 한국 돼지코가 안 들어갈 수 있습니다. <b>멀티 어댑터</b></li>
+          <li><b>스위스는 EU가 아닙니다.</b> 유럽 eSIM 중 스위스가 빠진 상품이 많은데 5박을 스위스에서 보냅니다. 커버 범위 확인</li>
           <li>보조배터리 — 산악 이동일에 지도·사진으로 빨리 닳습니다</li>
         </ul>
       </div>
@@ -849,29 +1081,27 @@
       <div class="prep-cell">
         <h3>보험 · 서류</h3>
         <ul>
-          <li><b>여행자보험</b> — <b>패러글라이딩이 면책 조항에 걸리는지</b> 반드시 확인하세요. 항공 레저는 기본 담보에서 빠지는 경우가 많습니다</li>
+          <li><b>여행자보험</b> — <b>패러글라이딩이 면책 조항에 걸리는지</b> 반드시 확인. 항공 레저는 기본 담보에서 빠지는 경우가 많습니다</li>
           <li>여권 유효기간 <b>6개월 이상</b></li>
-          <li><b>융프라우 할인쿠폰 종이 인쇄본</b> — 현지 발권에 필수</li>
-          <li>왕복 항공권·숙소 예약 확인서 (입국 심사 대비)</li>
-          <li>티켓 6건 PDF를 <b>오프라인으로도 저장</b> — 데이터가 안 될 때 대비</li>
+          <li><b>융프라우 할인쿠폰 종이 인쇄본</b> — 인원수만큼, 현지 발권 필수</li>
+          <li>티켓 6건 PDF를 <b>오프라인 저장</b> — 데이터가 안 될 때 대비</li>
         </ul>
       </div>
 
       <div class="prep-cell">
         <h3>현금 · 결제</h3>
         <ul>
-          <li><b>베르크하인</b> — 도어·가르데로베 현금, 1인 €40 정도</li>
-          <li><b>옥토버페스트 놀이기구</b> — 현금 전용</li>
-          <li><b>밀라노 도시세</b> 현장 결제</li>
+          <li><b>베르크하인</b> 1인 €40 · <b>옥토버페스트 놀이기구</b> 1인 €25 — 둘 다 현금</li>
+          <li><b>밀라노 도시세</b> 현장 현금</li>
           <li>트래블월렛·트래블로그에 <b>CHF와 EUR 각각</b> 충전. 스위스는 유로를 안 씁니다</li>
-          <li>밀라노 시내 교통용 <b>컨택리스 카드</b> 하나는 반드시 (종이표 폐지)</li>
+          <li>밀라노 교통용 <b>컨택리스 카드</b> 필수 (종이표 폐지)</li>
         </ul>
       </div>
 
       <div class="prep-cell">
         <h3>옷 · 몸</h3>
         <ul>
-          <li>9월 말 인터라켄 아침은 <b>5–8°C</b>. 융프라우요흐는 3,454m로 영하권입니다</li>
+          <li>9월 말 인터라켄 아침 <b>5–8°C</b>. 융프라우요흐는 3,454m로 영하권</li>
           <li>하이킹 신발 — 바흐알프제 왕복 2시간, 뮈렌–김멜발트 30분</li>
           <li>고산 두통약, 소화제, 상비약</li>
           <li>성당은 <b>어깨·무릎 가리는 복장</b> (두오모 테라스 포함)</li>
@@ -883,20 +1113,18 @@
   <footer class="sources">
     <h2>확인에 쓴 출처</h2>
     <ul>
-      <li><a href="https://www.muenchen.de/en/events/oktoberfest">옥토버페스트 2026 공식 일정 (뮌헨시)</a> — 9월 19일 ~ 10월 4일</li>
-      <li><a href="https://cda.ve.it/en/">베네치아 접근세 공식 포털</a> — 2026년 적용 기간 7/26 종료</li>
       <li><a href="https://www.jungfrau.ch/en-gb/jungfrau-travel-pass/connecting-ticket-to-jungfrau-travel-pass/">융프라우요흐 연결 티켓</a> — 5/1–10/31 CHF 89, <b>좌석 예약 포함</b></li>
-      <li><a href="https://www.jungfrau.ch/en-gb/jungfraujoch-top-of-europe/book-priority-boarding/">융프라우요흐 좌석 예약 안내</a> — 의무 기간과 변경·취소 조건</li>
+      <li><a href="https://www.jungfrau.co.kr/tour/JJVip.asp">동신항운 VIP패스</a> — 발권 가능 역에 인터라켄 West 제외</li>
       <li><a href="https://www.sbb.ch/en/offers/saver-day-pass">SBB 세이버데이패스</a> — 하프페어 유무에 따라 CHF 29 / CHF 52부터</li>
       <li><a href="https://www.sbb.ch/en/travel-information/rail-traffic-information/timetable-changes-europe.html">SBB 유럽 구간 운행 변경</a> — 도모도솔라 공사, 출발 전 재확인</li>
       <li><a href="https://www.muenchenwiki.de/wiki/Holzkirchner_Bahnhof">뮌헨 중앙역 승강장 구조</a> — 27–36번은 슈타른베르크 별관, 26번 폐쇄</li>
+      <li><a href="https://www.muenchen.de/en/events/oktoberfest">옥토버페스트 2026</a> — 9월 19일 ~ 10월 4일</li>
+      <li><a href="https://cda.ve.it/en/">베네치아 접근세 공식 포털</a> — 2026년 적용 기간 7/26 종료</li>
       <li><a href="https://www.atm.it/it/viaggiaconnoi/biglietti/pagine/tipologie.aspx">밀라노 ATM 요금</a> — 2026년 종이표 폐지, 컨택리스 전환</li>
       <li><a href="https://www.mvv-muenchen.de/tickets-abos-preise/gruppen-tageskarte/">뮌헨 MVV 요금 2026</a> — Zone M 1일권 €10.10</li>
-      <li><a href="https://www.vbb.de/news/neue-fahrpreise-im-vbb-ab-1-januar-2026/">VBB 2026년 요금 인상</a> — 베를린 AB 1회권 €4.00</li>
+      <li><a href="https://www.vbb.de/news/neue-fahrpreise-im-vbb-ab-1-januar-2026/">VBB 2026 요금</a> — 베를린 AB 1회권 €4.00</li>
       <li><a href="https://home-affairs.ec.europa.eu/news/main-differences-between-ees-and-etias-what-travellers-need-know-2026-04-28_en">EU EES / ETIAS</a> — EES 2026.4.10 전면 가동</li>
-      <li><a href="https://bergwelt-grindelwald.com/en/">베르크벨트 그린델발트</a> — 피르스트 도보 2분, Fire &amp; Ice 스파</li>
-      <li><a href="https://milan-cathedral.com/opening-hours/">밀라노 두오모 운영시간</a> — 테라스 마지막 입장 18:10</li>
-      <li><a href="https://www.jungfrau.co.kr/coupon/couponlist.asp">동신항운 융프라우 할인쿠폰</a> — 인터라켄 오스트에서 현지 발권</li>
+      <li><a href="https://milan-cathedral.com/opening-hours/">밀라노 두오모</a> — 테라스 마지막 입장 18:10</li>
     </ul>
   </footer>
 
