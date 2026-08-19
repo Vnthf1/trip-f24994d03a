@@ -181,6 +181,29 @@
   .map pre b { color: var(--ink); font-weight: 600; }
   .map pre .hi { color: var(--accent); font-weight: 600; }
 
+  /* 거점 체인 */
+  .spots { margin: 0 0 18px; padding: 0; list-style: none; }
+  .spots li { position: relative; padding: 0 0 0 30px; }
+  .spots li::before {
+    content: ""; position: absolute; left: 8px; top: .55em;
+    width: 9px; height: 9px; border-radius: 50%;
+    border: 2px solid var(--accent); background: var(--surface);
+  }
+  .spots li:not(:last-child)::after {
+    content: ""; position: absolute; left: 12px; top: 1.5em; bottom: -.2em;
+    width: 1px; background: var(--rule-strong);
+  }
+  .spots .pt { font-size: 15px; font-weight: 600; padding-bottom: 2px; }
+  .spots .pt a { color: var(--ink); text-decoration-color: var(--rule-strong); }
+  .spots .pt a:hover { color: var(--accent); }
+  .spots .pt small { font-weight: 400; font-size: 12.5px; color: var(--ink-3); margin-left: 6px; }
+  .spots .mv {
+    font-family: var(--mono); font-size: 12.5px; font-variant-numeric: tabular-nums;
+    color: var(--ink-2); padding: 2px 0 14px;
+  }
+  .spots li:last-child .mv { padding-bottom: 0; }
+  .spots .mv b { color: var(--ink); font-weight: 600; }
+
   .stay {
     font-size: 13.5px; color: var(--ink-2); max-width: none;
     margin: 0 0 14px; padding: 8px 12px;
@@ -394,6 +417,29 @@
               <li>내일 06:15 <em>기차 — 05:45 역 도착</em></li>
             </ul>
           </div>
+                    <p class="subhead">거점과 이동</p>
+          <ul class="spots">
+            <li>
+              <div class="pt"><a href="https://www.google.com/maps/search/?api=1&query=Frankfurt%20Flughafen%20Regionalbahnhof%20Terminal%201" target="_blank" rel="noopener">프랑크푸르트 공항 · 터미널 1 지하</a><small>Regionalbahnhof, 승강장 1–3</small></div>
+              <div class="mv">↓ <b>S8 또는 S9</b> · 11~15분 · <b>€6.90</b> · 15분 간격 <span style="color:var(--ink-3)">— ICE용 Fernbahnhof와 다른 역입니다</span></div>
+            </li>
+            <li>
+              <div class="pt"><a href="https://www.google.com/maps/search/?api=1&query=Frankfurt%20am%20Main%20Hauptbahnhof" target="_blank" rel="noopener">프랑크푸르트 중앙역</a><small>Hauptbahnhof</small></div>
+              <div class="mv">↓ <b>도보 5분</b> · 250m · 남쪽 출구에서 뮌헨너 슈트라세로</div>
+            </li>
+            <li>
+              <div class="pt"><a href="https://www.google.com/maps/search/?api=1&query=Townhouse%20Hotel%20M%C3%BCnchener%20Strasse%2042%20Frankfurt%20am%20Main" target="_blank" rel="noopener">타운하우스 호텔</a><small>Münchener Str. 42</small></div>
+              <div class="mv">↓ <b>U4·U5 4분</b>(Dom/Römer 하차) 또는 <b>도보 20분</b> · 1.6km</div>
+            </li>
+            <li>
+              <div class="pt"><a href="https://www.google.com/maps/search/?api=1&query=R%C3%B6merberg%20Frankfurt%20am%20Main" target="_blank" rel="noopener">뢰머 광장</a><small>Römerberg · 구시가 중심</small></div>
+              <div class="mv">↓ <b>도보 10분</b> · 아이제르너 슈테크(철교)로 마인강 건너기</div>
+            </li>
+            <li>
+              <div class="pt"><a href="https://www.google.com/maps/search/?api=1&query=Sachsenhausen%20Apfelwein%20Frankfurt" target="_blank" rel="noopener">작센하우젠</a><small>사과와인 골목</small></div>
+              <div class="mv">↓ 돌아올 때 <b>도보 25분</b> 또는 <b>S반 Lokalbahnhof</b>에서 중앙역</div>
+            </li>
+          </ul>
           <p class="subhead">도착 후 흐름</p>
           <p style="font-size:14.5px;color:var(--ink-2)">입국심사(EES 생체등록으로 평소보다 김) → 터미널 1 지하 <b>Regionalbahnhof</b>에서 S8/S9 → 중앙역 11~15분 → 남쪽 출구 도보 2~3분. <b>숙소 도착 19:30~20:30 사이</b>로 보시면 됩니다.</p>
           <div class="plans">
