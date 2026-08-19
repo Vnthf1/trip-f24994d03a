@@ -205,7 +205,8 @@
     padding: 12px 16px; background: var(--surface-2); border-radius: 3px; margin: 0 0 14px;
   }
   .route b { color: var(--ink); }
-  .route .arrow { color: var(--ink-3); padding: 0 2px; }
+  .arrow { color: var(--ink-3); padding: 0 2px; }
+  td code { font-size: .82em; white-space: nowrap; }
   .act .subhead { margin-top: 16px; }
   .act ul.checks { margin-top: 0; }
 
@@ -356,487 +357,8 @@
     </div>
   </header>
 
-  <!-- ============ 1. 확정 티켓 ============ -->
-  <section id="confirmed">
-    <div class="sec-head">
-      <h2>확정된 티켓</h2>
-      <span class="count">6건 · 전부 2인 예약 · 금액은 2인 총액</span>
-    </div>
-    <p class="lede">이 여섯 개가 여행의 뼈대이자, 유일하게 못 바꾸는 시각입니다. 나머지 일정은 이 사이를 채우는 것뿐입니다.</p>
 
-    <div class="rails">
-
-      <div class="rail">
-        <div class="rail-date">9/19<small>토</small></div>
-        <div class="rail-main">
-          <b>프랑크푸르트 → 베를린</b>
-          <span class="times">06:15 Frankfurt Hbf → 10:23 Berlin Hbf</span>
-          <span class="note warn">에어푸르트(Erfurt Hbf) 환승 · 08:27 도착 → 08:46 출발, 갈아탈 시간 19분</span>
-          <span class="note">ICE 696 → ICE 1604 · 2등석 · 열차 지정 · 좌석 미지정 · 환불 불가</span>
-        </div>
-        <div class="rail-cost"><b>€39.98</b><small>2인</small></div>
-      </div>
-
-      <div class="rail">
-        <div class="rail-date">9/21<small>월</small></div>
-        <div class="rail-main">
-          <b>베를린 → 뮌헨</b>
-          <span class="times">10:37 Berlin Hbf (tief) → 14:46 München Hbf · 직통 4시간 9분</span>
-          <span class="note warn">출발이 <b>지하 플랫폼(tief)</b>입니다. S반은 지상 도착이니 층 이동 시간을 따로 잡으세요</span>
-          <span class="note">2등석 · 좌석 예약 포함</span>
-        </div>
-        <div class="rail-cost"><b>€110.98</b><small>2인</small></div>
-      </div>
-
-      <div class="rail">
-        <div class="rail-date">9/22<small>화</small></div>
-        <div class="rail-main">
-          <b>뮌헨 → 루체른</b>
-          <span class="times">16:48 München Hbf Gl.27–36 → 21:25 Luzern · 환승 1회</span>
-          <span class="note warn">27–36번은 <b>슈타른베르크 별관</b>(본관 밖). 26번 승강장이 공사로 막혀 우회해야 하니 짐 들고 10–15분</span>
-          <span class="note">1등석 · 좌석 예약 포함</span>
-        </div>
-        <div class="rail-cost"><b>€161.78</b><small>2인</small></div>
-      </div>
-
-      <div class="rail">
-        <div class="rail-date">9/23<small>수</small></div>
-        <div class="rail-main">
-          <b>세이버데이 패스</b>
-          <span class="times">하루 무제한 · <b>다음날 05:00까지</b> 유효</span>
-          <span class="note">CHF 52는 하프페어카드 <b>없는</b> 사람용 가격이 맞습니다(있으면 CHF 29부터). 추가로 살 것 없습니다</span>
-          <span class="note">루체른–인터라켄 익스프레스는 좌석 예약 의무 아님(선택 CHF 16) · 호수 뷰는 진행방향 오른쪽</span>
-        </div>
-        <div class="rail-cost"><b>CHF 104</b><small>2인 · 인당 52</small></div>
-      </div>
-
-      <div class="rail">
-        <div class="rail-date">9/28<small>월</small></div>
-        <div class="rail-main">
-          <b>인터라켄 → 밀라노</b>
-          <span class="times">07:33 Interlaken West → 07:48 Spiez → 08:05 → 10:50 Milano Centrale</span>
-          <span class="note warn">숙소가 <b>West 바로 앞</b>이라 07:20에 나서면 됩니다. 슈피츠 환승 17분 · 좌석 5호차</span>
-          <span class="note">2등석 Smart · 좌석 예약 포함</span>
-        </div>
-        <div class="rail-cost"><b>CHF 114.40</b><small>2인</small></div>
-      </div>
-
-      <div class="rail">
-        <div class="rail-date">9/29<small>화</small></div>
-        <div class="rail-main">
-          <b>베네치아 → 밀라노</b>
-          <span class="times">19:48 Venezia S. Lucia → 22:15 Milano Centrale · Frecciarossa 9762</span>
-          <span class="note warn"><b>Basic 요금 — 변경·환불 불가.</b> 놓치면 표가 그대로 날아갑니다. 19:20까지 역 도착</span>
-        </div>
-        <div class="rail-cost"><b>$64</b><small>2인</small></div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ============ 2. 남은 일 ============ -->
-  <section id="todo">
-    <div class="sec-head">
-      <h2>출발 전에 남은 일</h2>
-      <span class="count">예약 1건 · 확인 2건</span>
-    </div>
-
-    <div class="findings">
-
-      <article class="finding is-attention">
-        <span class="tag t-attention">예약 · 지금</span>
-        <h3>패러글라이딩만 아직 안 잡혔습니다</h3>
-        <p>9월도 <strong>오전 슬롯은 3–5일 전에 마감</strong>됩니다. 오전 첫 타임이 바람이 가장 잔잔하고, 날씨 취소가 흔하니 <strong>뒤에 예비일이 남는 날</strong>로 잡아야 합니다.</p>
-        <p>CHF 190 내외 × 2 = <strong>CHF 380</strong>, 사진·영상은 별도 CHF 40 × 2. 무료 취소는 보통 24시간 전까지입니다. 이륙은 베아텐베르크, <strong>착륙은 회에마테</strong> — 숙소가 인터라켄 West라 착륙장이 걸어서 갈 거리입니다.</p>
-        <div class="fix">
-          <b>추천</b>
-          <strong>9/25(금) 오전으로 잡고 9/27을 예비일로.</strong> 9/26은 그린델발트에 있으니 예비일로 못 씁니다. 마지막 날 9/27까지 밀리면 그날 흐릴 때 만회가 안 되니, 9/25를 1순위로 두세요.
-        </div>
-      </article>
-
-      <article class="finding is-good">
-        <span class="tag t-good">확인 완료</span>
-        <h3>융프라우요흐 좌석 예약은 VIP패스에 포함됩니다</h3>
-        <p>일반 융프라우 트래블패스는 <strong>아이거글레처까지만</strong> 커버하고 정상 구간은 “연결 티켓”을 따로 삽니다. 이 연결 티켓이 비수기 <span class="num">CHF 63</span>인데 <strong>5/1~10/31은 CHF 89이고 공식 안내에 “좌석 예약 포함”이라고 명시</strong>돼 있습니다. 의무 기간에는 예약비가 티켓 값에 이미 들어가 있습니다.</p>
-        <p>동신항운 VIP패스는 <strong>융프라우요흐 왕복 1회권이 통째로 포함</strong>된 상품이라, 좌석 예약도 그 안에 함께 들어갑니다. <strong>CHF 10을 따로 낼 일이 없습니다.</strong></p>
-        <div class="fix">
-          <b>대신 시간대는 지정해야 합니다</b>
-          돈이 안 들 뿐, 몇 시 차를 탈지는 정해서 등록해야 합니다. 발권할 때 창구에서 같이 처리하면 되고, <strong>전날까지 무료 취소·출발 45분 전까지 변경</strong>이라 날씨 보고 정하는 방식 그대로 가시면 됩니다.
-        </div>
-      </article>
-
-      <article class="finding is-critical">
-        <span class="tag t-critical">확인 완료 · 주의</span>
-        <h3>인터라켄 West에서는 VIP패스 발권이 안 됩니다</h3>
-        <p>여러 자료가 일치합니다. 발권 가능한 곳은 <strong>인터라켄 오스트 · 빌더스빌 · 그린델발트 · 그린델발트 터미널 · 라우터브루넨</strong>이고, <strong>인터라켄 베스트는 제외</strong>입니다. 숙소가 West라 <strong>기차로 한 정거장(3분)</strong> 가야 합니다.</p>
-        <p>그리고 발권 후기에서 반복해서 나오는 함정이 하나 있습니다. <strong>날짜를 정확히 말하지 않으면 “오늘부터” 개시되는 패스로 발권됩니다.</strong> 9/24에 받는데 9/24~27로 써야 하니 그대로 맞지만, 만약 개시일을 미룰 생각이라면 반드시 짚어서 말해야 합니다.</p>
-        <div class="fix">
-          <b>창구에서 말할 것 세 가지</b>
-          ① <strong>패스 개시일과 사용 일수</strong>(9월 24일부터 4일) ② <strong>융프라우요흐 왕복을 쓸 날짜와 시간대</strong> ③ <strong>인터라켄 West–Ost 구간이 패스에 포함되는지</strong>. 쿠폰은 이메일로 받아 <strong>인원수만큼 종이로 출력</strong>해 가고, 여권을 함께 내면 됩니다.
-        </div>
-      </article>
-
-    </div>
-  </section>
-
-  <!-- ============ 3. 위험 ============ -->
-  <section id="risks">
-    <div class="sec-head">
-      <h2>당일 놓치기 쉬운 것</h2>
-      <span class="count">4건</span>
-    </div>
-    <p class="lede">예매는 다 됐지만, 티켓 조건 때문에 동선이 바뀌어야 하는 항목입니다.</p>
-
-    <div class="findings">
-
-      <article class="finding is-attention">
-        <span class="tag t-attention">9/22 · 환승</span>
-        <h3>뮌헨 27–36번 승강장은 역 본관 밖입니다</h3>
-        <p>루체른행이 서는 <code>Gl. 27–36</code>은 <strong>슈타른베르크 별관</strong>으로 본관 지붕 밖 북쪽에 따로 있습니다. 원래는 26번 승강장 끝으로 건너가는데 <strong>2025년 11월부터 철거공사로 26번이 막혀</strong>, 아눌프슈트라세 출구로 나가 건물 바깥으로 돌아야 합니다.</p>
-        <div class="fix">
-          <b>대응</b>
-          짐이 있으면 <strong>10–15분</strong>입니다. 짐 보관함에서 캐리어까지 찾아야 하니 <strong>16:15에는 역 도착</strong>. 도착하자마자 27–36번 방향 표지부터 찾으세요.
-        </div>
-      </article>
-
-      <article class="finding is-critical">
-        <span class="tag t-critical">9/29 · 시간 충돌</span>
-        <h3>“아카데미아 다리 일몰”과 “배 타고 귀환”은 같이 못 합니다</h3>
-        <p>귀환이 <strong>19:48 · Basic 요금(변경·환불 불가)</strong>입니다. 9월 말 베네치아 일몰은 <span class="num">19:00</span> 전후인데, 아카데미아에서 1번 바포레토로 산타루치아역까지 <strong>25–30분</strong>입니다. 일몰을 다리에서 다 보고 배를 타면 <span class="num">19:35~19:45</span> 도착이라 위험합니다.</p>
-        <div class="fix">
-          <b>절충안</b>
-          <strong>18:40~18:45에 아카데미아 정류장에서 1번을 타세요.</strong> 대운하 매직아워와 일몰을 <strong>배 위에서</strong> 보게 되고 <span class="num">19:10~19:15</span>에 Ferrovia에 내리면 역이 바로 앞입니다. 승선 전 <strong>흰색 기계에 태그</strong> 잊지 마세요.
-        </div>
-      </article>
-
-      <article class="finding is-attention">
-        <span class="tag t-attention">9/28 · 사전 확인</span>
-        <h3>도모도솔라–밀라노 공사 공지를 출발 전에 봐야 합니다</h3>
-        <p>티켓 경로가 슈피츠 → 심플론 터널 → 도모도솔라 → 밀라노입니다. 이 구간은 <strong>2024–2028년 공사</strong> 중이고 2026년에도 6~7월에 실제로 대체버스가 운행했습니다. 가을 단기 공사는 촉박하게 공지됩니다.</p>
-        <div class="fix">
-          <b>대응</b>
-          출발 <strong>일주일 전과 전날</strong> <code>sbb.ch</code> 유럽 운행변경 페이지 확인. 대체버스로 바뀌면 지정 좌석이 무의미해지고 <strong>버스는 예약 의무</strong>라 재예약이 필요합니다.
-        </div>
-      </article>
-
-      <article class="finding is-attention">
-        <span class="tag t-attention">9/19–21 · 요금</span>
-        <h3>베를린 24시간권은 2장이 필요합니다</h3>
-        <p>24시간권은 개시 시각부터 정확히 24시간입니다. 9/19 <span class="num">10:40</span>쯤 첫 장을 끊으면 9/20 <span class="num">10:40</span>에 끝나서 <strong>9/20 하루가 통째로 비고</strong> 9/21 아침 기차도 못 탑니다.</p>
-        <p>9/20 오전에 두 번째 장을 끊어야 9/21 <span class="num">10:37</span>까지 덮입니다. 7일권(1인 €44 수준)보다 <strong>24시간권 2장(1인 €22.40)</strong>이 쌉니다. BVG 앱이나 Jelbi 앱으로 사면 “지금 개시”를 눌러 1분도 안 버립니다.</p>
-      </article>
-
-    </div>
-  </section>
-
-  <!-- ============ 4. 추천 ============ -->
-  <section id="ideas">
-    <div class="sec-head">
-      <h2>제가 더하고 싶은 것</h2>
-      <span class="count">추천 8가지</span>
-    </div>
-    <p class="lede">계획을 다 읽고 나서, 넣으면 좋겠다 싶은 것들입니다.</p>
-
-    <div class="findings">
-
-      <article class="finding is-good">
-        <span class="tag t-good">추천 01 · 9/20</span>
-        <h3>이스트 사이드 갤러리를 베르크하인 직전에 붙이세요</h3>
-        <p>베르크하인을 일요일 낮으로 옮기신 게 신의 한 수입니다. 통과율이 가장 높은 시간대인 데다 토요일 밤을 안 태워도 됩니다.</p>
-        <p>그런데 <strong>이스트 사이드 갤러리와 베르크하인이 걸어서 15분 거리</strong>입니다(둘 다 Warschauer Str. / Ostbahnhof 권역). 100번 버스 코스에서 빠지는 곳이라 따로 가야 하는데, <strong>일요일 오후에 갤러리 → 베르크하인</strong>으로 묶으면 한 번 움직여서 둘 다 해결됩니다.</p>
-      </article>
-
-      <article class="finding is-good">
-        <span class="tag t-good">추천 02 · 스위스</span>
-        <h3>인터라켄 5일 중 하루는 아무 계획도 넣지 마세요</h3>
-        <p>12박 13일에 도시를 여섯 번 옮기고, 그중 이동일만 여섯 날입니다. 9/23은 하루 종일 기차, 9/28은 새벽 출발입니다.</p>
-        <p>산은 날씨가 정하는 거라 어차피 계획대로 안 됩니다. <strong>흐린 날 하나를 통째로 비워두고</strong> 늦잠 · 마을 산책 · 콥에서 장 봐서 숙소 저녁 · 하더쿨룸 야경 정도로 두세요. 이 하루가 뒤쪽 이탈리아 일정의 체력을 만듭니다.</p>
-      </article>
-
-      <article class="finding is-good">
-        <span class="tag t-good">추천 03 · 9/26</span>
-        <h3>그린델발트 1박은 피르스트 + 스파로 묶으세요</h3>
-        <p>숙소가 <strong>피르스트 곤돌라에서 도보 2분</strong>이고 <strong>800㎡ 스파</strong>가 있습니다. 이 조합을 안 쓰면 굳이 하루 옮긴 의미가 없습니다.</p>
-        <p>낮에 피르스트 클리프 워크 → 바흐알프제 왕복 2시간 → 트로티바이크나 카트로 하산 → 저녁에 스파. 하루가 딱 떨어집니다. <strong>큰 짐은 인터라켄에 두고 1박치만</strong> 들고 가세요.</p>
-      </article>
-
-      <article class="finding is-good">
-        <span class="tag t-good">추천 04 · 9/28</span>
-        <h3>두오모 테라스를 일몰 슬롯으로 잡으세요</h3>
-        <p><span class="num">10:50</span>에 밀라노에 도착하니 첫날이 통째로 남습니다. 테라스는 <strong>마지막 입장 18:10, 19:00 폐장</strong>이고 9월 말 밀라노 일몰은 <span class="num">19:20</span> 전후입니다.</p>
-        <p><strong>17:30~18:00 슬롯</strong>을 잡으면 황금빛에 물든 첨탑과 마돈니나를 보고, 내려와서 갤러리아를 지나 나빌리 운하로 저녁을 가면 동선이 한 줄로 이어집니다. 성수기엔 3–5일 전 매진이고 <strong>구매 후 시간 변경이 안 되니</strong> 날짜가 확정된 지금 예매하세요.</p>
-      </article>
-
-      <article class="finding is-good">
-        <span class="tag t-good">추천 05 · 9/29</span>
-        <h3>베로나는 당일 아침에 결정해도 됩니다</h3>
-        <p>밀라노→베로나, 베로나→베네치아 모두 <strong>지역열차라 당일 창구·기계에서 사면 되고 가격도 고정</strong>입니다. 미리 안 사도 손해가 없습니다.</p>
-        <p>그러니 <strong>전날 밤 컨디션을 보고 아침에 정하세요.</strong> 멀쩡하면 07:00에 나가 베로나를 찍고, 지치면 09:00에 베네치아로 직행해서 하루를 느긋하게 쓰면 됩니다. 어느 쪽이든 19:48 귀환은 그대로입니다.</p>
-      </article>
-
-      <article class="finding is-good">
-        <span class="tag t-good">추천 06 · 스위스</span>
-        <h3>저녁은 콥·미그로에서 사서 숙소에서 드세요</h3>
-        <p>스위스 식당은 한 끼 CHF 30부터입니다. 5박이면 두 명이 저녁만으로 CHF 300이 넘습니다.</p>
-        <p>마트는 보통 <strong>저녁 6시반~7시에 문을 닫고 일요일은 휴무</strong>입니다. 산에서 늦게 내려오면 살 곳이 없으니, <strong>9/26 토요일 저녁까지 일요일치를 미리</strong> 사두세요. 역 안 매장은 일요일에도 여는 경우가 있으니 인터라켄 Ost 쪽을 기억해두면 좋습니다.</p>
-      </article>
-
-      <article class="finding is-good">
-        <span class="tag t-good">추천 07 · 9/22</span>
-        <h3>뮌헨 인형극은 12시 말고 11시로</h3>
-        <p>11시와 12시 두 번 하는데 <strong>12시에 사람이 훨씬 많습니다.</strong> 11시에 보면 명당을 쉽게 잡고, 바로 옆 성 베드로 교회 전망대(€5)에 올라간 뒤 빅투알리엔 시장에서 점심까지 자연스럽게 이어집니다.</p>
-        <p>그러면 오후에 여유가 생겨서 <strong>16:15 역 도착</strong>이라는 빠듯한 마감에 쫓기지 않습니다.</p>
-      </article>
-
-      <article class="finding is-good">
-        <span class="tag t-good">추천 08 · 9/30</span>
-        <h3>최후의 만찬을 뺀 자리는 브레라로 채우세요</h3>
-        <p>12시 체크아웃부터 17:30까지 다섯 시간 반이 빕니다. 짐을 맡기고 걸어 다니기 좋은 조합이 있습니다.</p>
-        <p><strong>스포르체스코 성 안뜰(무료) → 셈피오네 공원 → 브레라 지구 골목과 미술관 정원 → 스타벅스 리저브 로스터리</strong>. 전부 도보권이고 마지막에 중앙역으로 돌아오기도 쉽습니다. 산타 마리아 델레 그라치에 <strong>성당 자체는 무료 입장</strong>이니, 벽화는 못 봐도 건물은 보고 오실 수 있습니다.</p>
-      </article>
-
-    </div>
-  </section>
-
-  <!-- ============ 5. 코스 카탈로그 ============ -->
-  <section id="catalog">
-    <div class="sec-head">
-      <h2>스위스 코스 카탈로그</h2>
-      <span class="count">기점별 전체 목록 · 소요시간과 패스 적용</span>
-    </div>
-    <p class="lede">할 수 있는 걸 전부 모았습니다. <strong>기점</strong>(어디서 출발하는지)과 <strong>소요</strong>(하루인지 반나절인지)가 날짜 배치를 결정합니다.</p>
-
-    <div class="scroll">
-      <table>
-        <thead>
-          <tr><th>코스</th><th>기점</th><th class="mono">소요</th><th>패스</th><th>메모</th></tr>
-        </thead>
-        <tbody>
-          <tr class="sub-row"><td colspan="5">인터라켄 기점</td></tr>
-          <tr><td><b>융프라우요흐</b></td><td>Ost → 그린델발트 터미널</td><td class="mono">하루</td><td><span class="pill p-done">1회 포함</span></td><td>3,454m · 좌석 예약 포함 · 숙소에서 편도 1시간 40분</td></tr>
-          <tr><td><b>뮈렌 · 김멜발트</b></td><td>라우터브루넨</td><td class="mono">반나절~하루</td><td><span class="pill p-done">무료</span></td><td>도보 30분 내리막 · 쉴트호른 50% 할인</td></tr>
-          <tr><td><b>쉬니게 플라테</b></td><td>빌더스빌</td><td class="mono">반나절</td><td><span class="pill p-done">무료</span></td><td>클래식 열차 52분 · 삼봉 정면 · 10/25까지</td></tr>
-          <tr><td><b>튠 호수 → 슈피츠</b></td><td>인터라켄 <b>West</b> 선착장</td><td class="mono">반나절</td><td><span class="pill p-done">왕복 무료</span></td><td><b>숙소 앞</b> · 배 45분 · 오버호펜 성 추가 가능</td></tr>
-          <tr><td><b>브리엔츠 호수</b></td><td>인터라켄 <b>Ost</b> 선착장</td><td class="mono">반나절</td><td><span class="pill p-done">왕복 무료</span></td><td>이젤발트 40분 · 기스바흐 폭포 · 브리엔츠 마을</td></tr>
-          <tr><td><b>트뤼멜바흐 폭포</b></td><td>라우터브루넨 계곡 버스</td><td class="mono">2시간</td><td><span class="pill p-open">버스만</span></td><td><b>산 내부 · 비 와도 됨</b> · 입장 CHF 14</td></tr>
-          <tr><td><b>성 베아투스 동굴</b></td><td>인터라켄 West · 버스 21</td><td class="mono">2~3시간</td><td><span class="pill p-open">버스만</span></td><td><b>비 오면 오히려 좋음</b> · 입장 CHF 20 · 20분 거리</td></tr>
-          <tr><td><b>패러글라이딩</b></td><td>베아텐베르크 이륙</td><td class="mono">오전 반나절</td><td><span class="pill p-bad">별도</span></td><td>CHF 190 · <b>착륙장이 숙소 근처</b></td></tr>
-          <tr><td><b>하더쿨룸</b></td><td>인터라켄 <b>Ost</b></td><td class="mono">저녁 2~3시간</td><td><span class="pill p-done">무료</span></td><td>패스 없으면 왕복 CHF 44 · 마지막 상행 20:40</td></tr>
-          <tr><td>인터라켄 시내 · 회에마테</td><td>숙소</td><td class="mono">자유</td><td>—</td><td>잔디밭 · 마트 · 상점</td></tr>
-
-          <tr class="sub-row"><td colspan="5">그린델발트 기점</td></tr>
-          <tr><td><b>피르스트</b></td><td>마을 동쪽 <b>도보 2분</b></td><td class="mono">2~4시간</td><td><span class="pill p-done">곤돌라 무료</span></td><td>클리프 워크 무료 · 액티비티 30~50% 할인 · 바흐알프제 왕복 2시간</td></tr>
-          <tr><td><b>멘리헨 → 클라이네 샤이덱</b></td><td>그린델발트 터미널</td><td class="mono">3시간</td><td><span class="pill p-done">무료</span></td><td>곤돌라 20분 + 능선 1시간 30분 + 기차 25분 · <b>삼봉 정면</b></td></tr>
-          <tr><td><b>아이거 트레일</b></td><td>아이거글레처</td><td class="mono">3~4시간</td><td><span class="pill p-done">무료</span></td><td>북벽 바로 아래 · 787m 하강 · 트레킹화</td></tr>
-          <tr><td><b>빙하 협곡</b></td><td>마을 · 버스 122</td><td class="mono">1~2시간</td><td><span class="pill p-bad">별도</span></td><td><b>비 와도 됨</b> · CHF 19 (게스트카드 17)</td></tr>
-          <tr><td><b>프핑스텍</b></td><td>마을 동쪽</td><td class="mono">1~2시간</td><td><span class="pill p-bad">별도</span></td><td>토보간 725m · 플라이라인 · 편도 CHF 18</td></tr>
-          <tr><td><b>그로세 샤이덱 버스</b></td><td>마을 · 버스 126~128</td><td class="mono">반나절</td><td><span class="pill p-open">게스트카드</span></td><td>안 걷고 고갯길 풍경 · <b>9/26 숙박분에만</b></td></tr>
-
-          <tr class="sub-row"><td colspan="5">긴 코스 · 패스 밖 (참고)</td></tr>
-          <tr><td>쉬니게 플라테 → 파울호른 → 피르스트</td><td>빌더스빌</td><td class="mono">하루 6시간</td><td><span class="pill p-done">무료</span></td><td>16km 종주 · 다음날까지 영향</td></tr>
-          <tr><td>니더호른</td><td>베아텐베르크</td><td class="mono">반나절</td><td><span class="pill p-bad">제외</span></td><td>두 호수 조망 · 아이벡스</td></tr>
-          <tr><td>브리엔처 로트호른</td><td>브리엔츠</td><td class="mono">하루</td><td><span class="pill p-bad">제외</span></td><td>증기 열차 · CHF 96 · 사전 예약</td></tr>
-          <tr><td>발렌베르크 야외박물관</td><td>브리엔츠</td><td class="mono">반나절</td><td><span class="pill p-bad">제외</span></td><td>스위스 전통 가옥 · 비 와도 됨</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <p style="margin-top:18px;font-size:14.5px;color:var(--ink-2)">패스 밖 세 개는 <strong>넣을 이유가 약합니다.</strong> 니더호른·로트호른은 조망이 하더쿨룸·쉬니게 플라테와 겹치는데 돈은 따로 들고, 발렌베르크는 브리엔츠까지 가야 합니다. <strong>4일밖에 없으니 패스 안에서 고르는 게 낫습니다.</strong></p>
-  </section>
-
-  <!-- ============ 6. 날짜별 후보 ============ -->
-  <section id="bydate">
-    <div class="sec-head">
-      <h2>날짜별 후보</h2>
-      <span class="count">기점이 바뀌니 되는 코스도 바뀝니다</span>
-    </div>
-    <p class="lede"><strong>9/26 오후부터 9/27 오전까지가 그린델발트</strong>이고 나머지는 인터라켄입니다. 그래서 같은 코스도 날짜에 따라 되고 안 되고가 갈립니다. 각 날짜의 후보를 순서대로 뒀습니다.</p>
-
-    <div class="days" style="border-top:1px solid var(--rule-strong)">
-
-      <div class="day" style="border-top:0">
-        <div class="day-when"><b>9/24</b> 목<span>인터라켄 · 종일</span></div>
-        <div class="day-body">
-          <div class="anchor">
-            <span class="lbl">오늘만의 일</span>
-            <ul>
-              <li>오전 <em>인터라켄 Ost에서 VIP패스 발권 (West에서는 안 됩니다)</em></li>
-            </ul>
-          </div>
-          <ul class="checks">
-            <li class="hot"><b>1 · 융프라우요흐</b> <span class="walk mid">하루</span> — 날씨 좋으면 무조건. 발권하고 바로 올라가세요</li>
-            <li><b>2 · 뮈렌 · 김멜발트</b> <span class="walk">반나절~하루</span> — 저지대라 구름이 껴도 볼 만합니다</li>
-            <li><b>3 · 쉬니게 플라테</b> <span class="walk">반나절</span> — 2,000m라 구름 위로 올라가는 날이 있습니다</li>
-            <li><b>4 · 튠 호수 → 슈피츠</b> <span class="walk">반나절</span> — 선착장이 숙소 앞</li>
-            <li><b>5 · 브리엔츠 호수</b> <span class="walk">반나절</span> — 이젤발트 · 기스바흐</li>
-            <li><b>비 오면</b> — 트뤼멜바흐 폭포, 성 베아투스 동굴</li>
-            <li class="ok"><b>저녁</b> — 하더쿨룸. 융프라우요흐를 다녀왔으면 무리일 수 있습니다</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="day">
-        <div class="day-when"><b>9/25</b> 금<span>인터라켄 · 종일</span></div>
-        <div class="day-body">
-          <div class="anchor loose">
-            <span class="lbl">오늘 잡을 것</span>
-            <ul>
-              <li>오전 <em>패러글라이딩 — 바람이 가장 잔잔한 시간대</em></li>
-              <li><em>예비일은 9/27뿐입니다 (9/26은 그린델발트)</em></li>
-            </ul>
-          </div>
-          <ul class="checks">
-            <li class="hot"><b>1 · 패러글라이딩 오전</b> <span class="walk">0</span> — 착륙장이 숙소 근처라 걸어옵니다</li>
-            <li class="hot"><b>2 · 융프라우요흐</b> <span class="walk mid">하루</span> — 어제 흐렸으면 오늘로. 비행은 오후나 9/27로</li>
-            <li><b>3 · 오후 반나절</b> — 튠 호수 / 브리엔츠 호수 / 쉬니게 플라테 / 뮈렌 중 하나</li>
-            <li><b>비행 취소되면</b> — 오전부터 위 반나절 코스로 돌리세요</li>
-            <li><b>비 오면</b> — 트뤼멜바흐 폭포, 성 베아투스 동굴</li>
-            <li class="hot"><b>저녁 · 하더쿨룸</b> <span class="walk">0</span> — <b>이 날이 최적입니다.</b> 오전 반나절에 오후는 앉아 있는 날이라 저녁에 체력이 남습니다. 18:30~19:00 탑승</li>
-            <li class="hot"><b>일요일치 장보기</b> — 마트가 일요일에 닫습니다</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="day">
-        <div class="day-when"><b>9/26</b> 토<span>→ 그린델발트 1박</span></div>
-        <div class="day-body">
-          <div class="anchor">
-            <span class="lbl">오늘 안 되는 것</span>
-            <ul>
-              <li><em>패러글라이딩 · 튠 호수 · 브리엔츠 호수 · 하더쿨룸 — 전부 인터라켄 기점</em></li>
-              <li><em>큰 짐은 인터라켄에 두고 1박치만</em></li>
-            </ul>
-          </div>
-          <ul class="checks">
-            <li class="hot"><b>1 · 피르스트</b> <span class="walk">15분~2시간</span> — <b>곤돌라가 숙소 도보 2분.</b> 클리프 워크(무료, 45m 허공 전망대)와 하산 액티비티. 바흐알프제는 기분 따라 회차</li>
-            <li class="hot"><b>2 · 멘리헨 → 클라이네 샤이덱</b> <span class="walk mid">3시간</span> — 09:00 출발이면 12:00 종료. 삼봉이 걷는 내내 정면입니다</li>
-            <li><b>3 · 융프라우요흐</b> <span class="walk mid">하루</span> — 아직 못 갔고 오늘 맑으면. 단 숙소가 터미널에서 2km라 셔틀을 물어보세요</li>
-            <li><b>4 · 아이거 트레일</b> <span class="walk high">3~4시간</span> — 북벽 아래. 체력이 남을 때만</li>
-            <li><b>5 · 빙하 협곡 / 프핑스텍</b> <span class="walk">1~2시간</span> — 오전을 짧게 끝냈을 때 오후 채우기</li>
-            <li><b>6 · 그로세 샤이덱 버스</b> <span class="walk">0</span> — 게스트카드로 무료. 안 걷고 풍경만</li>
-            <li class="ok"><b>체크인 15:00</b> — 전에 스파를 쓸 수 있는지 물어보면 시간 배분이 쉬워집니다</li>
-            <li class="ok"><b>19:30 전후 밖으로</b> — 해질녘 아이거가 분홍빛으로 물듭니다</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="day">
-        <div class="day-when"><b>9/27</b> 일<span>그린델발트 → 인터라켄</span></div>
-        <div class="day-body">
-          <div class="anchor">
-            <span class="lbl">기점이 낮에 바뀝니다</span>
-            <ul>
-              <li>오전 <em>아직 그린델발트 — 그린델발트 기점 코스가 됩니다</em></li>
-              <li>오후 <em>인터라켄 복귀 — 인터라켄 기점으로</em></li>
-              <li>밤 <em>짐 완전히 싸두기. 내일 07:20 출발</em></li>
-            </ul>
-          </div>
-          <p class="subhead">오전 · 아직 그린델발트</p>
-          <ul class="checks">
-            <li class="hot"><b>1 · 피르스트</b> <span class="walk">15분~2시간</span> — 어제 못 했으면 오늘 오전이 마지막 기회입니다</li>
-            <li class="hot"><b>2 · 멘리헨 → 클라이네 샤이덱</b> <span class="walk mid">3시간</span> — 어제 피르스트를 했으면 오늘 이걸로. 둘 다 살립니다</li>
-            <li><b>3 · 빙하 협곡 / 프핑스텍</b> <span class="walk">1~2시간</span> — 짧게 하나만</li>
-          </ul>
-          <p class="subhead">오후 · 인터라켄 복귀 후</p>
-          <ul class="checks">
-            <li><b>4 · 뮈렌 · 김멜발트</b> <span class="walk">반나절</span> — 트뤼멜바흐를 붙이면 하나로 이어집니다</li>
-            <li><b>5 · 튠 호수 / 브리엔츠 호수</b> <span class="walk">반나절</span> — 앉아 있는 게 전부라 마지막 날에 부담이 없습니다</li>
-            <li><b>6 · 융프라우요흐</b> <span class="walk mid">하루</span> — 아직 못 갔고 오늘 맑으면 <b>오늘이 마지막</b>입니다. 오전부터 통째로</li>
-            <li><b>7 · 아무것도 안 하기</b> <span class="walk">0</span> — 회에마테 잔디밭, 마을 산책. 내일이 이릅니다</li>
-            <li><b>비 오면</b> — 성 베아투스 동굴, 트뤼멜바흐 폭포</li>
-            <li class="hot"><b>저녁 · 하더쿨룸</b> — 아직 안 갔으면 마지막 기회. 짐 먼저 싸고 20:30까지 내려오세요</li>
-            <li class="hot"><b>마트가 닫습니다</b> — 저녁거리는 어제 사둔 걸로</li>
-          </ul>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ============ 7. 패스 커버 범위 ============ -->
-  <section id="passcover">
-    <div class="sec-head">
-      <h2>패스로 어디까지 되나</h2>
-      <span class="count">VIP패스 · 게스트카드</span>
-    </div>
-
-    <div class="scroll">
-      <table>
-        <thead>
-          <tr><th>항목</th><th>혜택</th><th>메모</th></tr>
-        </thead>
-        <tbody>
-          <tr class="sub-row"><td colspan="3">VIP패스 — 무제한 무료</td></tr>
-          <tr><td>피르스트 · 멘리헨 · 쉬니게 플라테 곤돌라</td><td><span class="pill p-done">무료</span></td><td>산 오르는 교통 전부</td></tr>
-          <tr><td><b>하더쿨룸 푸니쿨라</b></td><td><span class="pill p-done">무료</span></td><td>패스 없으면 <b>왕복 CHF 44</b> · 2인이면 88</td></tr>
-          <tr><td>뮈렌 · 그뤼치알프 · 올멘후벨</td><td><span class="pill p-done">무료</span></td><td>—</td></tr>
-          <tr><td>마을 간 기차 · 라우터브루넨 계곡 버스</td><td><span class="pill p-done">무료</span></td><td>트뤼멜바흐·슈테헬베르크행 포함</td></tr>
-          <tr class="sub-row"><td colspan="3">VIP패스 — 1회 · 할인</td></tr>
-          <tr><td><b>융프라우요흐 왕복</b></td><td><span class="pill p-done">1회</span></td><td>좌석 예약 무료 포함 · 아이거글레처 아래는 무제한</td></tr>
-          <tr><td>브리엔츠 · 튠 호수 유람선</td><td><span class="pill p-done">왕복</span></td><td>각 1왕복</td></tr>
-          <tr><td>피르스트 액티비티</td><td><span class="pill p-open">30~50%</span></td><td>플라이어 · 카트 · 트로티바이크</td></tr>
-          <tr><td>쉴트호른</td><td><span class="pill p-open">50%</span></td><td>뮈렌 위 구간</td></tr>
-          <tr class="sub-row"><td colspan="3">게스트카드 — 숙소에서 자동 발급</td></tr>
-          <tr><td><b>인터라켄</b> 시내버스 · West↔Ost 기차</td><td><span class="pill p-done">무료</span></td><td>이젤발트 103번 버스도 · <b>이름·날짜 기재 필수</b></td></tr>
-          <tr><td><b>그린델발트</b> 산악버스 126·127·128</td><td><span class="pill p-done">무료</span></td><td>VIP패스와 함께 · 9/26 숙박분</td></tr>
-          <tr class="sub-row"><td colspan="3">제외 — 따로 냅니다</td></tr>
-          <tr><td>트뤼멜바흐 CHF 14 · 성 베아투스 CHF 20 · 빙하 협곡 CHF 19 · 프핑스텍 CHF 18</td><td><span class="pill p-bad">별도</span></td><td>가는 교통은 대부분 커버됩니다</td></tr>
-          <tr><td>니더호른 · 브리엔처 로트호른 · 발렌베르크</td><td><span class="pill p-bad">범위 밖</span></td><td>—</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <!-- ============ 8. 지형 ============ -->
-  <section id="geo">
-    <div class="sec-head">
-      <h2>지형</h2>
-      <span class="count">헷갈리기 쉬운 두 가지</span>
-    </div>
-
-    <div class="map">
-<pre>  <b>① 클라이네 샤이덱은 환승역, 멘리헨은 옆으로 빠지는 봉우리</b>
-
-              <b>멘리헨</b> 2,343m
-             ╱     │      ╲
-    (곤돌라)╱      │       ╲ <span class="hi">능선 도보 1시간 30분</span>
-           ╱  (케이블카)     ╲
-   그린델발트      │           ╲
-     터미널     <b>벵엔</b>        <b>클라이네 샤이덱</b> 2,061m
-                  │            ╱          ╲
-                  │      (기차)            (기차)
-             <b>라우터브루넨</b>  아이거글레처      그린델발트
-                                 │
-                            <b>융프라우요흐</b> 3,454m
-
-   → 융프라우요흐에서 내려오면 <span class="hi">클라이네 샤이덱은 무조건 지납니다</span>
-   → <span class="hi">멘리헨은 기차가 안 갑니다</span>. 일부러 찾아가야 합니다
-   → 클라이네 샤이덱에서 <span class="hi">양쪽으로 다 내려갑니다</span>
-      그린델발트 25분 · 라우터브루넨 41분 (막차 18:44)</pre>
-    </div>
-
-    <div class="map">
-<pre>  <b>② 뮈렌과 벵엔은 계곡을 사이에 두고 마주봅니다</b>
-
-      서쪽 절벽                          동쪽 절벽
-
-   쉴트호른 2,970m                    멘리헨 2,343m
-        │                                  │
-    <b>뮈렌</b> 1,638m  ←── 마주봄 ──→      <b>벵엔</b> 1,274m
-        │                                  │
-    그뤼치알프                             │
-        │ (케이블카)                  (기차)│
-        └────── <b>라우터브루넨</b> 800m ──────┘
-                      │
-                슈타우프바흐 폭포
-
-   → 겹치는 건 <span class="hi">라우터브루넨 통과와 폭포</span>뿐입니다
-   → 벵엔은 경유지, <span class="hi">뮈렌이 목적지</span>입니다</pre>
-    </div>
-  </section>
-
-
-  <!-- ============ 9. 전체 일정 ============ -->
+  <!-- 1. 날짜별 계획 -->
   <section id="itinerary">
     <div class="sec-head">
       <h2>날짜별 계획</h2>
@@ -1052,25 +574,98 @@
         </div>
       </div>
 
-      <!-- 9/24 -->
       <div class="day">
-        <div class="day-when"><b>9/24–27</b><span>스위스 4일</span></div>
+        <div class="day-when"><b>9/24</b> 목<span>인터라켄 · 종일</span></div>
         <div class="day-body">
-          <h3>코스는 위 “날짜별 후보”에서 고르세요</h3>
           <div class="anchor">
-            <span class="lbl">이 나흘의 고정</span>
+            <span class="lbl">오늘만의 일</span>
             <ul>
-              <li>9/24 오전 <em>인터라켄 Ost에서 VIP패스 발권</em></li>
-              <li>9/25 오전 <em>패러글라이딩 (예비일 9/27)</em></li>
-              <li>9/26 <em>그린델발트 1박 — 큰 짐은 인터라켄에</em></li>
-              <li>9/27 밤 <em>짐 완전히 싸두기</em></li>
+              <li>오전 <em>인터라켄 Ost에서 VIP패스 발권 (West에서는 안 됩니다)</em></li>
             </ul>
           </div>
           <ul class="checks">
-            <li class="hot"><b>날씨 좋은 날을 융프라우요흐에 쓰세요</b> — 9/27까지 미루면 그날 흐릴 때 만회가 안 됩니다</li>
-            <li class="hot"><b>9/25 저녁 하더쿨룸</b> — 저녁에 체력이 남는 유일한 날입니다</li>
-            <li class="hot"><b>9/25 또는 9/26에 일요일치 장보기</b> — 마트가 일요일에 닫습니다</li>
-            <li class="ok"><b>인터라켄 게스트카드</b>는 숙소에서 자동으로 받습니다. <b>이름과 날짜를 적어야</b> 검표에서 문제가 없습니다</li>
+            <li class="hot"><b>1 · 융프라우요흐</b> <span class="walk mid">하루</span> — 날씨 좋으면 무조건. 발권하고 바로 올라가세요</li>
+            <li><b>2 · 뮈렌 · 김멜발트</b> <span class="walk">반나절~하루</span> — 저지대라 구름이 껴도 볼 만합니다</li>
+            <li><b>3 · 쉬니게 플라테</b> <span class="walk">반나절</span> — 2,000m라 구름 위로 올라가는 날이 있습니다</li>
+            <li><b>4 · 튠 호수 → 슈피츠</b> <span class="walk">반나절</span> — 선착장이 숙소 앞</li>
+            <li><b>5 · 브리엔츠 호수</b> <span class="walk">반나절</span> — 이젤발트 · 기스바흐</li>
+            <li><b>비 오면</b> — 트뤼멜바흐 폭포, 성 베아투스 동굴</li>
+            <li class="ok"><b>저녁</b> — 하더쿨룸. 융프라우요흐를 다녀왔으면 무리일 수 있습니다</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="day">
+        <div class="day-when"><b>9/25</b> 금<span>인터라켄 · 종일</span></div>
+        <div class="day-body">
+          <div class="anchor loose">
+            <span class="lbl">오늘 잡을 것</span>
+            <ul>
+              <li>오전 <em>패러글라이딩 — 바람이 가장 잔잔한 시간대</em></li>
+              <li><em>예비일은 9/27뿐입니다 (9/26은 그린델발트)</em></li>
+            </ul>
+          </div>
+          <ul class="checks">
+            <li class="hot"><b>1 · 패러글라이딩 오전</b> <span class="walk">0</span> — 착륙장이 숙소 근처라 걸어옵니다</li>
+            <li class="hot"><b>2 · 융프라우요흐</b> <span class="walk mid">하루</span> — 어제 흐렸으면 오늘로. 비행은 오후나 9/27로</li>
+            <li><b>3 · 오후 반나절</b> — 튠 호수 / 브리엔츠 호수 / 쉬니게 플라테 / 뮈렌 중 하나</li>
+            <li><b>비행 취소되면</b> — 오전부터 위 반나절 코스로 돌리세요</li>
+            <li><b>비 오면</b> — 트뤼멜바흐 폭포, 성 베아투스 동굴</li>
+            <li class="hot"><b>저녁 · 하더쿨룸</b> <span class="walk">0</span> — <b>이 날이 최적입니다.</b> 오전 반나절에 오후는 앉아 있는 날이라 저녁에 체력이 남습니다. 18:30~19:00 탑승</li>
+            <li class="hot"><b>일요일치 장보기</b> — 마트가 일요일에 닫습니다</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="day">
+        <div class="day-when"><b>9/26</b> 토<span>→ 그린델발트 1박</span></div>
+        <div class="day-body">
+          <div class="anchor">
+            <span class="lbl">오늘 안 되는 것</span>
+            <ul>
+              <li><em>패러글라이딩 · 튠 호수 · 브리엔츠 호수 · 하더쿨룸 — 전부 인터라켄 기점</em></li>
+              <li><em>큰 짐은 인터라켄에 두고 1박치만</em></li>
+            </ul>
+          </div>
+          <ul class="checks">
+            <li class="hot"><b>1 · 피르스트</b> <span class="walk">15분~2시간</span> — <b>곤돌라가 숙소 도보 2분.</b> 클리프 워크(무료, 45m 허공 전망대)와 하산 액티비티. 바흐알프제는 기분 따라 회차</li>
+            <li class="hot"><b>2 · 멘리헨 → 클라이네 샤이덱</b> <span class="walk mid">3시간</span> — 09:00 출발이면 12:00 종료. 삼봉이 걷는 내내 정면입니다</li>
+            <li><b>3 · 융프라우요흐</b> <span class="walk mid">하루</span> — 아직 못 갔고 오늘 맑으면. 단 숙소가 터미널에서 2km라 셔틀을 물어보세요</li>
+            <li><b>4 · 아이거 트레일</b> <span class="walk high">3~4시간</span> — 북벽 아래. 체력이 남을 때만</li>
+            <li><b>5 · 빙하 협곡 / 프핑스텍</b> <span class="walk">1~2시간</span> — 오전을 짧게 끝냈을 때 오후 채우기</li>
+            <li><b>6 · 그로세 샤이덱 버스</b> <span class="walk">0</span> — 게스트카드로 무료. 안 걷고 풍경만</li>
+            <li class="ok"><b>체크인 15:00</b> — 전에 스파를 쓸 수 있는지 물어보면 시간 배분이 쉬워집니다</li>
+            <li class="ok"><b>19:30 전후 밖으로</b> — 해질녘 아이거가 분홍빛으로 물듭니다</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="day">
+        <div class="day-when"><b>9/27</b> 일<span>그린델발트 → 인터라켄</span></div>
+        <div class="day-body">
+          <div class="anchor">
+            <span class="lbl">기점이 낮에 바뀝니다</span>
+            <ul>
+              <li>오전 <em>아직 그린델발트 — 그린델발트 기점 코스가 됩니다</em></li>
+              <li>오후 <em>인터라켄 복귀 — 인터라켄 기점으로</em></li>
+              <li>밤 <em>짐 완전히 싸두기. 내일 07:20 출발</em></li>
+            </ul>
+          </div>
+          <p class="subhead">오전 · 아직 그린델발트</p>
+          <ul class="checks">
+            <li class="hot"><b>1 · 피르스트</b> <span class="walk">15분~2시간</span> — 어제 못 했으면 오늘 오전이 마지막 기회입니다</li>
+            <li class="hot"><b>2 · 멘리헨 → 클라이네 샤이덱</b> <span class="walk mid">3시간</span> — 어제 피르스트를 했으면 오늘 이걸로. 둘 다 살립니다</li>
+            <li><b>3 · 빙하 협곡 / 프핑스텍</b> <span class="walk">1~2시간</span> — 짧게 하나만</li>
+          </ul>
+          <p class="subhead">오후 · 인터라켄 복귀 후</p>
+          <ul class="checks">
+            <li><b>4 · 뮈렌 · 김멜발트</b> <span class="walk">반나절</span> — 트뤼멜바흐를 붙이면 하나로 이어집니다</li>
+            <li><b>5 · 튠 호수 / 브리엔츠 호수</b> <span class="walk">반나절</span> — 앉아 있는 게 전부라 마지막 날에 부담이 없습니다</li>
+            <li><b>6 · 융프라우요흐</b> <span class="walk mid">하루</span> — 아직 못 갔고 오늘 맑으면 <b>오늘이 마지막</b>입니다. 오전부터 통째로</li>
+            <li><b>7 · 아무것도 안 하기</b> <span class="walk">0</span> — 회에마테 잔디밭, 마을 산책. 내일이 이릅니다</li>
+            <li><b>비 오면</b> — 성 베아투스 동굴, 트뤼멜바흐 폭포</li>
+            <li class="hot"><b>저녁 · 하더쿨룸</b> — 아직 안 갔으면 마지막 기회. 짐 먼저 싸고 20:30까지 내려오세요</li>
+            <li class="hot"><b>마트가 닫습니다</b> — 저녁거리는 어제 사둔 걸로</li>
           </ul>
         </div>
       </div>
@@ -1180,6 +775,435 @@
     </div>
   </section>
 
+  <!-- 2. 확정 티켓 -->
+  <!-- ============ 1. 확정 티켓 ============ -->
+  <section id="confirmed">
+    <div class="sec-head">
+      <h2>확정된 티켓</h2>
+      <span class="count">6건 · 전부 2인 예약 · 금액은 2인 총액</span>
+    </div>
+    <p class="lede">이 여섯 개가 여행의 뼈대이자, 유일하게 못 바꾸는 시각입니다. 나머지 일정은 이 사이를 채우는 것뿐입니다.</p>
+
+    <div class="rails">
+
+      <div class="rail">
+        <div class="rail-date">9/19<small>토</small></div>
+        <div class="rail-main">
+          <b>프랑크푸르트 → 베를린</b>
+          <span class="times">06:15 Frankfurt Hbf → 10:23 Berlin Hbf</span>
+          <span class="note warn">에어푸르트(Erfurt Hbf) 환승 · 08:27 도착 → 08:46 출발, 갈아탈 시간 19분</span>
+          <span class="note">ICE 696 → ICE 1604 · 2등석 · 열차 지정 · 좌석 미지정 · 환불 불가</span>
+        </div>
+        <div class="rail-cost"><b>€39.98</b><small>2인</small></div>
+      </div>
+
+      <div class="rail">
+        <div class="rail-date">9/21<small>월</small></div>
+        <div class="rail-main">
+          <b>베를린 → 뮌헨</b>
+          <span class="times">10:37 Berlin Hbf (tief) → 14:46 München Hbf · 직통 4시간 9분</span>
+          <span class="note warn">출발이 <b>지하 플랫폼(tief)</b>입니다. S반은 지상 도착이니 층 이동 시간을 따로 잡으세요</span>
+          <span class="note">2등석 · 좌석 예약 포함</span>
+        </div>
+        <div class="rail-cost"><b>€110.98</b><small>2인</small></div>
+      </div>
+
+      <div class="rail">
+        <div class="rail-date">9/22<small>화</small></div>
+        <div class="rail-main">
+          <b>뮌헨 → 루체른</b>
+          <span class="times">16:48 München Hbf Gl.27–36 → 21:25 Luzern · 환승 1회</span>
+          <span class="note warn">27–36번은 <b>슈타른베르크 별관</b>(본관 밖). 26번 승강장이 공사로 막혀 우회해야 하니 짐 들고 10–15분</span>
+          <span class="note">1등석 · 좌석 예약 포함</span>
+        </div>
+        <div class="rail-cost"><b>€161.78</b><small>2인</small></div>
+      </div>
+
+      <div class="rail">
+        <div class="rail-date">9/23<small>수</small></div>
+        <div class="rail-main">
+          <b>세이버데이 패스</b>
+          <span class="times">하루 무제한 · <b>다음날 05:00까지</b> 유효</span>
+          <span class="note">CHF 52는 하프페어카드 <b>없는</b> 사람용 가격이 맞습니다(있으면 CHF 29부터). 추가로 살 것 없습니다</span>
+          <span class="note">루체른–인터라켄 익스프레스는 좌석 예약 의무 아님(선택 CHF 16) · 호수 뷰는 진행방향 오른쪽</span>
+        </div>
+        <div class="rail-cost"><b>CHF 104</b><small>2인 · 인당 52</small></div>
+      </div>
+
+      <div class="rail">
+        <div class="rail-date">9/28<small>월</small></div>
+        <div class="rail-main">
+          <b>인터라켄 → 밀라노</b>
+          <span class="times">07:33 Interlaken West → 07:48 Spiez → 08:05 → 10:50 Milano Centrale</span>
+          <span class="note warn">숙소가 <b>West 바로 앞</b>이라 07:20에 나서면 됩니다. 슈피츠 환승 17분 · 좌석 5호차</span>
+          <span class="note">2등석 Smart · 좌석 예약 포함</span>
+        </div>
+        <div class="rail-cost"><b>CHF 114.40</b><small>2인</small></div>
+      </div>
+
+      <div class="rail">
+        <div class="rail-date">9/29<small>화</small></div>
+        <div class="rail-main">
+          <b>베네치아 → 밀라노</b>
+          <span class="times">19:48 Venezia S. Lucia → 22:15 Milano Centrale · Frecciarossa 9762</span>
+          <span class="note warn"><b>Basic 요금 — 변경·환불 불가.</b> 놓치면 표가 그대로 날아갑니다. 19:20까지 역 도착</span>
+        </div>
+        <div class="rail-cost"><b>$64</b><small>2인</small></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 3. 남은 일 -->
+  <!-- ============ 2. 남은 일 ============ -->
+  <section id="todo">
+    <div class="sec-head">
+      <h2>출발 전에 남은 일</h2>
+      <span class="count">예약 1건 · 확인 2건</span>
+    </div>
+
+    <div class="findings">
+
+      <article class="finding is-attention">
+        <span class="tag t-attention">예약 · 지금</span>
+        <h3>패러글라이딩만 아직 안 잡혔습니다</h3>
+        <p>9월도 <strong>오전 슬롯은 3–5일 전에 마감</strong>됩니다. 오전 첫 타임이 바람이 가장 잔잔하고, 날씨 취소가 흔하니 <strong>뒤에 예비일이 남는 날</strong>로 잡아야 합니다.</p>
+        <p>CHF 190 내외 × 2 = <strong>CHF 380</strong>, 사진·영상은 별도 CHF 40 × 2. 무료 취소는 보통 24시간 전까지입니다. 이륙은 베아텐베르크, <strong>착륙은 회에마테</strong> — 숙소가 인터라켄 West라 착륙장이 걸어서 갈 거리입니다.</p>
+        <div class="fix">
+          <b>추천</b>
+          <strong>9/25(금) 오전으로 잡고 9/27을 예비일로.</strong> 9/26은 그린델발트에 있으니 예비일로 못 씁니다. 마지막 날 9/27까지 밀리면 그날 흐릴 때 만회가 안 되니, 9/25를 1순위로 두세요.
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 4. 당일 주의 -->
+  <!-- ============ 3. 위험 ============ -->
+  <section id="risks">
+    <div class="sec-head">
+      <h2>당일 놓치기 쉬운 것</h2>
+      <span class="count">4건</span>
+    </div>
+    <p class="lede">예매는 다 됐지만, 티켓 조건 때문에 동선이 바뀌어야 하는 항목입니다.</p>
+
+    <div class="findings">
+
+      <article class="finding is-attention">
+        <span class="tag t-attention">9/22 · 환승</span>
+        <h3>뮌헨 27–36번 승강장은 역 본관 밖입니다</h3>
+        <p>루체른행이 서는 <code>Gl. 27–36</code>은 <strong>슈타른베르크 별관</strong>으로 본관 지붕 밖 북쪽에 따로 있습니다. 원래는 26번 승강장 끝으로 건너가는데 <strong>2025년 11월부터 철거공사로 26번이 막혀</strong>, 아눌프슈트라세 출구로 나가 건물 바깥으로 돌아야 합니다.</p>
+        <div class="fix">
+          <b>대응</b>
+          짐이 있으면 <strong>10–15분</strong>입니다. 짐 보관함에서 캐리어까지 찾아야 하니 <strong>16:15에는 역 도착</strong>. 도착하자마자 27–36번 방향 표지부터 찾으세요.
+        </div>
+      </article>
+
+      <article class="finding is-critical">
+        <span class="tag t-critical">9/29 · 시간 충돌</span>
+        <h3>“아카데미아 다리 일몰”과 “배 타고 귀환”은 같이 못 합니다</h3>
+        <p>귀환이 <strong>19:48 · Basic 요금(변경·환불 불가)</strong>입니다. 9월 말 베네치아 일몰은 <span class="num">19:00</span> 전후인데, 아카데미아에서 1번 바포레토로 산타루치아역까지 <strong>25–30분</strong>입니다. 일몰을 다리에서 다 보고 배를 타면 <span class="num">19:35~19:45</span> 도착이라 위험합니다.</p>
+        <div class="fix">
+          <b>절충안</b>
+          <strong>18:40~18:45에 아카데미아 정류장에서 1번을 타세요.</strong> 대운하 매직아워와 일몰을 <strong>배 위에서</strong> 보게 되고 <span class="num">19:10~19:15</span>에 Ferrovia에 내리면 역이 바로 앞입니다. 승선 전 <strong>흰색 기계에 태그</strong> 잊지 마세요.
+        </div>
+      </article>
+
+      <article class="finding is-attention">
+        <span class="tag t-attention">9/28 · 사전 확인</span>
+        <h3>도모도솔라–밀라노 공사 공지를 출발 전에 봐야 합니다</h3>
+        <p>티켓 경로가 슈피츠 → 심플론 터널 → 도모도솔라 → 밀라노입니다. 이 구간은 <strong>2024–2028년 공사</strong> 중이고 2026년에도 6~7월에 실제로 대체버스가 운행했습니다. 가을 단기 공사는 촉박하게 공지됩니다.</p>
+        <div class="fix">
+          <b>대응</b>
+          출발 <strong>일주일 전과 전날</strong> <code>sbb.ch</code> 유럽 운행변경 페이지 확인. 대체버스로 바뀌면 지정 좌석이 무의미해지고 <strong>버스는 예약 의무</strong>라 재예약이 필요합니다.
+        </div>
+      </article>
+
+      <article class="finding is-attention">
+        <span class="tag t-attention">9/19–21 · 요금</span>
+        <h3>베를린 24시간권은 2장이 필요합니다</h3>
+        <p>24시간권은 개시 시각부터 정확히 24시간입니다. 9/19 <span class="num">10:40</span>쯤 첫 장을 끊으면 9/20 <span class="num">10:40</span>에 끝나서 <strong>9/20 하루가 통째로 비고</strong> 9/21 아침 기차도 못 탑니다.</p>
+        <p>9/20 오전에 두 번째 장을 끊어야 9/21 <span class="num">10:37</span>까지 덮입니다. 7일권(1인 €44 수준)보다 <strong>24시간권 2장(1인 €22.40)</strong>이 쌉니다. BVG 앱이나 Jelbi 앱으로 사면 “지금 개시”를 눌러 1분도 안 버립니다.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- 5. 코스 카탈로그 -->
+  <!-- ============ 5. 코스 카탈로그 ============ -->
+  <section id="catalog">
+    <div class="sec-head">
+      <h2>스위스 코스 카탈로그</h2>
+      <span class="count">경로 · 소요시간 · 패스 적용</span>
+    </div>
+    <p class="lede">할 수 있는 걸 전부 모았습니다. <code>[ ]</code> 안이 타는 것이고, <b>굵은 글씨</b>가 목적지입니다.</p>
+
+    <div class="scroll">
+      <table style="min-width:900px">
+        <thead>
+          <tr><th>코스</th><th>경로</th><th class="mono">소요</th><th>패스</th></tr>
+        </thead>
+        <tbody>
+          <tr class="sub-row"><td colspan="4">인터라켄 기점</td></tr>
+
+          <tr>
+            <td><b>융프라우요흐</b><br><span style="color:var(--ink-3);font-size:12.5px">3,454m</span></td>
+            <td>
+              <b>올라갈 때</b> 인터라켄 Ost <span class="arrow">→</span> 그린델발트 터미널 <span class="arrow">→</span> <code>아이거 익스프레스</code> <span class="arrow">→</span> 아이거글레처 <span class="arrow">→</span> <code>산악열차</code> <span class="arrow">→</span> <b>융프라우요흐</b><br>
+              <b>내려올 때</b> <code>산악열차</code> <span class="arrow">→</span> 아이거글레처 <span class="arrow">→</span> <code>기차 7분</code> 또는 <code>37번 도보 1시간</code> <span class="arrow">→</span> 클라이네 샤이덱 <span class="arrow">→</span> <code>기차</code> <span class="arrow">→</span> 벵엔 <span class="arrow">→</span> 라우터브루넨 <span class="arrow">→</span> 인터라켄 Ost
+            </td>
+            <td class="mono">하루</td>
+            <td><span class="pill p-done">1회 포함</span><br><span style="font-size:11px;color:var(--ink-3)">좌석예약 포함</span></td>
+          </tr>
+
+          <tr>
+            <td><b>뮈렌 · 김멜발트</b></td>
+            <td>
+              인터라켄 Ost <span class="arrow">→</span> 라우터브루넨 <span class="arrow">→</span> <code>케이블카</code> <span class="arrow">→</span> 그뤼치알프 <span class="arrow">→</span> <code>산악열차</code> <span class="arrow">→</span> <b>뮈렌</b><br>
+              <b>하산</b> 뮈렌 <span class="arrow">→</span> <code>도보 30분</code> <span class="arrow">→</span> 김멜발트 <span class="arrow">→</span> <code>케이블카</code> <span class="arrow">→</span> 슈테헬베르크 <span class="arrow">→</span> <code>포스트버스</code> <span class="arrow">→</span> 라우터브루넨<br>
+              <span style="color:var(--ink-3);font-size:12.5px">곁가지 — 올멘후벨 <code>푸니쿨라</code> 무료 · 쉴트호른 <code>케이블카</code> 50% 할인</span>
+            </td>
+            <td class="mono">반나절<br>~하루</td>
+            <td><span class="pill p-done">무료</span></td>
+          </tr>
+
+          <tr>
+            <td><b>쉬니게 플라테</b></td>
+            <td>인터라켄 Ost <span class="arrow">→</span> 빌더스빌 <span class="arrow">→</span> <code>클래식 산악열차 52분</code> <span class="arrow">→</span> <b>쉬니게 플라테</b> <span class="arrow">→</span> 알파인 식물원 · 능선 산책로<br><span style="color:var(--ink-3);font-size:12.5px">10/25까지 운행 · 첫차 빌더스빌 8시 조금 넘어</span></td>
+            <td class="mono">반나절</td>
+            <td><span class="pill p-done">무료</span></td>
+          </tr>
+
+          <tr>
+            <td><b>튠 호수</b><br><span style="color:var(--ink-3);font-size:12.5px">숙소 앞</span></td>
+            <td>인터라켄 <b>West 선착장</b> <span class="arrow">→</span> <code>유람선 45분</code> <span class="arrow">→</span> <b>슈피츠</b>(항구 마을 · 성) <span class="arrow">→</span> <code>기차</code> <span class="arrow">→</span> 인터라켄<br><span style="color:var(--ink-3);font-size:12.5px">곁가지 — 오버호펜 성(호수 북안), 슈피츠에서 베른행도 가능</span></td>
+            <td class="mono">반나절</td>
+            <td><span class="pill p-done">왕복 무료</span></td>
+          </tr>
+
+          <tr>
+            <td><b>브리엔츠 호수</b></td>
+            <td>인터라켄 <b>Ost 선착장</b> <span class="arrow">→</span> <code>유람선 40분</code> <span class="arrow">→</span> <b>이젤발트</b> <span class="arrow">→</span> <code>유람선</code> <span class="arrow">→</span> 기스바흐 폭포 <span class="arrow">→</span> <b>브리엔츠</b> <span class="arrow">→</span> <code>기차 20분</code> <span class="arrow">→</span> 인터라켄 Ost<br><span style="color:var(--ink-3);font-size:12.5px">이젤발트는 <code>버스 103</code>으로도 갑니다 (게스트카드 무료)</span></td>
+            <td class="mono">반나절</td>
+            <td><span class="pill p-done">왕복 무료</span></td>
+          </tr>
+
+          <tr>
+            <td><b>트뤼멜바흐 폭포</b></td>
+            <td>인터라켄 Ost <span class="arrow">→</span> 라우터브루넨 <span class="arrow">→</span> <code>계곡 버스</code> <span class="arrow">→</span> <b>트뤼멜바흐</b> <span class="arrow">→</span> <code>터널 엘리베이터</code> <span class="arrow">→</span> 산 내부 폭포<br><span style="color:var(--ink-3);font-size:12.5px">뮈렌 하산 코스에 그대로 이어집니다 · 비 오면 수량이 늘어 더 좋음</span></td>
+            <td class="mono">2시간</td>
+            <td><span class="pill p-open">버스만</span><br><span style="font-size:11px;color:var(--ink-3)">입장 CHF 14</span></td>
+          </tr>
+
+          <tr>
+            <td><b>성 베아투스 동굴</b></td>
+            <td>인터라켄 West <span class="arrow">→</span> <code>버스 21번 20분</code> <span class="arrow">→</span> <b>Beatushöhlen</b> <span class="arrow">→</span> 가이드 투어(45분 간격)<br><span style="color:var(--ink-3);font-size:12.5px">종유동 1km · 내부 10°C · 비 오면 지하 폭포가 불어 더 볼 만함</span></td>
+            <td class="mono">2~3시간</td>
+            <td><span class="pill p-open">버스만</span><br><span style="font-size:11px;color:var(--ink-3)">입장 CHF 20</span></td>
+          </tr>
+
+          <tr>
+            <td><b>하더쿨룸</b></td>
+            <td>인터라켄 <b>Ost</b> <span class="arrow">→</span> <code>푸니쿨라</code> <span class="arrow">→</span> <b>하더쿨룸</b> <span class="arrow">→</span> 전망 테라스 · 파노라마 레스토랑<br><span style="color:var(--ink-3);font-size:12.5px">마지막 상행 20:40 · 9월 말 일몰 19:30 · 18:30~19:00 탑승</span></td>
+            <td class="mono">저녁<br>2~3시간</td>
+            <td><span class="pill p-done">무료</span><br><span style="font-size:11px;color:var(--ink-3)">원래 왕복 44</span></td>
+          </tr>
+
+          <tr>
+            <td>인터라켄 시내</td>
+            <td>숙소 <span class="arrow">→</span> <b>회에마테</b> 잔디밭 · 상점가 · 콥/미그로<br><span style="color:var(--ink-3);font-size:12.5px">상점 18:30 마감 · 일요일 휴무</span></td>
+            <td class="mono">자유</td>
+            <td>—</td>
+          </tr>
+
+          <tr class="sub-row"><td colspan="4">그린델발트 기점 — 9/26 오후 ~ 9/27 오전</td></tr>
+
+          <tr>
+            <td><b>피르스트</b><br><span style="color:var(--ink-3);font-size:12.5px">숙소 도보 2분</span></td>
+            <td>
+              그린델발트 <span class="arrow">→</span> <code>곤돌라</code> <span class="arrow">→</span> <b>피르스트</b> 2,166m <span class="arrow">→</span> 클리프 워크(무료, 45m 허공) <span class="arrow">→</span> <code>도보 편도 50분</code> <span class="arrow">→</span> 바흐알프제<br>
+              <b>하산</b> 피르스트 <span class="arrow">→</span> <code>플라이어</code> <span class="arrow">→</span> 슈렉펠트 <span class="arrow">→</span> <code>마운틴 카트 30분</code> <span class="arrow">→</span> 보르트 <span class="arrow">→</span> <code>트로티바이크 30분</code> <span class="arrow">→</span> 그린델발트<br>
+              <span style="color:var(--ink-3);font-size:12.5px">바흐알프제는 왕복 코스라 아무 데서나 회차 가능</span>
+            </td>
+            <td class="mono">2~4시간</td>
+            <td><span class="pill p-done">곤돌라 무료</span><br><span style="font-size:11px;color:var(--ink-3)">액티비티 30~50%</span></td>
+          </tr>
+
+          <tr>
+            <td><b>멘리헨 →<br>클라이네 샤이덱</b></td>
+            <td>그린델발트 터미널 <span class="arrow">→</span> <code>곤돌라 20분</code> <span class="arrow">→</span> <b>멘리헨</b> 2,343m <span class="arrow">→</span> <code>능선 도보 1시간 30분</code> <span class="arrow">→</span> <b>클라이네 샤이덱</b> <span class="arrow">→</span> <code>기차 25분</code> <span class="arrow">→</span> 그린델발트<br><span style="color:var(--ink-3);font-size:12.5px">삼봉이 걷는 내내 정면 · 거의 평지 · <b>반대 방향으로 걸으면 경치가 등 뒤</b> · 곁가지 로열 워크 45분</span></td>
+            <td class="mono">3시간</td>
+            <td><span class="pill p-done">무료</span></td>
+          </tr>
+
+          <tr>
+            <td><b>아이거 트레일</b></td>
+            <td>그린델발트 터미널 <span class="arrow">→</span> <code>아이거 익스프레스</code> <span class="arrow">→</span> 아이거글레처 <span class="arrow">→</span> <code>도보 6km, 787m 하강</code> <span class="arrow">→</span> <b>알피글렌</b> <span class="arrow">→</span> <code>기차</code> <span class="arrow">→</span> 그린델발트<br><span style="color:var(--ink-3);font-size:12.5px">북벽 바로 아래 · 37번 코스와 다른 길 · 트레킹화 권장</span></td>
+            <td class="mono">3~4시간</td>
+            <td><span class="pill p-done">무료</span></td>
+          </tr>
+
+          <tr>
+            <td><b>빙하 협곡</b></td>
+            <td>그린델발트 <span class="arrow">→</span> <code>버스 122번</code> 또는 <code>도보 30분</code> <span class="arrow">→</span> <b>글레처슐루흐트</b> <span class="arrow">→</span> 나무 데크 왕복 2km<br><span style="color:var(--ink-3);font-size:12.5px">300m 절벽 사이 · 09:30~18:00 · 비 와도 운영 · 안이 추움</span></td>
+            <td class="mono">1~2시간</td>
+            <td><span class="pill p-bad">CHF 19</span><br><span style="font-size:11px;color:var(--ink-3)">게스트카드 17</span></td>
+          </tr>
+
+          <tr>
+            <td><b>프핑스텍</b></td>
+            <td>그린델발트 마을 동쪽 <span class="arrow">→</span> <code>케이블카 5분</code> <span class="arrow">→</span> <b>프핑스텍</b> 1,387m <span class="arrow">→</span> 토보간 · 플라이라인</td>
+            <td class="mono">1~2시간</td>
+            <td><span class="pill p-bad">편도 18</span></td>
+          </tr>
+
+          <tr>
+            <td><b>그로세 샤이덱</b></td>
+            <td>그린델발트 <span class="arrow">→</span> <code>산악버스 128번</code> <span class="arrow">→</span> <b>그로세 샤이덱</b> 고갯길<br><span style="color:var(--ink-3);font-size:12.5px">부살프 127번 · 발트슈피츠 126번 · 안 걷고 풍경만 · 피르스트 하이킹의 하산 종점으로도 씀</span></td>
+            <td class="mono">반나절</td>
+            <td><span class="pill p-open">게스트카드</span></td>
+          </tr>
+
+          <tr class="sub-row"><td colspan="4">액티비티</td></tr>
+
+          <tr>
+            <td><b>패러글라이딩</b></td>
+            <td>숙소 픽업 <span class="arrow">→</span> <code>차 30분</code> <span class="arrow">→</span> <b>베아텐베르크</b> 1,350m 이륙 <span class="arrow">→</span> <code>비행 10~20분</code> <span class="arrow">→</span> <b>회에마테</b> 착륙(숙소 근처)</td>
+            <td class="mono">오전<br>반나절</td>
+            <td><span class="pill p-bad">CHF 190</span><br><span style="font-size:11px;color:var(--ink-3)">사진 +40</span></td>
+          </tr>
+
+          <tr>
+            <td><b>스노우 펀 파크</b></td>
+            <td>융프라우요흐 정상 <span class="arrow">→</span> 알레치 빙하 출구 <span class="arrow">→</span> <b>눈썰매 · 튜빙 · 짚라인</b>(84km/h)<br><span style="color:var(--ink-3);font-size:12.5px">10:00~16:00 · 예약 불가 선착순 · <b>패스 바우처로 눈썰매 무료 전환 가능</b></span></td>
+            <td class="mono">1시간</td>
+            <td><span class="pill p-open">40% 할인</span><br><span style="font-size:11px;color:var(--ink-3)">종목당 20~35</span></td>
+          </tr>
+
+          <tr>
+            <td><b>캐니언 스윙</b></td>
+            <td>빙하 협곡 안 <span class="arrow">→</span> <b>90m 자유낙하</b><br><span style="color:var(--ink-3);font-size:12.5px">협곡 방문에 붙이면 됩니다</span></td>
+            <td class="mono">+30분</td>
+            <td><span class="pill p-bad">별도</span></td>
+          </tr>
+
+          <tr>
+            <td><b>캐녀닝</b></td>
+            <td>인터라켄 집합 <span class="arrow">→</span> <code>차</code> <span class="arrow">→</span> 협곡(초급 작세트바흐 · 중급 클리 슐리레) <span class="arrow">→</span> 점프 · 슬라이드 · 레펠<br><span style="color:var(--ink-3);font-size:12.5px">수온 10~12°C · 전신 네오프렌 · 수영복과 갈아입을 옷</span></td>
+            <td class="mono">반나절</td>
+            <td><span class="pill p-bad">130~180</span></td>
+          </tr>
+
+          <tr>
+            <td><b>래프팅</b></td>
+            <td>인터라켄 집합 <span class="arrow">→</span> <b>뤼치네</b>(짧고 강함) 또는 <b>아레</b>(길고 풍경) <span class="arrow">→</span> 급류<br><span style="color:var(--ink-3);font-size:12.5px">초보 가능</span></td>
+            <td class="mono">반나절</td>
+            <td><span class="pill p-bad">110~140</span></td>
+          </tr>
+
+          <tr>
+            <td>카약 · 번지 · 스카이다이빙</td>
+            <td>카약은 호수에서 <span class="arrow">·</span> 번지는 <b>슈토크호른</b>(이동 있음) <span class="arrow">·</span> 스카이다이빙은 경비행기</td>
+            <td class="mono">반나절<br>~하루</td>
+            <td><span class="pill p-bad">90~600</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p style="margin-top:18px;font-size:14.5px;color:var(--ink-2)">액티비티는 <strong>날씨 의존도가 높습니다.</strong> 패러글라이딩·캐녀닝·래프팅 모두 9월이 적기이긴 한데 취소가 잦으니 <strong>예비일이 남는 날</strong>로 잡으세요. 항공 계열은 <strong>5~10일 전 예약</strong>이 권장되고, 사진·영상은 대부분 별도 요금입니다.</p>
+  </section>
+
+  <!-- 6. 패스 범위 -->
+  <!-- ============ 7. 패스 커버 범위 ============ -->
+  <section id="passcover">
+    <div class="sec-head">
+      <h2>패스로 어디까지 되나</h2>
+      <span class="count">VIP패스 · 게스트카드</span>
+    </div>
+
+    <div class="scroll">
+      <table>
+        <thead>
+          <tr><th>항목</th><th>혜택</th><th>메모</th></tr>
+        </thead>
+        <tbody>
+          <tr class="sub-row"><td colspan="3">VIP패스 — 무제한 무료</td></tr>
+          <tr><td>피르스트 · 멘리헨 · 쉬니게 플라테 곤돌라</td><td><span class="pill p-done">무료</span></td><td>산 오르는 교통 전부</td></tr>
+          <tr><td><b>하더쿨룸 푸니쿨라</b></td><td><span class="pill p-done">무료</span></td><td>패스 없으면 <b>왕복 CHF 44</b> · 2인이면 88</td></tr>
+          <tr><td>뮈렌 · 그뤼치알프 · 올멘후벨</td><td><span class="pill p-done">무료</span></td><td>—</td></tr>
+          <tr><td>마을 간 기차 · 라우터브루넨 계곡 버스</td><td><span class="pill p-done">무료</span></td><td>트뤼멜바흐·슈테헬베르크행 포함</td></tr>
+          <tr class="sub-row"><td colspan="3">VIP패스 — 1회 · 할인</td></tr>
+          <tr><td><b>융프라우요흐 왕복</b></td><td><span class="pill p-done">1회</span></td><td>좌석 예약 무료 포함 · 아이거글레처 아래는 무제한</td></tr>
+          <tr><td>브리엔츠 · 튠 호수 유람선</td><td><span class="pill p-done">왕복</span></td><td>각 1왕복</td></tr>
+          <tr><td>피르스트 액티비티</td><td><span class="pill p-open">30~50%</span></td><td>플라이어 · 카트 · 트로티바이크</td></tr>
+          <tr><td>쉴트호른</td><td><span class="pill p-open">50%</span></td><td>뮈렌 위 구간</td></tr>
+          <tr class="sub-row"><td colspan="3">게스트카드 — 숙소에서 자동 발급</td></tr>
+          <tr><td><b>인터라켄</b> 시내버스 · West↔Ost 기차</td><td><span class="pill p-done">무료</span></td><td>이젤발트 103번 버스도 · <b>이름·날짜 기재 필수</b></td></tr>
+          <tr><td><b>그린델발트</b> 산악버스 126·127·128</td><td><span class="pill p-done">무료</span></td><td>VIP패스와 함께 · 9/26 숙박분</td></tr>
+          <tr class="sub-row"><td colspan="3">제외 — 따로 냅니다</td></tr>
+          <tr><td>트뤼멜바흐 CHF 14 · 성 베아투스 CHF 20 · 빙하 협곡 CHF 19 · 프핑스텍 CHF 18</td><td><span class="pill p-bad">별도</span></td><td>가는 교통은 대부분 커버됩니다</td></tr>
+          <tr><td>니더호른 · 브리엔처 로트호른 · 발렌베르크</td><td><span class="pill p-bad">범위 밖</span></td><td>—</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 7. 추천 -->
+  <!-- ============ 4. 추천 ============ -->
+  <section id="ideas">
+    <div class="sec-head">
+      <h2>제가 더하고 싶은 것</h2>
+      <span class="count">추천 8가지</span>
+    </div>
+    <p class="lede">계획을 다 읽고 나서, 넣으면 좋겠다 싶은 것들입니다.</p>
+
+    <div class="findings">
+
+      <article class="finding is-good">
+        <span class="tag t-good">추천 01 · 9/20</span>
+        <h3>이스트 사이드 갤러리를 베르크하인 직전에 붙이세요</h3>
+        <p>베르크하인을 일요일 낮으로 옮기신 게 신의 한 수입니다. 통과율이 가장 높은 시간대인 데다 토요일 밤을 안 태워도 됩니다.</p>
+        <p>그런데 <strong>이스트 사이드 갤러리와 베르크하인이 걸어서 15분 거리</strong>입니다(둘 다 Warschauer Str. / Ostbahnhof 권역). 100번 버스 코스에서 빠지는 곳이라 따로 가야 하는데, <strong>일요일 오후에 갤러리 → 베르크하인</strong>으로 묶으면 한 번 움직여서 둘 다 해결됩니다.</p>
+      </article>
+      <article class="finding is-good">
+        <span class="tag t-good">추천 04 · 9/28</span>
+        <h3>두오모 테라스를 일몰 슬롯으로 잡으세요</h3>
+        <p><span class="num">10:50</span>에 밀라노에 도착하니 첫날이 통째로 남습니다. 테라스는 <strong>마지막 입장 18:10, 19:00 폐장</strong>이고 9월 말 밀라노 일몰은 <span class="num">19:20</span> 전후입니다.</p>
+        <p><strong>17:30~18:00 슬롯</strong>을 잡으면 황금빛에 물든 첨탑과 마돈니나를 보고, 내려와서 갤러리아를 지나 나빌리 운하로 저녁을 가면 동선이 한 줄로 이어집니다. 성수기엔 3–5일 전 매진이고 <strong>구매 후 시간 변경이 안 되니</strong> 날짜가 확정된 지금 예매하세요.</p>
+      </article>
+
+      <article class="finding is-good">
+        <span class="tag t-good">추천 05 · 9/29</span>
+        <h3>베로나는 당일 아침에 결정해도 됩니다</h3>
+        <p>밀라노→베로나, 베로나→베네치아 모두 <strong>지역열차라 당일 창구·기계에서 사면 되고 가격도 고정</strong>입니다. 미리 안 사도 손해가 없습니다.</p>
+        <p>그러니 <strong>전날 밤 컨디션을 보고 아침에 정하세요.</strong> 멀쩡하면 07:00에 나가 베로나를 찍고, 지치면 09:00에 베네치아로 직행해서 하루를 느긋하게 쓰면 됩니다. 어느 쪽이든 19:48 귀환은 그대로입니다.</p>
+      </article>
+
+      <article class="finding is-good">
+        <span class="tag t-good">추천 06 · 스위스</span>
+        <h3>저녁은 콥·미그로에서 사서 숙소에서 드세요</h3>
+        <p>스위스 식당은 한 끼 CHF 30부터입니다. 5박이면 두 명이 저녁만으로 CHF 300이 넘습니다.</p>
+        <p>마트는 보통 <strong>저녁 6시반~7시에 문을 닫고 일요일은 휴무</strong>입니다. 산에서 늦게 내려오면 살 곳이 없으니, <strong>9/26 토요일 저녁까지 일요일치를 미리</strong> 사두세요. 역 안 매장은 일요일에도 여는 경우가 있으니 인터라켄 Ost 쪽을 기억해두면 좋습니다.</p>
+      </article>
+
+      <article class="finding is-good">
+        <span class="tag t-good">추천 07 · 9/22</span>
+        <h3>뮌헨 인형극은 12시 말고 11시로</h3>
+        <p>11시와 12시 두 번 하는데 <strong>12시에 사람이 훨씬 많습니다.</strong> 11시에 보면 명당을 쉽게 잡고, 바로 옆 성 베드로 교회 전망대(€5)에 올라간 뒤 빅투알리엔 시장에서 점심까지 자연스럽게 이어집니다.</p>
+        <p>그러면 오후에 여유가 생겨서 <strong>16:15 역 도착</strong>이라는 빠듯한 마감에 쫓기지 않습니다.</p>
+      </article>
+
+      <article class="finding is-good">
+        <span class="tag t-good">추천 08 · 9/30</span>
+        <h3>최후의 만찬을 뺀 자리는 브레라로 채우세요</h3>
+        <p>12시 체크아웃부터 17:30까지 다섯 시간 반이 빕니다. 짐을 맡기고 걸어 다니기 좋은 조합이 있습니다.</p>
+        <p><strong>스포르체스코 성 안뜰(무료) → 셈피오네 공원 → 브레라 지구 골목과 미술관 정원 → 스타벅스 리저브 로스터리</strong>. 전부 도보권이고 마지막에 중앙역으로 돌아오기도 쉽습니다. 산타 마리아 델레 그라치에 <strong>성당 자체는 무료 입장</strong>이니, 벽화는 못 봐도 건물은 보고 오실 수 있습니다.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- 8. 비용 -->
   <!-- ============ 10. 비용 ============ -->
   <section id="budget">
     <div class="sec-head">
@@ -1235,6 +1259,7 @@
     <p style="margin-top:20px;font-size:14.5px;color:var(--ink-2)">식비·숙박은 뺀 금액입니다. 스위스 5일은 마트를 쓰면 하루 두 명 CHF 40 안쪽으로도 되지만 식당을 쓰면 CHF 80~100씩 나갑니다. 이 차이가 5일이면 <strong>CHF 200~300</strong>이라 위 표의 어지간한 항목보다 큽니다.</p>
   </section>
 
+  <!-- 9. 준비물 -->
   <!-- ============ 11. 준비물 ============ -->
   <section id="prep">
     <div class="sec-head">
