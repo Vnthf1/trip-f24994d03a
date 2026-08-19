@@ -181,6 +181,19 @@
   .map pre b { color: var(--ink); font-weight: 600; }
   .map pre .hi { color: var(--accent); font-weight: 600; }
 
+  .stay {
+    font-size: 13.5px; color: var(--ink-2); max-width: none;
+    margin: 0 0 14px; padding: 8px 12px;
+    background: var(--surface-2); border-radius: 3px;
+    display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: baseline;
+  }
+  .stay > span {
+    font-family: var(--mono); font-size: 10px; font-weight: 600;
+    letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3);
+  }
+  .stay a { font-weight: 600; color: var(--accent); }
+  .stay em { font-style: normal; color: var(--ink-3); font-size: 12.5px; }
+
   /* 걷기 강도 */
   .walk {
     display: inline-block;
@@ -372,6 +385,7 @@
       <div class="day">
         <div class="day-when"><b>9/18</b> 금<span>프랑크푸르트 1박</span></div>
         <div class="day-body">
+          <p class="stay"><span>숙소</span> <a href="https://www.google.com/maps/search/?api=1&query=Townhouse%20Hotel%20M%C3%BCnchener%20Strasse%2042%20Frankfurt%20am%20Main" target="_blank" rel="noopener">타운하우스 호텔</a> <em>Münchener Str. 42, 프랑크푸르트 · 중앙역 도보 5분</em></p>
           <h3>도착일 · 무리하지 않는 게 목표</h3>
           <div class="anchor">
             <span class="lbl">고정</span>
@@ -404,6 +418,7 @@
       <div class="day">
         <div class="day-when"><b>9/19</b> 토<span>→ 베를린 2박</span></div>
         <div class="day-body">
+          <p class="stay"><span>숙소</span> <a href="https://www.google.com/maps/search/?api=1&query=Hampton%20by%20Hilton%20Berlin%20City%20Centre%20Alexanderplatz%20Otto-Braun-Strasse%2069" target="_blank" rel="noopener">햄튼 바이 힐튼 알렉산더플라츠</a> <em>Otto-Braun-Str. 69, 베를린 · 알렉산더플라츠 도보 9분</em></p>
           <h3>베를린 첫날 · 밤은 비워둠</h3>
           <div class="anchor">
             <span class="lbl">고정</span>
@@ -439,6 +454,7 @@
       <div class="day">
         <div class="day-when"><b>9/20</b> 일<span>베를린</span></div>
         <div class="day-body">
+          <p class="stay"><span>숙소</span> <a href="https://www.google.com/maps/search/?api=1&query=Hampton%20by%20Hilton%20Berlin%20City%20Centre%20Alexanderplatz%20Otto-Braun-Strasse%2069" target="_blank" rel="noopener">햄튼 바이 힐튼 알렉산더플라츠</a> <em>2박째</em></p>
           <h3>베르크하인 데이</h3>
           <div class="anchor loose">
             <span class="lbl">사실상 고정</span>
@@ -472,6 +488,7 @@
       <div class="day">
         <div class="day-when"><b>9/21</b> 월<span>→ 뮌헨 1박</span></div>
         <div class="day-body">
+          <p class="stay"><span>숙소</span> <a href="https://www.google.com/maps/search/?api=1&query=Theresienstrasse%2070%20M%C3%BCnchen" target="_blank" rel="noopener">에어비앤비</a> <em>Theresienstraße 70, 뮌헨 · 중앙역에서 U2 두 정거장</em></p>
           <h3>옥토버페스트 · 오늘은 시각이 중요합니다</h3>
           <div class="anchor">
             <span class="lbl">고정</span>
@@ -508,6 +525,7 @@
       <div class="day">
         <div class="day-when"><b>9/22</b> 화<span>→ 루체른 1박</span></div>
         <div class="day-body">
+          <p class="stay"><span>숙소</span> 에어비앤비 <em>루체른 · 주소 확인 필요</em></p>
           <h3>뮌헨 오전 · 저녁은 이동에 다 씁니다</h3>
           <div class="anchor">
             <span class="lbl">고정</span>
@@ -540,6 +558,7 @@
       <div class="day">
         <div class="day-when"><b>9/23</b> 수<span>→ 인터라켄 West</span></div>
         <div class="day-body">
+          <p class="stay"><span>숙소</span> <a href="https://www.google.com/maps/search/?api=1&query=Ssico%20Interlaken%20West" target="_blank" rel="noopener">치코민박</a> <em>인터라켄 West역 바로 앞 · 조식 포함 · 짐 보관 무료</em></p>
           <h3>세이버데이 패스 하루 · 셋 다 됩니다</h3>
           <div class="anchor">
             <span class="lbl">고정</span>
@@ -577,6 +596,7 @@
       <div class="day">
         <div class="day-when"><b>9/24</b> 목<span>인터라켄 · 종일</span></div>
         <div class="day-body">
+          <p class="stay"><span>숙소</span> <a href="https://www.google.com/maps/search/?api=1&query=Ssico%20Interlaken%20West" target="_blank" rel="noopener">치코민박</a> <em>인터라켄 West</em></p>
           <div class="anchor">
             <span class="lbl">오늘만의 일</span>
             <ul>
@@ -598,6 +618,7 @@
       <div class="day">
         <div class="day-when"><b>9/25</b> 금<span>인터라켄 · 종일</span></div>
         <div class="day-body">
+          <p class="stay"><span>숙소</span> <a href="https://www.google.com/maps/search/?api=1&query=Ssico%20Interlaken%20West" target="_blank" rel="noopener">치코민박</a> <em>인터라켄 West</em></p>
           <div class="anchor loose">
             <span class="lbl">오늘 잡을 것</span>
             <ul>
@@ -620,6 +641,7 @@
       <div class="day">
         <div class="day-when"><b>9/26</b> 토<span>→ 그린델발트 1박</span></div>
         <div class="day-body">
+          <p class="stay"><span>숙소</span> <a href="https://www.google.com/maps/search/?api=1&query=Bergwelt%20Grindelwald%20Alpine%20Design%20Resort" target="_blank" rel="noopener">베르크벨트 그린델발트</a> <em>피르스트 곤돌라 도보 2분 · 그린델발트 터미널에서 2km</em></p>
           <div class="anchor">
             <span class="lbl">오늘 안 되는 것</span>
             <ul>
@@ -643,6 +665,7 @@
       <div class="day">
         <div class="day-when"><b>9/27</b> 일<span>그린델발트 → 인터라켄</span></div>
         <div class="day-body">
+          <p class="stay"><span>숙소</span> <a href="https://www.google.com/maps/search/?api=1&query=Ssico%20Interlaken%20West" target="_blank" rel="noopener">치코민박</a> <em>인터라켄 West · 마지막 밤</em></p>
           <div class="anchor">
             <span class="lbl">기점이 낮에 바뀝니다</span>
             <ul>
@@ -673,6 +696,7 @@
       <div class="day">
         <div class="day-when"><b>9/28</b> 월<span>→ 밀라노 2박</span></div>
         <div class="day-body">
+          <p class="stay"><span>숙소</span> <a href="https://www.google.com/maps/search/?api=1&query=Residence%20De%20La%20Gare%20Via%20Mauro%20Macchi%2049%20Milano" target="_blank" rel="noopener">Residence De La Gare</a> <em>Via Mauro Macchi 49, 밀라노 · 중앙역 도보 4분</em></p>
           <h3>이른 출발 · 밀라노가 하루 통째로 남습니다</h3>
           <div class="anchor">
             <span class="lbl">고정</span>
@@ -707,6 +731,7 @@
       <div class="day">
         <div class="day-when"><b>9/29</b> 화<span>당일치기</span></div>
         <div class="day-body">
+          <p class="stay"><span>숙소</span> <a href="https://www.google.com/maps/search/?api=1&query=Residence%20De%20La%20Gare%20Via%20Mauro%20Macchi%2049%20Milano" target="_blank" rel="noopener">Residence De La Gare</a> <em>2박째</em></p>
           <h3>귀환만 고정, 나머지는 아침에 결정</h3>
           <div class="anchor">
             <span class="lbl">고정</span>
