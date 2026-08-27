@@ -333,6 +333,25 @@
   }
   .checks li.ok b { color: var(--ink-2); font-weight: 500; }
 
+  .eats { list-style: none; margin: 0 0 16px; padding: 0; display: grid; gap: 7px; }
+  .eats li {
+    position: relative; padding-left: 20px; font-size: 14px; line-height: 1.6;
+    color: var(--ink-2); max-width: none;
+  }
+  .eats li::before {
+    content: ""; position: absolute; left: 5px; top: .72em;
+    width: 5px; height: 5px; border-radius: 50%; background: var(--rule-strong);
+  }
+  .eats li.pick::before { background: var(--accent); }
+  .eats a { color: var(--ink); font-weight: 600; text-decoration-color: var(--rule-strong); }
+  .eats a:hover { color: var(--accent); }
+  .eats .rt {
+    font-family: var(--mono); font-size: 12px; font-weight: 600;
+    color: var(--accent); white-space: nowrap; margin: 0 2px;
+  }
+  .eats .sep { color: var(--rule-strong); margin: 0 4px; }
+  .eats b { color: var(--ink); font-weight: 600; }
+
   .subhead {
     font-family: var(--mono); font-size: 10.5px; font-weight: 600; letter-spacing: .12em;
     text-transform: uppercase; color: var(--ink-3); margin: 20px 0 10px;
@@ -376,10 +395,84 @@
     .day-when span { display: inline; }
   }
 
-  @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+  /* ---------- 날짜별 바로가기 ---------- */
+
+  html { scroll-behavior: smooth; }
+  .day { scroll-margin-top: 96px; }
+
+  .daynav {
+    position: sticky; top: 0; z-index: 50;
+    margin: 0 -24px; padding: 0 24px;
+    background: var(--ground); border-bottom: 1px solid var(--rule);
+  }
+  .daynav-in {
+    display: flex; align-items: center; gap: 6px; flex-wrap: wrap;
+    padding: 9px 0;
+  }
+  .daynav .cty {
+    display: inline-flex; align-items: center; gap: 5px;
+    font-family: var(--mono); font-size: 10.5px; font-weight: 600;
+    letter-spacing: .1em; text-transform: uppercase;
+    color: var(--ink-3); white-space: nowrap;
+    padding: 0 6px 0 0; margin-left: 4px;
+  }
+  .daynav .cty:first-child { margin-left: 0; }
+  .daynav .cty .fl { font-size: 14px; letter-spacing: 0; }
+  .daynav a {
+    display: inline-flex; align-items: baseline; gap: 5px;
+    padding: 4px 9px; border: 1px solid var(--rule); border-radius: 3px;
+    background: var(--surface); color: var(--ink-2);
+    font-size: 12px; text-decoration: none; white-space: nowrap;
+    transition: border-color .12s, color .12s;
+  }
+  .daynav a b {
+    font-family: var(--mono); font-size: 12px; font-weight: 600;
+    color: var(--ink); font-variant-numeric: tabular-nums;
+  }
+  .daynav a:hover { border-color: var(--accent); color: var(--accent); }
+  .daynav a:hover b { color: var(--accent); }
+  .daynav a:target, .daynav a.on { border-color: var(--accent); }
+
+  @media (max-width: 760px) {
+    .daynav { margin: 0 -18px; padding: 0; }
+    .daynav-in {
+      flex-wrap: nowrap; overflow-x: auto; overflow-y: hidden;
+      padding: 8px 18px; gap: 5px;
+      scrollbar-width: none; -webkit-overflow-scrolling: touch;
+    }
+    .daynav-in::-webkit-scrollbar { display: none; }
+    .daynav .cty { font-size: 10px; letter-spacing: .06em; }
+    .daynav a { font-size: 11.5px; padding: 4px 8px; }
+    .day { scroll-margin-top: 60px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { animation: none !important; transition: none !important; }
+  }
 </style>
 
 <div class="page">
+
+  <nav class="daynav" aria-label="날짜별 바로가기">
+    <div class="daynav-in">
+      <span class="cty"><span class="fl">🇩🇪</span>독일</span>
+      <a href="#d18"><b>9/18</b>프랑크푸르트</a>
+      <a href="#d19"><b>9/19–20</b>베를린</a>
+      <a href="#d21"><b>9/21</b>뮌헨</a>
+      <span class="cty"><span class="fl">🇨🇭</span>스위스</span>
+      <a href="#d22"><b>9/22</b>루체른</a>
+      <a href="#d23"><b>9/23</b>인터라켄</a>
+      <a href="#d24"><b>9/24</b>인터라켄</a>
+      <a href="#d25"><b>9/25</b>인터라켄</a>
+      <a href="#d26"><b>9/26</b>그린델발트</a>
+      <a href="#d27"><b>9/27</b>인터라켄</a>
+      <span class="cty"><span class="fl">🇮🇹</span>이탈리아</span>
+      <a href="#d28"><b>9/28</b>밀라노</a>
+      <a href="#d29"><b>9/29</b>당일치기</a>
+      <a href="#d30"><b>9/30</b>귀국</a>
+    </div>
+  </nav>
 
   <header class="masthead">
     <p class="eyebrow">D-31 · 출발 전 점검</p>
@@ -406,7 +499,7 @@
     <div class="days">
 
       <!-- 9/18 -->
-            <div class="day">
+            <div class="day" id="d18">
         <div class="day-when"><b>9/18</b> 금<span>프랑크푸르트 1박</span></div>
         <div class="day-body">
           <p class="stay"><span>숙소</span> <a href="https://www.google.com/maps/search/?api=1&query=Townhouse%20Hotel%20M%C3%BCnchener%20Strasse%2042%20Frankfurt%20am%20Main" target="_blank" rel="noopener">타운하우스 호텔</a> <em>Münchener Str. 42 · 중앙역 도보 5분</em></p>
@@ -436,7 +529,7 @@
               <div class="mv">↓ <b>U4·U5 4분</b> · <b>€3.80</b> · Dom/Römer 하차 (또는 도보 20분)</div>
             </li>
             <li>
-              <div class="pt"><a href="https://www.google.com/maps/search/?api=1&query=R%C3%B6merberg%20Frankfurt%20am%20Main" target="_blank" rel="noopener">뢰머 광장</a><small>구시가 중심 · 야경</small></div>
+              <div class="pt"><a href="https://www.google.com/maps/search/?api=1&query=R%C3%B6merberg%2C%2060311%20Frankfurt%20am%20Main%2C%20Germany" target="_blank" rel="noopener">뢰머 광장</a><small>구시가 중심 · 야경</small></div>
               <div class="mv">체력이 되면. 광장만 보고 오면 <b>왕복 1시간 30분</b>. <b>Römer Pils Brunnen이 도보 5분</b>이라 저녁까지 묶으면 한 번에 끝납니다</div>
             </li>
           </ul>
@@ -482,7 +575,7 @@
       </div>
 
       <!-- 9/19–20 베를린 -->
-      <div class="day">
+      <div class="day" id="d19">
         <div class="day-when"><b>9/19–20</b><span>베를린 2박</span></div>
         <div class="day-body">
           <p class="stay"><span>숙소</span> <a href="https://www.google.com/maps/search/?api=1&query=Hampton%20by%20Hilton%20Berlin%20City%20Centre%20Alexanderplatz%20Otto-Braun-Strasse%2069" target="_blank" rel="noopener">햄튼 바이 힐튼 알렉산더플라츠</a> <em>Otto-Braun-Str. 69 · 조식 포함</em></p>
@@ -606,6 +699,40 @@
             </div>
           </div>
 
+          <p class="subhead">먹을 곳 — 쇼핑보다 이쪽이 먼저입니다</p>
+          <p style="font-size:14px;color:var(--ink-2);max-width:none;margin-bottom:14px">평점은 <b>구글 기준이고, 없는 곳은 트립어드바이저(TA)·레스토랑구루(RG)</b>로 적었습니다. 숫자는 계속 바뀌니 대략의 눈금으로만 보세요. <b>인기 있는 곳은 토요일 저녁 예약이 사실상 필수</b>입니다.</p>
+
+          <p class="subhead" style="margin-top:14px">숙소에서 걸어가는 곳 — 알렉산더플라츠·니콜라이 지구</p>
+          <ul class="eats">
+            <li class="pick"><a href="https://www.google.com/maps/search/?api=1&query=Mutter%20Hoppe%20Rathausstra%C3%9Fe%2021%20Berlin" target="_blank" rel="noopener">Mutter Hoppe</a><span class="sep">·</span><span class="rt">구글 4.4</span><span class="sep">·</span>니콜라이 지구 전통 베를린 가정식. 학세·크리스피 덕이 대표고 <b>양이 아주 많습니다.</b> <b>금·토 19:30~22:30 1920~30년대 라이브</b>가 있어 토요일 저녁에 제일 맞습니다. 매일 11:30~24:00 · <b>예약 필수</b> · Rathausstr. 21 · 도보 15분</li>
+            <li class="pick"><a href="https://www.google.com/maps/search/?api=1&query=Zur%20letzten%20Instanz%20Waisenstra%C3%9Fe%2014%20Berlin" target="_blank" rel="noopener">Zur letzten Instanz</a><span class="sep">·</span><span class="rt">RG 4.1 / TA 4.0</span><span class="sep">·</span><b>1621년 문 연 베를린에서 가장 오래된 식당</b>입니다. 나폴레옹이 들렀다는 집. 학세와 베를린식 불레테. <b>월요일 휴무</b>라 토·일에만 가능 · 토 12:00~01:00 · 일 12:00~22:00 · Waisenstr. 14–16 · <b>도보 10분으로 제일 가깝습니다</b></li>
+            <li><a href="https://www.google.com/maps/search/?api=1&query=Brauhaus%20Georgbraeu%20Spreeufer%204%20Berlin" target="_blank" rel="noopener">Brauhaus Georgbräu</a><span class="sep">·</span><span class="rt">RG 4.1 / TA 3.8</span><span class="sep">·</span>슈프레 강변 자가양조 비어홀. <b>야외 350석</b>이라 날 좋으면 여기가 낫습니다. 단체 관광객이 몰리는 시간엔 서비스가 늘어진다는 평이 꾸준합니다 · Spreeufer 4 · 도보 15분</li>
+          </ul>
+
+          <p class="subhead" style="margin-top:14px">베를린 중앙역 근처 — 도착한 날·바발리 스파와 묶기 좋습니다</p>
+          <ul class="eats">
+            <li class="pick"><a href="https://www.google.com/maps/search/?api=1&query=Schnitzelei%20Mitte%20Chausseestra%C3%9Fe%208%20Berlin" target="_blank" rel="noopener">Schnitzelei Mitte</a><span class="sep">·</span><span class="rt">TA 4.4 · 베를린 60위</span><span class="sep">·</span>슈니첼 전문점 중 가장 평이 안정적입니다. 양이 크고 곁들임이 다양하며 글루텐프리도 있습니다. <b>예약 권장</b> · Chausseestr. 8 · 역에서 도보 15분</li>
+            <li class="pick"><a href="https://www.google.com/maps/search/?api=1&query=Zollpackhof%20Elisabeth-Abegg-Stra%C3%9Fe%201%20Berlin" target="_blank" rel="noopener">Zollpackhof</a><span class="sep">·</span><span class="rt">구글 4.3</span><span class="sep">·</span>총리관저 맞은편 <b>아우구스티너 비어가르텐</b>입니다. 슈니첼·학세·구이가 기본이고 실내에 360° 벽난로가 있습니다. <b>바발리 스파와 같은 방향</b>이라 스파 전후로 붙이면 딱 맞습니다 · Elisabeth-Abegg-Str. 1 · 역에서 도보 8분</li>
+            <li><a href="https://www.google.com/maps/search/?api=1&query=Restaurant%20Paris-Moskau%20Alt-Moabit%20141%20Berlin" target="_blank" rel="noopener">Paris-Moskau</a><span class="sep">·</span><span class="rt">TA 상위 10%</span><span class="sep">·</span>1898년 목조 건물에 든 파인다이닝. 와인 페어링 코스가 대표고 여름 정원에서 정부청사와 스카이라인이 보입니다. <b>예약 필수 · 값이 셉니다</b> · Alt-Moabit 141 · 역에서 도보 10분</li>
+          </ul>
+
+          <p class="subhead" style="margin-top:14px">일요일 동선 근처 — 이스트 사이드 갤러리·베르크하인</p>
+          <ul class="eats">
+            <li class="pick"><a href="https://www.google.com/maps/search/?api=1&query=Scheers%20Schnitzel%20Warschauer%20Platz%2018%20Berlin" target="_blank" rel="noopener">Scheers Schnitzel</a><span class="sep">·</span><span class="rt">RG 4.6 / TA 4.4 · 베를린 76위</span><span class="sep">·</span><b>갤러리에서 도보 3분.</b> 맥주 박스에 앉아 종이접시로 먹는 집인데 슈니첼과 자가제 레물라드로 유명합니다. 싸고 빠릅니다 · 일~목 11:30~22:00 · 금·토 24:00까지 · Warschauer Platz 18</li>
+            <li class="pick"><a href="https://www.google.com/maps/search/?api=1&query=Burgermeister%20Oberbaumstra%C3%9Fe%208%20Berlin" target="_blank" rel="noopener">Burgermeister</a><span class="sep">·</span><span class="rt">TA 4.5 · 베를린 37위</span><span class="sep">·</span><b>1920년대 공중화장실을 개조한 버거집</b>입니다. 지하철 고가 밑에 있고 <b>오버바움 다리 건너 바로</b>라 갤러리 산책 끝에 그대로 이어집니다. €10~12 · 줄은 각오하세요 · Oberbaumstr. 8</li>
+            <li><a href="https://www.google.com/maps/search/?api=1&query=Katerschmaus%20Holzmarktstra%C3%9Fe%2025%20Berlin" target="_blank" rel="noopener">Katerschmaus</a><span class="sep">·</span><span class="rt">오픈테이블 4.7 / TA 3.8</span><span class="sep">·</span>홀츠마르크트 슈프레 강변, <b>베르크하인에서 도보 10분</b>. 자리와 음식은 좋은데 <b>서비스가 느리다는 평이 갈립니다.</b> 예약하고 여유 있게 가세요 · Holzmarktstr. 25</li>
+            <li><a href="https://www.google.com/maps/search/?api=1&query=Michelberger%20Restaurant%20Warschauer%20Stra%C3%9Fe%2039%20Berlin" target="_blank" rel="noopener">Michelberger</a><span class="sep">·</span><span class="rt">오픈테이블 4.6 / TA 4.1</span><span class="sep">·</span><b>동역 바로 앞</b>. 브란덴부르크 자체 농장 재료를 쓰는 모던 유러피언으로 <b>브런치를 매일</b> 합니다. 채식 선택지가 많습니다. 양 대비 값이 비싸다는 평 · Warschauer Str. 39–40</li>
+          </ul>
+
+          <p class="subhead" style="margin-top:14px">베를린이니까 한 번은 — 명물</p>
+          <ul class="eats">
+            <li class="pick"><a href="https://www.google.com/maps/search/?api=1&query=Mustafa%27s%20Gem%C3%BCse%20Kebap%20Mehringdamm%2033%20Berlin" target="_blank" rel="noopener">Mustafa's Gemüse Kebap</a><span class="sep">·</span><span class="rt">Falstaff 93점</span><span class="sep">·</span>구운 야채와 페타를 넣는 베를린 케밥의 상징. <b>2025년 7월 길 건너 점포로 옮겼습니다</b> — 주소는 그대로 Mehringdamm 33이지만 <b>지하철 출구 쪽 옛 자리가 아닙니다.</b> 토 10:00~01:30 · 일 10:00~23:30 · <b>줄이 1~2시간</b></li>
+            <li><a href="https://www.google.com/maps/search/?api=1&query=R%C3%BCyam%20Gem%C3%BCse%20Kebab%20Hauptstra%C3%9Fe%20133%20Berlin" target="_blank" rel="noopener">Rüyam Gemüse Kebab</a><span class="sep">·</span><span class="rt">현지인 대안</span><span class="sep">·</span>무스타파의 줄을 안 서는 사람들이 가는 쇠네베르크 집입니다. <b>대기 15분.</b> <b>Oma Galbi·Woof와 같은 쇠네베르크</b>라 토요일 밤 동선에 그대로 붙습니다 · Hauptstr. 133</li>
+            <li><a href="https://www.google.com/maps/search/?api=1&query=Curry%2036%20Hardenbergplatz%209%20Berlin" target="_blank" rel="noopener">Curry 36</a><span class="sep">·</span><span class="rt">Falstaff 88점</span><span class="sep">·</span>커리부어스트의 기준점. <b>토요일 100번 버스 타기 전 동물원역 앞 지점</b>이 이미 동선에 들어 있습니다. 09:00~05:00 · Hardenbergplatz 9 / Mehringdamm 36</li>
+            <li><a href="https://www.google.com/maps/search/?api=1&query=Konnopke%27s%20Imbiss%20Sch%C3%B6nhauser%20Allee%2044B%20Berlin" target="_blank" rel="noopener">Konnopke's Imbiss</a><span class="sep">·</span><span class="rt">TA 3.9</span><span class="sep">·</span>1930년부터 U2 고가 밑에서 파는 <b>동베를린식 커리부어스트</b>. 껍질 없는 <b>"ohne Darm"</b>으로 시키는 게 정석입니다. <b>일요일 휴무</b>라 토요일에만 가능 · Schönhauser Allee 44B</li>
+            <li><a href="https://www.google.com/maps/search/?api=1&query=Prater%20Garten%20Kastanienallee%207%20Berlin" target="_blank" rel="noopener">Prater Garten</a><span class="sep">·</span><span class="rt">TA 4.2 · 베를린 200위</span><span class="sep">·</span><b>1837년, 베를린에서 가장 오래된 비어가르텐</b>입니다. 밤나무 아래 자리에서 <b>베를리너 바이세</b>에 시럽을 타 마시는 게 이 도시 방식. <b>콘노프케에서 도보 5분</b>이라 묶으면 한 번에 끝납니다 · Kastanienallee 7–9</li>
+          </ul>
+
           <p class="subhead">쇼핑과 카페 — 요일이 갈립니다</p>
           <p style="font-size:14px;color:var(--ink-2);max-width:none;margin-bottom:14px"><b>독일은 일요일에 상점이 거의 다 닫습니다.</b> 그래서 <b>쇼핑은 토요일</b>, <b>카페는 일요일</b>로 나누는 게 맞습니다. 베를린 사람들은 일요일 브런치를 중요하게 여겨서 일요일에 카페는 오히려 잘 엽니다.</p>
           <div class="plans">
@@ -661,17 +788,16 @@
           <ul class="checks">
             <li class="hot"><b>24시간권은 각각 1장씩, 총 2장</b> — 토요일 11시에 첫 장을 끊으면 일요일 11시에 끝납니다. 일요일 오전에 두 번째 장을 끊어야 월요일 10:37 기차까지 덮입니다</li>
             <li><b>택스 리펀은 기대하지 마세요</b> — 9/22에 <b>기차로 스위스(비EU)에 들어가면서 EU를 떠납니다.</b> 육로 국경에서 세관 도장을 받아야 환급이 되는데 기차에서는 실무적으로 어렵습니다. 오쏘몰 두 개면 환급액이 €15~20 수준이라 품이 더 듭니다</li>
-            <li class="hot"><b>무거운 건 사지 마세요</b> — 여기가 이제 2일차입니다. 스위스 5일과 이탈리아 3일을 그대로 들고 다녀야 합니다. 쌍둥이칼 같은 건 참고, 발포비타민처럼 <b>가볍고 부피 작은 것</b>만</li>
             <li class="hot"><b>현금을 넉넉히</b> — Woof는 카드를 안 받고, 베르크하인도 도어·가르데로베가 현금입니다. <b>1인 €80</b> 정도</li>
             <li><b>새벽 귀가는 걱정 없습니다</b> — 금·토 밤에는 U반·S반이 24시간 운행합니다. 베르크하인(Ostbahnhof)에서 알렉산더플라츠는 S반 5분</li>
             <li><b>체크포인트 찰리</b>(U6 Kochstr.)는 100번 노선 밖입니다. 넣으려면 토요일 오후에 따로 가야 합니다</li>
-            <li><b>Mustafa's Gemüse Kebap</b>은 Mehringdamm(보일러 가는 그 역)에 있습니다. 줄이 길지만 유명합니다</li>
+            <li class="hot"><b>Mustafa's는 옛 자리에 없습니다</b> — 2025년 7월 <b>길 건너 점포</b>로 옮겼습니다(주소는 그대로 Mehringdamm 33). 보일러 가는 그 역이라 <b>토요일 밤 동선에 붙습니다</b>. 줄 서기 싫으면 쇠네베르크 <b>Rüyam</b>으로</li>
           </ul>
         </div>
       </div>
 
       <!-- 9/21 -->
-      <div class="day">
+      <div class="day" id="d21">
         <div class="day-when"><b>9/21</b> 월<span>→ 뮌헨 1박</span></div>
         <div class="day-body">
           <p class="stay"><span>숙소</span> <a href="https://www.google.com/maps/search/?api=1&query=Theresienstrasse%2070%20M%C3%BCnchen" target="_blank" rel="noopener">에어비앤비</a> <em>Theresienstraße 70, 뮌헨 · 중앙역에서 U2 두 정거장</em></p>
@@ -708,7 +834,7 @@
       </div>
 
       <!-- 9/22 -->
-      <div class="day">
+      <div class="day" id="d22">
         <div class="day-when"><b>9/22</b> 화<span>→ 루체른 1박</span></div>
         <div class="day-body">
           <p class="stay"><span>숙소</span> 에어비앤비 <em>루체른 · 주소 확인 필요</em></p>
@@ -741,7 +867,7 @@
       </div>
 
       <!-- 9/23 -->
-      <div class="day">
+      <div class="day" id="d23">
         <div class="day-when"><b>9/23</b> 수<span>→ 인터라켄 West</span></div>
         <div class="day-body">
           <p class="stay"><span>숙소</span> <a href="https://www.google.com/maps/search/?api=1&query=Ssico%20Interlaken%20West" target="_blank" rel="noopener">치코민박</a> <em>인터라켄 West역 바로 앞 · 조식 포함 · 짐 보관 무료</em></p>
@@ -779,7 +905,7 @@
         </div>
       </div>
 
-      <div class="day">
+      <div class="day" id="d24">
         <div class="day-when"><b>9/24</b> 목<span>인터라켄 · 종일</span></div>
         <div class="day-body">
           <p class="stay"><span>숙소</span> <a href="https://www.google.com/maps/search/?api=1&query=Ssico%20Interlaken%20West" target="_blank" rel="noopener">치코민박</a> <em>인터라켄 West</em></p>
@@ -801,7 +927,7 @@
         </div>
       </div>
 
-      <div class="day">
+      <div class="day" id="d25">
         <div class="day-when"><b>9/25</b> 금<span>인터라켄 · 종일</span></div>
         <div class="day-body">
           <p class="stay"><span>숙소</span> <a href="https://www.google.com/maps/search/?api=1&query=Ssico%20Interlaken%20West" target="_blank" rel="noopener">치코민박</a> <em>인터라켄 West</em></p>
@@ -824,7 +950,7 @@
         </div>
       </div>
 
-      <div class="day">
+      <div class="day" id="d26">
         <div class="day-when"><b>9/26</b> 토<span>→ 그린델발트 1박</span></div>
         <div class="day-body">
           <p class="stay"><span>숙소</span> <a href="https://www.google.com/maps/search/?api=1&query=Bergwelt%20Grindelwald%20Alpine%20Design%20Resort" target="_blank" rel="noopener">베르크벨트 그린델발트</a> <em>피르스트 곤돌라 도보 2분 · 그린델발트 터미널에서 2km</em></p>
@@ -848,7 +974,7 @@
         </div>
       </div>
 
-      <div class="day">
+      <div class="day" id="d27">
         <div class="day-when"><b>9/27</b> 일<span>그린델발트 → 인터라켄</span></div>
         <div class="day-body">
           <p class="stay"><span>숙소</span> <a href="https://www.google.com/maps/search/?api=1&query=Ssico%20Interlaken%20West" target="_blank" rel="noopener">치코민박</a> <em>인터라켄 West · 마지막 밤</em></p>
@@ -879,7 +1005,7 @@
         </div>
       </div>
 
-      <div class="day">
+      <div class="day" id="d28">
         <div class="day-when"><b>9/28</b> 월<span>→ 밀라노 2박</span></div>
         <div class="day-body">
           <p class="stay"><span>숙소</span> <a href="https://www.google.com/maps/search/?api=1&query=Residence%20De%20La%20Gare%20Via%20Mauro%20Macchi%2049%20Milano" target="_blank" rel="noopener">Residence De La Gare</a> <em>Via Mauro Macchi 49, 밀라노 · 중앙역 도보 4분</em></p>
@@ -914,7 +1040,7 @@
       </div>
 
       <!-- 9/29 -->
-      <div class="day">
+      <div class="day" id="d29">
         <div class="day-when"><b>9/29</b> 화<span>당일치기</span></div>
         <div class="day-body">
           <p class="stay"><span>숙소</span> <a href="https://www.google.com/maps/search/?api=1&query=Residence%20De%20La%20Gare%20Via%20Mauro%20Macchi%2049%20Milano" target="_blank" rel="noopener">Residence De La Gare</a> <em>2박째</em></p>
@@ -950,7 +1076,7 @@
       </div>
 
       <!-- 9/30 -->
-      <div class="day">
+      <div class="day" id="d30">
         <div class="day-when"><b>9/30</b> 수<span>귀국</span></div>
         <div class="day-body">
           <h3>다섯 시간 반이 빕니다</h3>
@@ -1548,3 +1674,61 @@
   </footer>
 
 </div>
+
+<script>
+  // 보고 있는 날짜를 상단 바에서 표시하고, 좁은 화면에서는 그 칩을 보이게 밀어줍니다.
+  (function () {
+    var bar = document.querySelector('.daynav');
+    var strip = document.querySelector('.daynav-in');
+    if (!bar || !strip) return;
+
+    var links = {}, ids = [];
+    strip.querySelectorAll('a[href^="#d"]').forEach(function (a) {
+      var id = a.getAttribute('href').slice(1);
+      if (!document.getElementById(id)) return;
+      links[id] = a;
+      ids.push(id);
+    });
+    if (!ids.length) return;
+
+    var current = null;
+
+    function pick() {
+      var line = bar.getBoundingClientRect().bottom + 24;
+      if (document.getElementById(ids[0]).getBoundingClientRect().top > line) return null;
+      var chosen = ids[0];
+      for (var i = 0; i < ids.length; i++) {
+        if (document.getElementById(ids[i]).getBoundingClientRect().top <= line) chosen = ids[i];
+        else break;
+      }
+      return chosen;
+    }
+
+    function paint() {
+      var next = pick();
+      if (next === current) return;
+      if (current) links[current].classList.remove('on');
+      current = next;
+      if (!current) return;
+      var a = links[current];
+      a.classList.add('on');
+      if (strip.scrollWidth > strip.clientWidth) {
+        strip.scrollTo({
+          left: Math.max(0, a.offsetLeft - strip.clientWidth / 2 + a.offsetWidth / 2),
+          behavior: 'smooth'
+        });
+      }
+    }
+
+    var queued = false;
+    function schedule() {
+      if (queued) return;
+      queued = true;
+      requestAnimationFrame(function () { queued = false; paint(); });
+    }
+
+    addEventListener('scroll', schedule, { passive: true });
+    addEventListener('resize', schedule);
+    paint();
+  })();
+</script>
