@@ -1,0 +1,6 @@
+# 에이전트 도구가 만드는 상태 파일
+.omc/
+.playwright-mcp/
+
+# macOS
+.DS_Store
