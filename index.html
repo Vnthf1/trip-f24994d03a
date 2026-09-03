@@ -131,7 +131,7 @@
   .rails { display: grid; gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: 4px; overflow: hidden; }
   .rail { background: var(--surface); display: grid; grid-template-columns: 96px 1fr 190px; gap: 20px; padding: 18px 22px; align-items: start; }
   .rail-date { font-family: var(--mono); font-size: 15px; font-weight: 600; font-variant-numeric: tabular-nums; color: var(--accent); letter-spacing: -.02em; }
-  .rail-date small { display: block; font-size: 11px; font-weight: 400; color: var(--ink-3); letter-spacing: 0; }
+  .rail-date small { display: block; font-size: 14px; font-weight: 600; color: var(--ink-2); letter-spacing: 0; margin-top: 2px; }
   .rail-main { font-size: 15px; }
   .rail-main b { font-weight: 600; display: block; margin-bottom: 4px; }
   .rail-main .times { font-family: var(--mono); font-size: 13.5px; font-variant-numeric: tabular-nums; color: var(--ink-2); display: block; margin-bottom: 4px; }
@@ -278,9 +278,9 @@
   .days { display: grid; gap: 0; }
   .day { display: grid; grid-template-columns: 138px 1fr; gap: 28px; padding: 30px 0; border-top: 1px solid var(--rule); }
   .day:last-child { border-bottom: 1px solid var(--rule); }
-  .day-when { font-family: var(--mono); font-size: 13px; font-variant-numeric: tabular-nums; color: var(--ink-2); line-height: 1.6; }
-  .day-when b { display: block; font-size: 18px; font-weight: 600; color: var(--ink); letter-spacing: -.02em; }
-  .day-when span { display: block; font-size: 12px; color: var(--ink-3); margin-top: 4px; }
+  .day-when { font-family: var(--mono); font-size: 16px; font-weight: 600; font-variant-numeric: tabular-nums; color: var(--accent); line-height: 1.5; }
+  .day-when b { display: block; font-size: 21px; font-weight: 600; color: var(--ink); letter-spacing: -.02em; }
+  .day-when span { display: block; font-size: 12.5px; font-weight: 400; color: var(--ink-3); margin-top: 5px; }
   .day-body > h3 { font-size: 17px; font-weight: 600; margin: 0 0 14px; letter-spacing: -.01em; }
 
   /* 고정 앵커 */
@@ -297,6 +297,11 @@
   }
   .anchor ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 5px; }
   .anchor li { font-family: var(--mono); font-size: 13.5px; font-variant-numeric: tabular-nums; color: var(--ink); }
+  .anchor li > b:first-child {
+    display: inline-block; min-width: 1.9em; margin-right: 5px; padding: 1px 5px;
+    border-radius: 3px; background: var(--accent); color: var(--surface);
+    font-size: 12px; font-weight: 600; text-align: center;
+  }
   .anchor li em { font-style: normal; font-family: var(--sans); font-size: 13px; color: var(--ink-2); }
   .anchor.loose { border-left-color: var(--rule-strong); }
   .anchor.loose .lbl { color: var(--ink-3); }
@@ -879,54 +884,55 @@
           </ul>
 
           <p class="subhead" id="d23" style="margin-top:26px">수요일 · 리기 → 골든패스 → 베른</p>
-          <p class="subhead">리기 어디가 어딘지</p>
-          <p style="font-size:14px;color:var(--ink-2);max-width:none;margin-bottom:14px"><b>리기는 호수와 내륙 사이에 솟은 산입니다.</b> 접근로가 양쪽으로 갈립니다 — <b>호수 쪽(비츠나우·베기스)은 배로</b>, <b>내륙 쪽(아르트골다우)은 기차로</b> 갑니다. 그래서 <b>한쪽으로 올라 반대쪽으로 내려오면 일주</b>가 됩니다.</p>
-          <ul class="eats">
-            <li><b>아르트골다우</b><span class="sep">·</span><span class="rt">루체른에서 기차 30분</span><span class="sep">·</span>리기 <b>동쪽 내륙</b>. 톱니열차 <b>39분</b> · 상행 07:30(첫차) → 08:55부터 <b>매시 XX:55</b> · 하행 08:45 → <b>매시 XX:48</b> · 수요일 막차 상행 16:55, 하행 17:48 · 승강장은 <b>“Arth-Goldau RB”</b></li>
-            <li><b>비츠나우</b><span class="sep">·</span><span class="rt">루체른에서 배 55분</span><span class="sep">·</span>리기 <b>남쪽 호숫가</b>. 톱니열차 <b>32분</b>, <b>1871년 유럽 최초의 산악철도</b> · 쿨름행 첫차 08:15 → <b>매시 XX:15</b> · 하행 <b>매시 정각</b>, 비츠나우까지 40분<br>⚠️ 하행에서 <b>골다우 방향은 리기 슈타펠에서 갈아탑니다</b>(xx:53 출발)</li>
-            <li><b>베기스</b><span class="sep">·</span><span class="rt">루체른에서 배 45분</span><span class="sep">·</span>리기 <b>서쪽 호숫가</b>. 케이블카 <b>10분</b>으로 <b>리기 칼트바트</b>까지만 · 거기서 톱니열차로 갈아타 쿨름으로 · 첫차 06:45쯤, 30분 간격</li>
-          </ul>
-          <p style="font-size:14px;color:var(--ink-2);max-width:none;margin-bottom:14px">배는 루체른 <b>1번 선착장</b>에서 뜨고 <b>세이버데이 패스로 커버</b>됩니다. 비츠나우행이 베기스를 거쳐 갑니다. <b>증기선</b>은 1901~1928년 건조 5척인데 <b>대개 금·토에만</b> 투입되어 수요일인 9/23엔 기대하기 어렵습니다.</p>
-          <p style="font-size:14px;color:var(--ink-2);max-width:none;margin-bottom:14px"><b>가을 시간표(9/7~10/18) 실제 시각</b><br><b>루체른 → 비츠나우</b> 첫 배 <b>08:12 → 09:09</b>, 이후 매시 <b>XX:12</b>(57분) · 06:20 배는 <b>베기스까지만</b><br><b>비츠나우 → 루체른</b> 09:49 → 10:47, 이후 매시 <b>XX:49</b>(58분)<br>시간표에 <b>“루체른 08:12~15:12 배는 비츠나우에서 리기 열차와 연결”</b>이라 명시돼 있습니다</p>
-
-          <ul class="checks">
-            <li class="hot"><b>9/23은 수요일이라 옛 차량이 다닙니다</b> — <b>5/27~10/7 수요일에만 50년 이상 된 역사 차량</b>으로 운행합니다. 아르트골다우 쪽 상행 <b>09:55·11:55·14:55</b>, 하행 10:48·12:48·15:48 · 비츠나우 쪽 상행 <b>10:15·12:15·15:15</b>, 하행 11:00·13:00·16:00<br>08:55를 타면 일반 차량이고, <b>09:55로 한 시간 미루면 옛 차량</b>입니다</li>
-          </ul>
-
-          <p class="subhead" style="margin-top:20px">어떻게 오르내릴지</p>
-          <ul class="eats">
-            <li class="pick"><b>올라갈 때 ① 기차</b><span class="sep">·</span><span class="rt">09:34 도착 · SBB 앱 실측</span><span class="sep">·</span><b>08:18</b> 루체른 <b>7번 승강장</b> · <b>IC 21 루가노 방면</b> → <b>08:45</b> 아르트골다우 <b>5번</b> → <b>도보 5분</b> → <b>08:55</b> 아르트골다우 RB <b>11/12번</b> · CC81 → <b>09:34 리기 쿨름</b> · <b>1시간 16분</b><br>환승 여유 10분(도보 포함) · 08:06 S3도 09:34에 닿지만 12분 일찍 나가야 합니다</li>
-            <li class="pick"><b>올라갈 때 ② 유람선</b><span class="sep">·</span><span class="rt">09:47 도착 · 13분 늦음</span><span class="sep">·</span><b>08:12</b> 루체른 <b>1번 선착장</b> → <b>09:09</b> 비츠나우 → <b>09:15</b> 톱니열차 → <b>09:47 리기 쿨름</b> · <b>1시간 35분</b><br>기차보다 <b>13분 늦게 닿고 19분 더 걸리는 대신</b> 호수를 물 위에서 봅니다 · 선착장 바로 앞이 톱니역이라 환승 6분</li>
-            <li><b>내려올 때는 기차</b><span class="sep">·</span><span class="rt">여유 1시간</span><span class="sep">·</span><b>10:48</b> 쿨름(<b>수요일 역사 차량</b>) → <b>11:35</b> 아르트골다우 → 기차로 <b>12시대 루체른</b> · 13:06 골든패스까지 <b>1시간 여유</b><br>배로 내려오면 11:00 쿨름 → 11:40 비츠나우 → 11:49 배 → 12:47 루체른인데 <b>여유가 19분뿐</b>입니다. <b>배를 타고 싶으면 올라갈 때 타세요</b></li>
-            <li><b>베기스는 권하지 않습니다</b><span class="sep">·</span><span class="rt">환승 2회</span><span class="sep">·</span>배 45분 → 케이블카 10분 → <b>칼트바트에서 톱니열차로 또 갈아탐</b> · 케이블카(30분 간격)와 열차 시각을 둘 다 맞춰야 해 제일 번거롭습니다</li>
-          </ul>
-          <p style="font-size:14px;color:var(--ink-2);max-width:none;margin-bottom:14px"><b>골든패스는 루체른에서 매시 :06 출발</b>입니다(06:06~21:06, 약 1시간 50분, 예약 불필요). 즉 <b>13:06 다음은 14:06</b>입니다.<br><b>14:06으로 한 편 미루면</b> 하산을 11:48로 늦춰 <b>정상에 2시간 14분</b>을 쓸 수 있습니다. 대신 <b>베른이 3시간 반에서 2시간 반으로</b> 줄어듭니다 — 그 교환을 받아들일지는 그날 정하시면 됩니다.</p>
-          <div class="plans">
-            <div class="plan pick">
-              <h4>13:06 골든패스 <span class="cond">베른을 길게</span></h4>
-              <p><b>08:18</b> 루체른 → <b>09:34</b> 리기 쿨름 · 정상 <b>1시간 14분</b> → <b>10:48</b> 하산(역사 차량) → 11:35 아르트골다우 → <b>12시대</b> 루체른</p>
-              <p><b>13:06</b> 골든패스 → <b>14:55</b> 인터라켄 Ost → West 숙소에 짐 · <b>15:30</b> West → <b>16:22</b> 베른</p>
-              <p><b>16:30~20:00</b> 베른 구시가와 저녁(<b>3시간 반</b>) → <b>20:04</b> → <b>20:56</b> West</p>
-            </div>
-            <div class="plan pick">
-              <h4>14:06 골든패스 <span class="cond">리기를 길게</span></h4>
-              <p><b>08:18</b> 루체른 → <b>09:34</b> 리기 쿨름 · 정상 <b>2시간 14분</b> → <b>11:48</b> 하산 → 12:35 아르트골다우 → <b>13시경</b> 루체른</p>
-              <p><b>14:06</b> 골든패스 → <b>15:56</b> 인터라켄 Ost → West 숙소에 짐 · <b>16:30</b> West → <b>17:22</b> 베른</p>
-              <p><b>17:30~20:00</b> 베른(<b>2시간 반</b>) → <b>20:04</b> → <b>20:56</b> West</p>
-              <p class="mv" style="padding:0"><b>리기에서 1시간을 벌고 베른에서 1시간을 잃습니다.</b> 운해가 좋은 날이면 이쪽</p>
-            </div>
-            <div class="plan">
-              <h4>리기 짧게 <span class="cond">시간 빠듯할 때</span></h4>
-              <p>비츠나우 하산을 빼고 <b>아르트골다우 왕복</b>만 하면 1시간 이상 벌립니다. 정상 풍경은 똑같습니다.</p>
-              <p class="mv" style="padding:0">세이버데이 패스로 <b>리기 반도 커버</b>됩니다. 패스 없으면 쿨름 왕복 CHF 84</p>
-            </div>
-            <div class="plan">
-              <h4>구름은 갈라서 봐야 합니다 <span class="cond">출발 전 웹캠</span></h4>
-              <p><b>아래만 구름 = 운해(Nebelmeer). 리기의 대표 풍경입니다.</b> 안개 상한선이 보통 800~1,400m라 <b>쿨름(1,797m)은 그 위</b>로 올라섭니다. 아침에 가장 두껍고 오후에 흩어지니 <b>일찍 올라가는 게 유리</b>합니다.</p>
-              <p><b>산 위까지 구름이면</b>(비·저기압) 그때만 아무것도 안 보입니다. 이 경우엔 루체른 시내만 보고 일찍 인터라켄으로.</p>
-              <p class="mv" style="padding:0"><b>구분법</b> — <a href="https://www.rigi.ch/en/live" target="_blank" rel="noopener">rigi.ch/live</a>에서 <b>골짜기 캠은 회색인데 정상 360° 캠이 파랗면 완벽한 운해</b>입니다. 둘 다 회색이면 접으세요</p>
-            </div>
+          <p class="subhead" style="margin-top:20px">선택 1 · 올라갈 때</p>
+          <div class="scroll">
+            <table style="min-width:560px">
+              <thead>
+                <tr><th></th><th>A · 기차</th><th>B · 유람선</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>루체른 출발</td><td class="mono"><b>08:18</b> · 7번 승강장<br>IC 21 루가노 방면</td><td class="mono"><b>08:12</b> · 1번 선착장</td></tr>
+                <tr><td>산기슭 도착</td><td class="mono">08:45 아르트골다우 5번</td><td class="mono">09:09 비츠나우</td></tr>
+                <tr><td>갈아타기</td><td>도보 5분 → RB 11/12번</td><td>선착장 바로 앞 · 6분</td></tr>
+                <tr><td>톱니열차</td><td class="mono">08:55</td><td class="mono">09:15</td></tr>
+                <tr><td><b>리기 쿨름 도착</b></td><td class="mono"><b>09:34</b></td><td class="mono"><b>09:47</b></td></tr>
+                <tr><td>소요</td><td class="mono">1시간 16분</td><td class="mono">1시간 35분</td></tr>
+                <tr><td>성격</td><td>빠르고 환승 여유 10분</td><td>13분 늦지만 <b>호수를 물 위에서</b></td></tr>
+              </tbody>
+            </table>
           </div>
+
+          <p class="subhead" style="margin-top:20px">내려올 때 · 선택 없음</p>
+          <div class="scroll">
+            <table style="min-width:560px">
+              <tbody>
+                <tr><td>경로</td><td colspan="2"><b>리기 쿨름 → 아르트골다우 → 루체른</b> · 톱니 47분 + 기차 30분</td></tr>
+                <tr><td>이유</td><td colspan="2">배로 내려오면 루체른 12:47 도착이라 골든패스까지 <b>19분뿐</b>입니다. <b>배는 올라갈 때 타세요</b></td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p class="subhead" style="margin-top:20px">선택 2 · 인터라켄으로 가는 편</p>
+          <div class="scroll">
+            <table style="min-width:560px">
+              <thead>
+                <tr><th></th><th>A · 13:06</th><th>B · 14:06</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><b>정상 체류</b></td><td class="mono"><b>1시간 14분</b></td><td class="mono"><b>2시간 14분</b></td></tr>
+                <tr><td>쿨름 하산</td><td class="mono">10:48 <b>역사 차량</b></td><td class="mono">11:48</td></tr>
+                <tr><td>아르트골다우</td><td class="mono">11:35</td><td class="mono">12:35</td></tr>
+                <tr><td>루체른</td><td class="mono">12시대</td><td class="mono">13시경</td></tr>
+                <tr><td><b>골든패스</b></td><td class="mono"><b>13:06</b></td><td class="mono"><b>14:06</b></td></tr>
+                <tr><td>인터라켄 Ost</td><td class="mono">14:55</td><td class="mono">15:56</td></tr>
+                <tr><td><b>베른</b></td><td class="mono">16:22~20:00 · <b>3시간 반</b></td><td class="mono">17:22~20:00 · <b>2시간 반</b></td></tr>
+                <tr><td>인터라켄 복귀</td><td colspan="2" class="mono"><b>20:56</b> · 어느 쪽이든 같습니다</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p style="font-size:14px;color:var(--ink-2);max-width:none;margin:14px 0 0"><b>두 선택은 서로 무관</b>합니다. 리기 <b>반·배 모두 세이버데이 패스로 무료</b>고, 골든패스는 <b>매시 :06</b>이라 그날 바꿔도 됩니다.<br>웹캠(<a href="https://www.rigi.ch/en/live" target="_blank" rel="noopener">rigi.ch/live</a>)에서 <b>골짜기는 회색인데 정상이 파랗면 운해</b> — 그런 날은 B(14:06)로 정상에 오래 계세요.</p>
+
           <ul class="checks">
             <li class="hot"><b>베른은 넣으세요.</b> 숙소가 <b>West</b>라 베른까지 직통 IC <b>50분, 매시간</b>입니다. 패스로 커버되니 추가 비용 0. 3시간 반이면 시계탑·대성당·아레강·곰공원에 저녁까지 됩니다</li>
             <li class="hot"><b>플랫폼 이름 주의</b> — 아르트골다우에서는 <b>“Arth-Goldau RB”</b>를 찾으세요. 일반 플랫폼과 다릅니다</li>
