@@ -357,17 +357,37 @@
   .eats .sep { color: var(--rule-strong); margin: 0 4px; }
   .eats b { color: var(--ink); font-weight: 600; }
 
+  /* 2단계: 소제목 */
   .subhead {
-    font-family: var(--sans); font-size: 15.5px; font-weight: 700; letter-spacing: -.01em;
-    color: var(--ink); margin: 30px 0 12px; padding: 12px 0 0;
-    border-top: 2px solid var(--rule-strong);
-    display: flex; align-items: baseline; gap: 8px;
+    font-family: var(--sans); font-size: 13.5px; font-weight: 600; letter-spacing: -.01em;
+    color: var(--ink-2); margin: 22px 0 9px; padding: 0; border-top: none;
+    display: flex; align-items: baseline; gap: 7px;
   }
   .subhead::before {
-    content: ""; flex: none; width: 4px; height: 15px; border-radius: 2px;
-    background: var(--accent); transform: translateY(2px);
+    content: ""; flex: none; width: 3px; height: 13px; border-radius: 2px;
+    background: var(--rule-strong); transform: translateY(2px);
   }
+  /* 1단계: 시간대 구분 */
+  .subhead.major {
+    font-size: 17px; font-weight: 700; color: var(--ink);
+    margin: 36px 0 14px; padding-top: 14px;
+    border-top: 2px solid var(--ink);
+  }
+  .subhead.major::before { width: 5px; height: 17px; background: var(--accent); }
   .subhead:first-child { margin-top: 0; }
+
+  /* 접었다 펴는 목록 */
+  details.fold { margin: 22px 0 9px; }
+  details.fold > summary { list-style: none; cursor: pointer; margin: 0 0 9px; }
+  details.fold > summary::-webkit-details-marker { display: none; }
+  details.fold > summary .cnt {
+    margin-left: auto; padding-left: 10px; font-size: 12px; font-weight: 500;
+    color: var(--ink-3); white-space: nowrap;
+  }
+  details.fold > summary .cnt::after { content: " \25BE"; }
+  details.fold[open] > summary .cnt::after { content: " \25B4"; }
+  details.fold > summary:hover { color: var(--accent); }
+  details.fold > *:last-child { margin-bottom: 0; }
 
   /* ---------- prep ---------- */
 
@@ -543,7 +563,8 @@
             </li>
           </ul>
 
-          <p class="subhead">저녁 후보 · 금요일이라 다섯 곳 다 영업합니다</p>
+                    <details class="fold" open>
+            <summary class="subhead">저녁 후보 · 금요일이라 다섯 곳 다 영업합니다<span class="cnt">5곳</span></summary>
           <p style="font-size:14px;color:var(--ink-2);max-width:none;margin-bottom:14px">숙소 동네인 <b>바안호프스피어텔에는 독일 음식이 거의 없습니다.</b> 베트남·터키·인도·중국이 몰린 “리틀 아시아”라 독일 음식은 조금 움직여야 하고, <b>아시아 쪽은 전부 도보 5분 안</b>입니다.</p>
           <ul class="eats">
             <li class="pick"><a href="https://www.google.com/maps/search/?api=1&query=Klosterhof%20Windm%C3%BChlstrasse%2014%20Frankfurt" target="_blank" rel="noopener">Klosterhof</a><span class="sep">·</span><span class="rt">구글 4.2</span><span class="sep">·</span><b>걸어서 갈 수 있는 유일한 독일 식당.</b> 맥주홀 겸 식당으로 슈니첼·슈바인학세·그뤼네 조세. <b>주방 23:00까지</b> · 069 97390650 · Windmühlstr. 14 · 도보 5~8분</li>
@@ -552,6 +573,7 @@
             <li><a href="https://www.google.com/maps/search/?api=1&query=Selera%20Malaysian%20Restaurant%20M%C3%BCnchener%20Strasse%2052%20Frankfurt" target="_blank" rel="noopener">Selera Malaysian</a><span class="sep">·</span><span class="rt">구글 4.4</span><span class="sep">·</span>말레이 요리에 광둥식과 <b>직접 만드는 딤섬</b>. <b>매일 11:30~23:00</b>이라 시간 걱정이 없습니다 · 069 24009601 · Münchener Str. 52 · <b>숙소 바로 옆</b></li>
             <li><a href="https://www.google.com/maps/search/?api=1&query=Pak%20Choi%20Elbestrasse%2012%20Frankfurt" target="_blank" rel="noopener">Pak Choi</a><span class="sep">·</span><span class="rt">구글 4.5</span><span class="sep">·</span>이 동네 <b>현지인 단골집</b>. 바삭한 가지, 두 번 익힌 오리, 소고기 천엽 샐러드 · 금 17:30~22:15 · 069 78988418 · Elbestr. 12 · 도보 3~5분</li>
           </ul>
+          </details>
 
           <ul class="checks">
             <li class="hot"><b>내일 아침은 역에서</b> — 중앙역 베이커리가 <b>05시에 엽니다.</b> 독일 기차에서 파는 건 부실하니 4시간 치를 넉넉히 사두세요</li>
@@ -579,7 +601,7 @@
             </ul>
           </div>
 
-          <p class="subhead">토요일 낮 — 100번은 <b>서쪽에서 동쪽으로</b> 타세요</p>
+          <p class="subhead major">토요일 낮 — 100번은 <b>서쪽에서 동쪽으로</b> 타세요</p>
           <p style="font-size:14px;color:var(--ink-2);max-width:none;margin-bottom:14px"><b>U반으로 동물원역까지 먼저 가서 거꾸로 타고 돌아오세요.</b> 동물원역이 <b>기점</b>이라 2층 앞자리를 잡을 수 있고, 관광지를 순서대로 지나 마지막에 숙소에 내립니다. 24시간권이라 <b>몇 번을 타고 내려도 추가 요금이 없습니다.</b></p>
           <ul class="spots">
             <li>
@@ -624,7 +646,7 @@
             </li>
           </ul>
 
-          <p class="subhead">토요일 밤 — Woof는 자정부터가 본편입니다</p>
+          <p class="subhead major">토요일 밤 — Woof는 자정부터가 본편입니다</p>
           <ul class="spots">
             <li>
               <div class="pt"><a href="https://www.google.com/maps/search/?api=1&query=Oma%20Galbi%20Motzstrasse%2028%20Berlin" target="_blank" rel="noopener">Oma Galbi</a><small>Motzstr. 28 · 한식</small></div>
@@ -640,7 +662,7 @@
             </li>
           </ul>
 
-          <p class="subhead">일요일 — 이스트 사이드 갤러리와 베르크하인을 한 번에</p>
+          <p class="subhead major">일요일 — 이스트 사이드 갤러리와 베르크하인을 한 번에</p>
           <ul class="spots">
             <li>
               <div class="pt">호텔 조식<small>일요일은 보통 11시까지</small></div>
@@ -672,28 +694,35 @@
           <p class="subhead">먹을 곳</p>
           <p style="font-size:14px;color:var(--ink-2);max-width:none;margin-bottom:14px">평점은 구글 기준, 없는 곳은 트립어드바이저(TA)·레스토랑구루(RG). <b>토요일 저녁은 예약이 사실상 필수입니다.</b></p>
 
-          <p class="subhead" style="margin-top:14px">숙소에서 걸어가는 곳 · 알렉산더플라츠·니콜라이 지구</p>
+                    <details class="fold" open>
+            <summary class="subhead">숙소에서 걸어가는 곳 · 알렉산더플라츠·니콜라이 지구<span class="cnt">2곳</span></summary>
           <ul class="eats">
             <li class="pick"><a href="https://www.google.com/maps/search/?api=1&query=Mutter%20Hoppe%20Rathausstra%C3%9Fe%2021%20Berlin" target="_blank" rel="noopener">Mutter Hoppe</a><span class="sep">·</span><span class="rt">구글 4.4</span><span class="sep">·</span>니콜라이 지구 전통 베를린 가정식. 학세·크리스피 덕이 대표고 <b>양이 아주 많습니다.</b> <b>금·토 19:30~22:30 1920~30년대 라이브</b>가 있어 토요일 저녁에 제일 맞습니다. 매일 11:30~24:00 · <b>예약 필수</b> · Rathausstr. 21 · 도보 15분</li>
             <li class="pick"><a href="https://www.google.com/maps/search/?api=1&query=Zur%20letzten%20Instanz%20Waisenstra%C3%9Fe%2014%20Berlin" target="_blank" rel="noopener">Zur letzten Instanz</a><span class="sep">·</span><span class="rt">RG 4.1 / TA 4.0</span><span class="sep">·</span><b>1621년 문 연 베를린에서 가장 오래된 식당</b>입니다. 나폴레옹이 들렀다는 집. 학세와 베를린식 불레테. <b>월요일 휴무</b>라 토·일에만 가능 · 토 12:00~01:00 · 일 12:00~22:00 · Waisenstr. 14–16 · <b>도보 10분으로 제일 가깝습니다</b></li>
           </ul>
+          </details>
 
-          <p class="subhead" style="margin-top:14px">베를린 중앙역 근처</p>
+                    <details class="fold" open>
+            <summary class="subhead">베를린 중앙역 근처<span class="cnt">3곳</span></summary>
           <ul class="eats">
             <li class="pick"><a href="https://www.google.com/maps/search/?api=1&query=Schnitzelei%20Mitte%20Chausseestra%C3%9Fe%208%20Berlin" target="_blank" rel="noopener">Schnitzelei Mitte</a><span class="sep">·</span><span class="rt">TA 4.4 · 베를린 60위</span><span class="sep">·</span>슈니첼 전문점 중 가장 평이 안정적입니다. 양이 크고 곁들임이 다양하며 글루텐프리도 있습니다. <b>예약 권장</b> · Chausseestr. 8 · 역에서 도보 15분</li>
             <li class="pick"><a href="https://www.google.com/maps/search/?api=1&query=Zollpackhof%20Elisabeth-Abegg-Stra%C3%9Fe%201%20Berlin" target="_blank" rel="noopener">Zollpackhof</a><span class="sep">·</span><span class="rt">구글 4.3</span><span class="sep">·</span>총리관저 맞은편 <b>아우구스티너 비어가르텐</b>입니다. 슈니첼·학세·구이가 기본이고 실내에 360° 벽난로가 있습니다. <b>바발리 스파와 같은 방향</b>이라 스파 전후로 붙이면 딱 맞습니다 · Elisabeth-Abegg-Str. 1 · 역에서 도보 8분</li>
             <li><a href="https://www.google.com/maps/search/?api=1&query=Restaurant%20Paris-Moskau%20Alt-Moabit%20141%20Berlin" target="_blank" rel="noopener">Paris-Moskau</a><span class="sep">·</span><span class="rt">TA 4.3 · 미슐랭 셀렉션</span><span class="sep">·</span>1898년 목조 건물에 든 파인다이닝. 1987년부터 프랑스·독일·러시아를 섞습니다. 와인 페어링 코스가 대표고 여름 정원에서 정부청사와 스카이라인이 보입니다. <b>예약 필수 · 값이 셉니다</b> · Alt-Moabit 141 · 역에서 도보 10분</li>
           </ul>
+          </details>
 
-          <p class="subhead" style="margin-top:14px">일요일 동선 근처 — 이스트 사이드 갤러리·베르크하인</p>
+                    <details class="fold" open>
+            <summary class="subhead">일요일 동선 근처 — 이스트 사이드 갤러리·베르크하인<span class="cnt">4곳</span></summary>
           <ul class="eats">
             <li class="pick"><a href="https://www.google.com/maps/search/?api=1&query=Scheers%20Schnitzel%20Warschauer%20Platz%2018%20Berlin" target="_blank" rel="noopener">Scheers Schnitzel</a><span class="sep">·</span><span class="rt">RG 4.6 / TA 4.4 · 베를린 76위</span><span class="sep">·</span><b>갤러리에서 도보 3분.</b> 맥주 박스에 앉아 종이접시로 먹는 집인데 슈니첼과 자가제 레물라드로 유명합니다. 싸고 빠릅니다 · 일~목 11:30~22:00 · 금·토 24:00까지 · Warschauer Platz 18</li>
             <li class="pick"><a href="https://www.google.com/maps/search/?api=1&query=Burgermeister%20Oberbaumstra%C3%9Fe%208%20Berlin" target="_blank" rel="noopener">Burgermeister</a><span class="sep">·</span><span class="rt">TA 4.5 · 베를린 37위</span><span class="sep">·</span><b>1920년대 공중화장실을 개조한 버거집</b>입니다. 지하철 고가 밑에 있고 <b>오버바움 다리 건너 바로</b>라 갤러리 산책 끝에 그대로 이어집니다. €10~12 · 줄은 각오하세요 · Oberbaumstr. 8</li>
             <li><a href="https://www.google.com/maps/search/?api=1&query=Katerschmaus%20Holzmarktstra%C3%9Fe%2025%20Berlin" target="_blank" rel="noopener">Katerschmaus</a><span class="sep">·</span><span class="rt">구글 4.5</span><span class="sep">·</span>홀츠마르크트 슈프레 강변, <b>베르크하인에서 도보 10분</b>. 자리와 음식은 좋은데 <b>서비스가 느리다는 평이 있습니다.</b> 예약하고 여유 있게 가세요 · Holzmarktstr. 25</li>
             <li><a href="https://www.google.com/maps/search/?api=1&query=Michelberger%20Restaurant%20Warschauer%20Stra%C3%9Fe%2039%20Berlin" target="_blank" rel="noopener">Michelberger</a><span class="sep">·</span><span class="rt">오픈테이블 4.6 / TA 4.1</span><span class="sep">·</span><b>동역 바로 앞</b>. 브란덴부르크 자체 농장 재료를 쓰는 모던 유러피언으로 <b>브런치를 매일</b> 합니다. 채식 선택지가 많습니다. 양 대비 값이 비싸다는 평 · Warschauer Str. 39–40</li>
           </ul>
+          </details>
 
-          <p class="subhead" style="margin-top:14px">명물</p>
+                    <details class="fold" open>
+            <summary class="subhead">명물<span class="cnt">5곳</span></summary>
           <ul class="eats">
             <li class="pick"><a href="https://www.google.com/maps/search/?api=1&query=Mustafa%27s%20Gem%C3%BCse%20Kebap%20Mehringdamm%2033%20Berlin" target="_blank" rel="noopener">Mustafa's Gemüse Kebap</a><span class="sep">·</span><span class="rt">Falstaff 93점</span><span class="sep">·</span>구운 야채와 페타를 넣는 베를린 케밥의 상징. <b>2025년 7월 길 건너 점포로 옮겼습니다</b> — 주소는 그대로 Mehringdamm 33이지만 <b>지하철 출구 쪽 옛 자리가 아닙니다.</b> 토 10:00~01:30 · 일 10:00~23:30 · <b>줄이 1~2시간</b></li>
             <li class="pick"><a href="https://www.google.com/maps/search/?api=1&query=R%C3%BCyam%20Gem%C3%BCse%20Kebab%20Hauptstra%C3%9Fe%20133%20Berlin" target="_blank" rel="noopener">Rüyam Gemüse Kebab</a><span class="sep">·</span><span class="rt">구글 4.9 · 리뷰 3.5만+</span><span class="sep">·</span><b>이 문서 전체에서 평점이 가장 높습니다.</b> TA로도 4.7, 베를린 26위. 무스타파의 줄을 안 서는 사람들이 가는 쇠네베르크 집입니다. <b>대기 15분.</b> <b>Oma Galbi·Woof와 같은 쇠네베르크</b>라 토요일 밤 동선에 그대로 붙습니다 · Hauptstr. 133</li>
@@ -701,6 +730,7 @@
             <li><a href="https://www.google.com/maps/search/?api=1&query=Konnopke%27s%20Imbiss%20Sch%C3%B6nhauser%20Allee%2044B%20Berlin" target="_blank" rel="noopener">Konnopke's Imbiss</a><span class="sep">·</span><span class="rt">구글 4.2</span><span class="sep">·</span>1930년부터 U2 고가 밑에서 파는 <b>동베를린식 커리부어스트</b>. 껍질 없는 <b>"ohne Darm"</b>으로 시키는 게 정석입니다. <b>일요일 휴무</b>라 토요일에만 가능 · Schönhauser Allee 44B</li>
             <li><a href="https://www.google.com/maps/search/?api=1&query=Prater%20Garten%20Kastanienallee%207%20Berlin" target="_blank" rel="noopener">Prater Garten</a><span class="sep">·</span><span class="rt">TA 4.2 · 베를린 200위</span><span class="sep">·</span><b>1837년, 베를린에서 가장 오래된 비어가르텐</b>입니다. 밤나무 아래 자리에서 <b>베를리너 바이세</b>에 시럽을 타 마시는 게 이 도시 방식. <b>콘노프케에서 도보 5분</b>이라 묶으면 한 번에 끝납니다 · Kastanienallee 7–9</li>
           </ul>
+          </details>
 
           <p class="subhead">쇼핑</p>
           <p style="font-size:14px;color:var(--ink-2);max-width:none;margin-bottom:14px"><b>독일은 일요일에 상점이 거의 다 닫습니다. 쇼핑은 토요일에 몰아서.</b></p>
@@ -754,7 +784,7 @@
             </ul>
           </div>
 
-          <p class="subhead" style="margin-top:22px">월요일 이동 경로</p>
+          <p class="subhead major" style="margin-top:22px">월요일 이동 경로</p>
           <ul class="eats">
             <li><b>중앙역 → 숙소</b><span class="sep">·</span><span class="rt">U2 · 2정거장 · 4분</span><span class="sep">·</span><b>U2 Feldmoching 방향</b>으로 Hauptbahnhof → Königsplatz(473m) → <b>Theresienstraße</b>(564m). 캐리어가 있으니 이쪽이 낫습니다. 걸으면 1.5km·18분</li>
             <li class="pick"><b>숙소 → 브로이로슬</b><span class="sep">·</span><span class="rt">환승 1회 · 12~15분</span><span class="sep">·</span><b>U2로 Hauptbahnhof</b>(2정거장, 아까 반대 방향) → <b>한 층 위로 올라가서</b> U4·U5 → <b>Theresienwiese</b>(1정거장). U4·U5 승강장은 Bayerstraße 아래라 U1·U2보다 <b>위층</b>입니다<br>걸으면 2km·25분이라 큰 차이는 없습니다</li>
@@ -763,12 +793,14 @@
             <li class="pick"><b>새벽 2시 · 숙소로</b><span class="sep">·</span><span class="rt">도보 30분 또는 N27</span><span class="sep">·</span><b>1일권이 06:00까지 유효하니 요금은 이미 냈습니다.</b> 문제는 배차입니다 — 평일 나이트라인은 <b>01:30·02:30·03:30·04:30 한 시간 간격</b>. <b>N27이 뮐러슈트라세에 섭니다</b><br>02:00에 나오면 다음 차까지 30분 대기라 <b>걷는 게 빠릅니다</b>(2.4km). 타려면 <b>02:20쯤 나와서</b> 슈타후스 환승. 나오기 전에 <b>MVGO로 다음 차를 보고 결정</b>하세요</li>
           </ul>
 
-          <p class="subhead" style="margin-top:22px">숙소 근처 이른 저녁 · 막스포어슈타트</p>
+                    <details class="fold" open>
+            <summary class="subhead">숙소 근처 이른 저녁 · 막스포어슈타트<span class="cnt">2곳</span></summary>
           <p style="font-size:14px;color:var(--ink-2);max-width:none;margin-bottom:14px"><b>텐트에서 제대로 먹으면 2인 €60~80</b>입니다(헨들 €15~18, 학세 €19~24). 숙소가 <b>LMU 대학가 한복판</b>이라 셸링·튀르켄 거리에 싼 집이 <b>도보 5~8분</b>에 몰려 있으니 여기서 배를 채우고 가세요. <b>빈속에 마스 2~3리터를 마시는 것보다 안전하기도 합니다.</b></p>
           <ul class="eats">
             <li class="pick"><a href="https://www.google.com/maps/search/?api=1&query=The%20Italian%20Shot%20Theresienstra%C3%9Fe%2040%20M%C3%BCnchen" target="_blank" rel="noopener">The Italian Shot</a><span class="sep">·</span><span class="rt">Maxvorstadt 지점</span><span class="sep">·</span>나폴리식 피자와 파스타. 피자 12종 이상에 채식 옵션도 있습니다. <b>월~일 12:00~01:00</b> · <b>Theresienstr. 40 — 숙소(70번지)와 같은 거리</b>, 도보 5분 · 20시부터 붐빔</li>
             <li><a href="https://www.google.com/maps/search/?api=1&query=Lezizel%20Manti%20Schellingstra%C3%9Fe%2048%20M%C3%BCnchen" target="_blank" rel="noopener">Lezizel Manti</a><span class="sep">·</span><span class="rt">약 4.5</span><span class="sep">·</span>터키식 만두 만트. <b>월~목 11:00~22:00</b>이라 월요일에 엽니다 · Schellingstr. 48 · <b>평점은 다른 지점 기준이라 셸링가 지점은 가기 전 확인</b></li>
           </ul>
+          </details>
 
           <p class="subhead" style="margin-top:22px">월요일 · 로젤몬탁</p>
                     <p style="font-size:14.5px;color:var(--ink-2)"><b>2026년부터 새로 생긴 날이고, 하필 두 분이 뮌헨에 있는 그 월요일입니다.</b> 40년 넘은 로자 존탁(9/20 일, 8,000명)이 자리가 모자라 월요일로 연장됐습니다. 주최는 로자 존탁과 같은 MLC 뮌헨.</p>
@@ -816,14 +848,16 @@
             <li class="pick"><b>화 저녁</b><span class="sep">·</span><span class="rt">기차에서 · 중앙역에서 조달</span><span class="sep">·</span>16:48~21:25 <b>4시간 37분</b>을 기차에서 씁니다. <b>16:15에 중앙역 도착하니 30분 안에 사서 타세요.</b> 취리히 환승이라 식당칸을 믿기 어렵습니다</li>
           </ul>
 
-          <p class="subhead" style="margin-top:26px">화요일 오전 · 뮌헨 시내</p>
-          <p class="subhead">화요일 아침 · 숙소 근처</p>
+          <p class="subhead major" style="margin-top:26px">화요일 오전 · 뮌헨 시내</p>
+                    <details class="fold" open>
+            <summary class="subhead">화요일 아침 · 숙소 근처<span class="cnt">3곳</span></summary>
           <p style="font-size:14px;color:var(--ink-2);max-width:none;margin-bottom:14px">숙소가 에어비앤비라 조식이 없습니다. 그런데 <b>막스포어슈타트 카페는 대부분 09:00~10:00에 엽니다</b> — 09:00 출발이면 아래 두 곳 정도만 됩니다. 빵집(Bäckerei)은 06~07시에 여니 급하면 그쪽으로.</p>
           <ul class="eats">
             <li class="pick"><a href="https://www.google.com/maps/search/?api=1&query=Pavesi%20Caff%C3%A9%20T%C3%BCrkenstra%C3%9Fe%2067%20M%C3%BCnchen" target="_blank" rel="noopener">Pavesi Caffé</a><span class="sep">·</span><span class="rt">구글 4.3 · 리뷰 304</span><span class="sep">·</span><b>월~금 07:30</b>에 열어 이 동네에서 가장 이릅니다. 에스프레소·샌드위치·생과일주스 · 원두는 난니니, 빵은 율리우스 브란트너 · Türkenstr. 67</li>
             <li class="pick"><a href="https://www.google.com/maps/search/?api=1&query=Morso%20Museo%20Theresienstra%C3%9Fe%2035%20M%C3%BCnchen" target="_blank" rel="noopener">Morso Museo</a><span class="sep">·</span><span class="rt">RG 4.1</span><span class="sep">·</span><b>매일 08:00~20:00</b> · <b>Theresienstr. 35 — 숙소와 같은 거리</b>입니다. 시칠리아식으로 <b>직접 만드는 코르네토</b>와 모악 원두 커피. 아침은 14시까지</li>
             <li><a href="https://www.google.com/maps/search/?api=1&query=Cafe%20Joon%20Theresienstra%C3%9Fe%20114%20M%C3%BCnchen" target="_blank" rel="noopener">Café Joon</a><span class="sep">·</span><span class="rt">구글 4.5 · 리뷰 1,600+</span><span class="sep">·</span><b>이 동네 최고 평점</b>인데 <b>09:00 개점</b>이라 출발을 09:30으로 미뤄야 갈 수 있습니다. 팬케이크·아보카도 오픈샌드위치·뮈슬리 · TUM 옆이라 아침에도 붐빕니다 · Theresienstr. 114</li>
           </ul>
+          </details>
 
           <p class="subhead">오전 코스 · 09:00 출발 기준</p>
           <p style="font-size:14.5px;color:var(--ink-2)"><b>09:20</b> 아이스바흐 서핑 → <b>09:50</b> 모노프테로스 → <b>10:15</b> 오데온 광장 → <b>11:00</b> 인형극 → 프라우엔키르헤 → <b>11:45</b> 알터 페터(€5) → <b>12:20</b> 빅투알리엔 점심 → <b>13:30</b> 아잠교회 → 숙소에서 짐 → 역</p>
@@ -835,7 +869,8 @@
             <li class="pick"><a href="https://www.google.com/maps/search/?api=1&query=Asamkirche%20Sendlinger%20Stra%C3%9Fe%2032%20M%C3%BCnchen" target="_blank" rel="noopener">아잠교회</a><span class="sep">·</span><span class="rt">무료</span><span class="sep">·</span>아삼 형제가 자기 집 옆에 자기 돈으로 지은 <b>로코코 개인 성당</b>. 작아서 <b>15분</b>인데 밀도가 압도적입니다. 4~10월 <b>09:00~19:00</b>(금요일만 13:00부터) · <b>미사 중엔 입장 불가</b> · Sendlinger Str. 32 — 마리엔플라츠에서 역·글로켄바흐 방향 길목입니다</li>
           </ul>
 
-          <p class="subhead">빅투알리엔에서 뭘 먹나</p>
+                    <details class="fold" open>
+            <summary class="subhead">빅투알리엔에서 뭘 먹나<span class="cnt">4곳</span></summary>
           <p style="font-size:14.5px;color:var(--ink-2)">월~토 08:00~20:00 · 화요일이라 다 엽니다(월요일 휴무 점포가 꽤 있습니다).</p>
           <ul class="eats">
             <li class="pick"><a href="https://www.google.com/maps/search/?api=1&query=Caspar%20Plautz%20Viktualienmarkt%20M%C3%BCnchen" target="_blank" rel="noopener">카스파 플라우츠</a><span class="sep">·</span><span class="rt">€7.50~</span><span class="sep">·</span>구운 감자에 생채소와 토핑. <b>감자 20여 품종</b>을 거의 다 바이에른에서 받습니다. 시장에서 현지인이 제일 많이 가는 집 · <b>Abt. III, Stand 38</b> · <b>12:30~14:00은 20분 줄</b>이니 피하세요</li>
@@ -843,6 +878,7 @@
             <li><a href="https://www.google.com/maps/search/?api=1&query=Viktualienmarkt%20M%C3%BCnchen" target="_blank" rel="noopener">레버케제제멜</a><span class="sep">·</span><span class="rt">€3</span><span class="sep">·</span>따뜻한 레버케제를 빵에 끼우고 단맛 겨자. <b>뮌헨 최고 가성비</b>고 시간 제약이 없습니다. <b>바이스부어스트는 “정오 종소리를 들으면 안 된다”</b>는 규칙이 있어 12시 넘으면 이쪽으로</li>
             <li><a href="https://www.google.com/maps/search/?api=1&query=Caf%C3%A9%20Frischhut%20Pr%C3%A4lat-Zistl-Stra%C3%9Fe%208%20M%C3%BCnchen" target="_blank" rel="noopener">카페 프리슈후트</a><span class="sep">·</span><span class="rt">€3.20 · 현금만</span><span class="sep">·</span>1973년부터. 현지인은 가게 이름 대신 <b>“슈말츠누델”</b>이라 부릅니다. 라드에 튀긴 이스트 반죽에 설탕, <b>눈앞에서 튀겨줍니다</b> · 시장 바로 밖 Prälat-Zistl-Str. 8 · 일요일 휴무</li>
           </ul>
+          </details>
           <div class="plans">
             <div class="plan pick">
               <h4>인형극은 11시 <span class="cond">추천</span></h4>
@@ -879,7 +915,7 @@
             </ul>
           </div>
 
-          <p class="subhead">화요일 밤 · 도착</p>
+          <p class="subhead major">화요일 밤 · 도착</p>
           <ul class="checks">
             <li class="hot"><b>체크인은 숙소가 아니라 호텔에서</b> — 메인 건물인 <a href="https://www.google.com/maps/search/?api=1&query=Hotel%20Luzernerhof%20Alpenstrasse%203%206004%20Luzern" target="_blank" rel="noopener">호텔 루체르너호프</a>(<b>Alpenstrasse 3</b>, <b>041 418 47 47</b>)에서 받습니다. 숙소로 바로 가면 안 됩니다</li>
             <li><b>역 → 호텔 도보 7~10분</b>(600~800m) — 반호프플라츠에서 <b>제브뤼케 다리</b>를 건너 호수 북안을 따라 오른쪽 알펜슈트라세로. 21:25 도착이면 <b>21:45쯤 체크인</b>입니다</li>
@@ -891,7 +927,7 @@
             <li>루체른역 → 숙소 경로를 미리 봐두세요. 밤에 처음 가는 길입니다</li>
           </ul>
 
-          <p class="subhead" id="d23" style="margin-top:26px">수요일 · 리기 → 골든패스 → 베른</p>
+          <p class="subhead major" id="d23" style="margin-top:26px">수요일 · 리기 → 골든패스 → 베른</p>
           <p class="subhead" style="margin-top:20px">선택 1 · 올라갈 때</p>
           <div class="scroll">
             <table style="min-width:560px">
@@ -1059,13 +1095,13 @@
               <li>밤 <em>짐 완전히 싸두기. 내일 07:20 출발</em></li>
             </ul>
           </div>
-          <p class="subhead">오전 · 아직 그린델발트</p>
+          <p class="subhead major">오전 · 아직 그린델발트</p>
           <ul class="checks">
             <li class="hot"><b>1 · 피르스트</b> <span class="walk">15분~2시간</span> — 어제 못 했으면 오늘 오전이 마지막 기회입니다</li>
             <li class="hot"><b>2 · 멘리헨 → 클라이네 샤이덱</b> <span class="walk mid">3시간</span> — 어제 피르스트를 했으면 오늘 이걸로. 둘 다 살립니다</li>
             <li><b>3 · 빙하 협곡 / 프핑스텍</b> <span class="walk">1~2시간</span> — 짧게 하나만</li>
           </ul>
-          <p class="subhead">오후 · 인터라켄 복귀 후</p>
+          <p class="subhead major">오후 · 인터라켄 복귀 후</p>
           <ul class="checks">
             <li><b>4 · 뮈렌 · 김멜발트</b> <span class="walk">반나절</span> — 트뤼멜바흐를 붙이면 하나로 이어집니다</li>
             <li><b>5 · 튠 호수 / 브리엔츠 호수</b> <span class="walk">반나절</span> — 앉아 있는 게 전부라 마지막 날에 부담이 없습니다</li>
