@@ -376,18 +376,67 @@
   .subhead.major::before { width: 5px; height: 17px; background: var(--accent); }
   .subhead:first-child { margin-top: 0; }
 
-  /* 접었다 펴는 목록 */
-  details.fold { margin: 22px 0 9px; }
-  details.fold > summary { list-style: none; cursor: pointer; margin: 0 0 9px; }
-  details.fold > summary::-webkit-details-marker { display: none; }
-  details.fold > summary .cnt {
-    margin-left: auto; padding-left: 10px; font-size: 12px; font-weight: 500;
-    color: var(--ink-3); white-space: nowrap;
+  /* 타임라인: 요일 · 시각 · 배지 · 내용 */
+  .tl { list-style: none; margin: 0; padding: 0; }
+  .tl li {
+    display: grid; grid-template-columns: 1.9em 4.4em auto 1fr; gap: 8px;
+    align-items: baseline; padding: 8px 0; border-top: 1px solid var(--rule);
   }
-  details.fold > summary .cnt::after { content: " \25BE"; }
-  details.fold[open] > summary .cnt::after { content: " \25B4"; }
-  details.fold > summary:hover { color: var(--accent); }
-  details.fold > *:last-child { margin-bottom: 0; }
+  .tl li:first-child { border-top: none; padding-top: 2px; }
+  .tl li:last-child { padding-bottom: 2px; }
+  .tl .d {
+    font-family: var(--mono); font-size: 11.5px; font-weight: 600; text-align: center;
+    padding: 1px 0; border-radius: 3px; background: var(--accent); color: var(--surface);
+  }
+  .tl .d:empty { background: none; }
+  .tl .t {
+    font-family: var(--mono); font-size: 13.5px; font-weight: 600; color: var(--ink);
+    font-variant-numeric: tabular-nums; white-space: nowrap;
+  }
+  .tl .c { font-size: 13.5px; color: var(--ink-2); line-height: 1.5; }
+  .tl .c b { color: var(--ink); font-weight: 600; }
+  .cat {
+    display: inline-block; padding: 1.5px 7px; border-radius: 3px;
+    font-size: 11px; font-weight: 600; white-space: nowrap; letter-spacing: .01em;
+  }
+  .cat-move { background: var(--accent-soft); color: var(--accent); }
+  .cat-eat  { background: var(--attention-bg); color: var(--attention); }
+  .cat-see  { background: var(--settled-bg); color: var(--settled); }
+  .cat-stay { background: var(--surface); color: var(--ink-2); border: 1px solid var(--rule-strong); }
+  .cat-buy  { background: var(--critical-bg); color: var(--critical); }
+  @media (max-width: 620px) {
+    .tl li { grid-template-columns: 1.9em 4.4em 1fr; row-gap: 4px; }
+    .tl .cat { justify-self: start; }
+    .tl .c { grid-column: 2 / -1; }
+  }
+
+  /* 접었다 펴는 목록 */
+  details.fold {
+    margin: 22px 0 12px; border: 1px solid var(--rule); border-radius: 5px;
+    background: var(--surface); overflow: hidden;
+  }
+  details.fold > summary {
+    list-style: none; cursor: pointer; margin: 0; padding: 11px 14px;
+    display: flex; align-items: center; gap: 9px;
+    font-size: 13.5px; font-weight: 600; color: var(--ink);
+    background: var(--surface-2); transition: background .12s;
+  }
+  details.fold > summary::-webkit-details-marker { display: none; }
+  details.fold > summary::before {
+    content: ""; flex: none; width: 6px; height: 6px;
+    border-right: 2px solid var(--accent); border-bottom: 2px solid var(--accent);
+    transform: rotate(-45deg); transition: transform .15s; margin-right: 1px;
+  }
+  details.fold[open] > summary::before { transform: rotate(45deg); }
+  details.fold > summary:hover { background: var(--accent-soft); }
+  details.fold > summary .cnt {
+    margin-left: auto; font-size: 11.5px; font-weight: 600; white-space: nowrap;
+    color: var(--accent); background: var(--surface); border: 1px solid var(--rule-strong);
+    border-radius: 3px; padding: 1px 7px;
+  }
+  details.fold[open] > summary { border-bottom: 1px solid var(--rule); }
+  details.fold > *:not(summary) { margin: 12px 14px; }
+  details.fold ul.eats { margin: 12px 14px; }
 
   /* ---------- prep ---------- */
 
@@ -536,14 +585,14 @@
 
           <div class="anchor">
             <span class="lbl">고정</span>
-            <ul>
-              <li>17:40 <em>공항 도착 — EES 생체등록으로 심사가 길어집니다</em></li>
-              <li>19:30~20:30 <em>숙소 도착 예상</em></li>
-              <li>내일 05:45 <em>역 도착 (06:15 기차)</em></li>
+            <ul class="tl">
+              <li><span class="d"></span><span class="t">17:40</span><span class="cat cat-move">이동</span><div class="c"><b>공항 도착</b> — EES 생체등록으로 심사가 길어집니다</div></li>
+              <li><span class="d"></span><span class="t">19:30</span><span class="cat cat-stay">숙소</span><div class="c">숙소 도착 예상 (~20:30)</div></li>
+              <li><span class="d">내일</span><span class="t">05:45</span><span class="cat cat-move">이동</span><div class="c">역 도착 · <b>06:15 기차</b></div></li>
             </ul>
           </div>
 
-          <p class="subhead">거점과 이동</p>
+          <p class="subhead">🚇 거점과 이동</p>
           <ul class="spots">
             <li>
               <div class="pt"><a href="https://www.google.com/maps/search/?api=1&query=Frankfurt%20Flughafen%20Regionalbahnhof%20Terminal%201" target="_blank" rel="noopener">공항 터미널 1 지하</a><small>Regionalbahnhof 승강장 1–3 · ICE용 Fernbahnhof와 다른 역</small></div>
@@ -563,8 +612,8 @@
             </li>
           </ul>
 
-                    <details class="fold" open>
-            <summary class="subhead">저녁 후보 · 금요일이라 다섯 곳 다 영업합니다<span class="cnt">5곳</span></summary>
+                    <details class="fold">
+            <summary>🍽️ 저녁 후보 · 금요일이라 다섯 곳 다 영업합니다<span class="cnt">5곳</span></summary>
           <p style="font-size:14px;color:var(--ink-2);max-width:none;margin-bottom:14px">숙소 동네인 <b>바안호프스피어텔에는 독일 음식이 거의 없습니다.</b> 베트남·터키·인도·중국이 몰린 “리틀 아시아”라 독일 음식은 조금 움직여야 하고, <b>아시아 쪽은 전부 도보 5분 안</b>입니다.</p>
           <ul class="eats">
             <li class="pick"><a href="https://www.google.com/maps/search/?api=1&query=Klosterhof%20Windm%C3%BChlstrasse%2014%20Frankfurt" target="_blank" rel="noopener">Klosterhof</a><span class="sep">·</span><span class="rt">구글 4.2</span><span class="sep">·</span><b>걸어서 갈 수 있는 유일한 독일 식당.</b> 맥주홀 겸 식당으로 슈니첼·슈바인학세·그뤼네 조세. <b>주방 23:00까지</b> · 069 97390650 · Windmühlstr. 14 · 도보 5~8분</li>
@@ -594,14 +643,14 @@
 
           <div class="anchor">
             <span class="lbl">고정</span>
-            <ul>
-              <li>토 10:23 <em>베를린 중앙역 도착</em></li>
-              <li>토 · 일 <em>24시간권 각각 1장씩 — 1장으로는 월요일 기차를 못 탑니다</em></li>
-              <li>월 09:45 <em>숙소 출발 (10:37 기차, 중앙역 지하 플랫폼)</em></li>
+            <ul class="tl">
+              <li><span class="d">토</span><span class="t">10:23</span><span class="cat cat-move">이동</span><div class="c"><b>베를린 중앙역 도착</b></div></li>
+              <li><span class="d">토·일</span><span class="t"></span><span class="cat cat-buy">준비</span><div class="c"><b>24시간권 각각 1장씩</b> — 1장으로는 월요일 기차를 못 탑니다</div></li>
+              <li><span class="d">월</span><span class="t">09:45</span><span class="cat cat-move">이동</span><div class="c">숙소 출발 · 10:37 기차, <b>중앙역 지하 플랫폼</b></div></li>
             </ul>
           </div>
 
-          <p class="subhead major">토요일 낮 — 100번은 <b>서쪽에서 동쪽으로</b> 타세요</p>
+          <p class="subhead major">☀️ 토요일 낮 — 100번은 <b>서쪽에서 동쪽으로</b> 타세요</p>
           <p style="font-size:14px;color:var(--ink-2);max-width:none;margin-bottom:14px"><b>U반으로 동물원역까지 먼저 가서 거꾸로 타고 돌아오세요.</b> 동물원역이 <b>기점</b>이라 2층 앞자리를 잡을 수 있고, 관광지를 순서대로 지나 마지막에 숙소에 내립니다. 24시간권이라 <b>몇 번을 타고 내려도 추가 요금이 없습니다.</b></p>
           <ul class="spots">
             <li>
@@ -646,7 +695,7 @@
             </li>
           </ul>
 
-          <p class="subhead major">토요일 밤 — Woof는 자정부터가 본편입니다</p>
+          <p class="subhead major">🌙 토요일 밤 — Woof는 자정부터가 본편입니다</p>
           <ul class="spots">
             <li>
               <div class="pt"><a href="https://www.google.com/maps/search/?api=1&query=Oma%20Galbi%20Motzstrasse%2028%20Berlin" target="_blank" rel="noopener">Oma Galbi</a><small>Motzstr. 28 · 한식</small></div>
@@ -662,7 +711,7 @@
             </li>
           </ul>
 
-          <p class="subhead major">일요일 — 이스트 사이드 갤러리와 베르크하인을 한 번에</p>
+          <p class="subhead major">☀️ 일요일 — 이스트 사이드 갤러리와 베르크하인을 한 번에</p>
           <ul class="spots">
             <li>
               <div class="pt">호텔 조식<small>일요일은 보통 11시까지</small></div>
@@ -678,7 +727,7 @@
             </li>
           </ul>
 
-          <p class="subhead">더 갈 만한 곳</p>
+          <p class="subhead">📍 더 갈 만한 곳</p>
           <div class="plans">
             <div class="plan pick">
               <h4><a href="https://www.google.com/maps/search/?api=1&query=Park%20Inn%20Alexanderplatz%20Panoramaterrasse%20Berlin" target="_blank" rel="noopener">파크인 옥상 전망대</a> <span class="cond">숙소 앞 · €6</span></h4>
@@ -691,19 +740,19 @@
             </div>
           </div>
 
-          <p class="subhead">먹을 곳</p>
+          <p class="subhead">🍽️ 먹을 곳</p>
           <p style="font-size:14px;color:var(--ink-2);max-width:none;margin-bottom:14px">평점은 구글 기준, 없는 곳은 트립어드바이저(TA)·레스토랑구루(RG). <b>토요일 저녁은 예약이 사실상 필수입니다.</b></p>
 
-                    <details class="fold" open>
-            <summary class="subhead">숙소에서 걸어가는 곳 · 알렉산더플라츠·니콜라이 지구<span class="cnt">2곳</span></summary>
+                    <details class="fold">
+            <summary>🍽️ 숙소에서 걸어가는 곳 · 알렉산더플라츠·니콜라이 지구<span class="cnt">2곳</span></summary>
           <ul class="eats">
             <li class="pick"><a href="https://www.google.com/maps/search/?api=1&query=Mutter%20Hoppe%20Rathausstra%C3%9Fe%2021%20Berlin" target="_blank" rel="noopener">Mutter Hoppe</a><span class="sep">·</span><span class="rt">구글 4.4</span><span class="sep">·</span>니콜라이 지구 전통 베를린 가정식. 학세·크리스피 덕이 대표고 <b>양이 아주 많습니다.</b> <b>금·토 19:30~22:30 1920~30년대 라이브</b>가 있어 토요일 저녁에 제일 맞습니다. 매일 11:30~24:00 · <b>예약 필수</b> · Rathausstr. 21 · 도보 15분</li>
             <li class="pick"><a href="https://www.google.com/maps/search/?api=1&query=Zur%20letzten%20Instanz%20Waisenstra%C3%9Fe%2014%20Berlin" target="_blank" rel="noopener">Zur letzten Instanz</a><span class="sep">·</span><span class="rt">RG 4.1 / TA 4.0</span><span class="sep">·</span><b>1621년 문 연 베를린에서 가장 오래된 식당</b>입니다. 나폴레옹이 들렀다는 집. 학세와 베를린식 불레테. <b>월요일 휴무</b>라 토·일에만 가능 · 토 12:00~01:00 · 일 12:00~22:00 · Waisenstr. 14–16 · <b>도보 10분으로 제일 가깝습니다</b></li>
           </ul>
           </details>
 
-                    <details class="fold" open>
-            <summary class="subhead">베를린 중앙역 근처<span class="cnt">3곳</span></summary>
+                    <details class="fold">
+            <summary>🍽️ 베를린 중앙역 근처<span class="cnt">3곳</span></summary>
           <ul class="eats">
             <li class="pick"><a href="https://www.google.com/maps/search/?api=1&query=Schnitzelei%20Mitte%20Chausseestra%C3%9Fe%208%20Berlin" target="_blank" rel="noopener">Schnitzelei Mitte</a><span class="sep">·</span><span class="rt">TA 4.4 · 베를린 60위</span><span class="sep">·</span>슈니첼 전문점 중 가장 평이 안정적입니다. 양이 크고 곁들임이 다양하며 글루텐프리도 있습니다. <b>예약 권장</b> · Chausseestr. 8 · 역에서 도보 15분</li>
             <li class="pick"><a href="https://www.google.com/maps/search/?api=1&query=Zollpackhof%20Elisabeth-Abegg-Stra%C3%9Fe%201%20Berlin" target="_blank" rel="noopener">Zollpackhof</a><span class="sep">·</span><span class="rt">구글 4.3</span><span class="sep">·</span>총리관저 맞은편 <b>아우구스티너 비어가르텐</b>입니다. 슈니첼·학세·구이가 기본이고 실내에 360° 벽난로가 있습니다. <b>바발리 스파와 같은 방향</b>이라 스파 전후로 붙이면 딱 맞습니다 · Elisabeth-Abegg-Str. 1 · 역에서 도보 8분</li>
@@ -711,8 +760,8 @@
           </ul>
           </details>
 
-                    <details class="fold" open>
-            <summary class="subhead">일요일 동선 근처 — 이스트 사이드 갤러리·베르크하인<span class="cnt">4곳</span></summary>
+                    <details class="fold">
+            <summary>🍽️ 일요일 동선 근처 — 이스트 사이드 갤러리·베르크하인<span class="cnt">4곳</span></summary>
           <ul class="eats">
             <li class="pick"><a href="https://www.google.com/maps/search/?api=1&query=Scheers%20Schnitzel%20Warschauer%20Platz%2018%20Berlin" target="_blank" rel="noopener">Scheers Schnitzel</a><span class="sep">·</span><span class="rt">RG 4.6 / TA 4.4 · 베를린 76위</span><span class="sep">·</span><b>갤러리에서 도보 3분.</b> 맥주 박스에 앉아 종이접시로 먹는 집인데 슈니첼과 자가제 레물라드로 유명합니다. 싸고 빠릅니다 · 일~목 11:30~22:00 · 금·토 24:00까지 · Warschauer Platz 18</li>
             <li class="pick"><a href="https://www.google.com/maps/search/?api=1&query=Burgermeister%20Oberbaumstra%C3%9Fe%208%20Berlin" target="_blank" rel="noopener">Burgermeister</a><span class="sep">·</span><span class="rt">TA 4.5 · 베를린 37위</span><span class="sep">·</span><b>1920년대 공중화장실을 개조한 버거집</b>입니다. 지하철 고가 밑에 있고 <b>오버바움 다리 건너 바로</b>라 갤러리 산책 끝에 그대로 이어집니다. €10~12 · 줄은 각오하세요 · Oberbaumstr. 8</li>
@@ -721,8 +770,8 @@
           </ul>
           </details>
 
-                    <details class="fold" open>
-            <summary class="subhead">명물<span class="cnt">5곳</span></summary>
+                    <details class="fold">
+            <summary>🌭 명물<span class="cnt">5곳</span></summary>
           <ul class="eats">
             <li class="pick"><a href="https://www.google.com/maps/search/?api=1&query=Mustafa%27s%20Gem%C3%BCse%20Kebap%20Mehringdamm%2033%20Berlin" target="_blank" rel="noopener">Mustafa's Gemüse Kebap</a><span class="sep">·</span><span class="rt">Falstaff 93점</span><span class="sep">·</span>구운 야채와 페타를 넣는 베를린 케밥의 상징. <b>2025년 7월 길 건너 점포로 옮겼습니다</b> — 주소는 그대로 Mehringdamm 33이지만 <b>지하철 출구 쪽 옛 자리가 아닙니다.</b> 토 10:00~01:30 · 일 10:00~23:30 · <b>줄이 1~2시간</b></li>
             <li class="pick"><a href="https://www.google.com/maps/search/?api=1&query=R%C3%BCyam%20Gem%C3%BCse%20Kebab%20Hauptstra%C3%9Fe%20133%20Berlin" target="_blank" rel="noopener">Rüyam Gemüse Kebab</a><span class="sep">·</span><span class="rt">구글 4.9 · 리뷰 3.5만+</span><span class="sep">·</span><b>이 문서 전체에서 평점이 가장 높습니다.</b> TA로도 4.7, 베를린 26위. 무스타파의 줄을 안 서는 사람들이 가는 쇠네베르크 집입니다. <b>대기 15분.</b> <b>Oma Galbi·Woof와 같은 쇠네베르크</b>라 토요일 밤 동선에 그대로 붙습니다 · Hauptstr. 133</li>
@@ -732,7 +781,7 @@
           </ul>
           </details>
 
-          <p class="subhead">쇼핑</p>
+          <p class="subhead">🛍️ 쇼핑</p>
           <p style="font-size:14px;color:var(--ink-2);max-width:none;margin-bottom:14px"><b>독일은 일요일에 상점이 거의 다 닫습니다. 쇼핑은 토요일에 몰아서.</b></p>
           <div class="plans">
             <div class="plan pick">
@@ -764,27 +813,27 @@
 
           <div class="anchor">
             <span class="lbl">고정</span>
-            <ul>
-              <li><b>월</b> 09:45 <em>베를린 숙소 출발 — 중앙역 지하 플랫폼까지 여유 포함</em></li>
-              <li><b>월</b> 10:37 <em>베를린 출발</em> · 14:46 <em>뮌헨 도착</em></li>
-              <li><b>월</b> 15:00~ <em>로젤몬탁 시작 (브로이로슬) — 행사 시각</em></li>
-              <li><b>화</b> 16:15 <em>뮌헨 중앙역 도착 — 27–36번 승강장까지 10~15분</em></li>
-              <li><b>화</b> 16:48 <em>출발</em> · 21:25 <em>루체른 도착</em></li>
+            <ul class="tl">
+              <li><span class="d">월</span><span class="t">09:45</span><span class="cat cat-move">이동</span><div class="c">베를린 숙소 출발 — 중앙역 지하 플랫폼까지 여유 포함</div></li>
+              <li><span class="d">월</span><span class="t">10:37</span><span class="cat cat-move">이동</span><div class="c">베를린 출발 → <b>14:46 뮌헨 도착</b></div></li>
+              <li><span class="d">월</span><span class="t">15:00~</span><span class="cat cat-see">축제</span><div class="c"><b>로젤몬탁 시작</b> (브로이로슬) — 행사 시각</div></li>
+              <li><span class="d">화</span><span class="t">16:15</span><span class="cat cat-move">이동</span><div class="c">뮌헨 중앙역 도착 — <b>32번 승강장까지 10~15분</b></div></li>
+              <li><span class="d">화</span><span class="t">16:48</span><span class="cat cat-move">이동</span><div class="c">뮌헨 출발 → <b>21:25 루체른 도착</b></div></li>
             </ul>
           </div>
 
           <div class="anchor loose">
             <span class="lbl">계획</span>
-            <ul>
-              <li>15:10 <em>숙소에 짐 — 축제장은 큰 가방 반입 금지라 사실상 강제</em></li>
-              <li>15:20~16:10 <em>숙소 근처에서 이른 저녁</em></li>
-              <li>16:30 <em>브로이로슬 — 17시 예약 교대 전에 들어갑니다</em></li>
-              <li>19:00 <em>텐트에서 나옴 → 바바리아 동상(20:00 마감) → 대관람차</em></li>
-              <li>01:30 <em>글로켄바흐에서 출발 → 02:00 취침</em></li>
+            <ul class="tl">
+              <li><span class="d">월</span><span class="t">15:10</span><span class="cat cat-stay">숙소</span><div class="c">숙소에 짐 — 축제장은 <b>큰 가방 반입 금지</b></div></li>
+              <li><span class="d">월</span><span class="t">15:20</span><span class="cat cat-eat">식사</span><div class="c">숙소 근처에서 이른 저녁 (~16:10)</div></li>
+              <li><span class="d">월</span><span class="t">16:30</span><span class="cat cat-see">축제</span><div class="c"><b>브로이로슬</b> — 17시 예약 교대 전에 들어갑니다</div></li>
+              <li><span class="d">월</span><span class="t">19:00</span><span class="cat cat-see">관광</span><div class="c">텐트에서 나옴 → 바바리아 동상(20:00 마감) → 대관람차</div></li>
+              <li><span class="d">화</span><span class="t">01:30</span><span class="cat cat-move">이동</span><div class="c">글로켄바흐에서 출발 → <b>02:00 취침</b></div></li>
             </ul>
           </div>
 
-          <p class="subhead major" style="margin-top:22px">월요일 이동 경로</p>
+          <p class="subhead major" style="margin-top:22px">🚇 월요일 이동 경로</p>
           <ul class="eats">
             <li><b>중앙역 → 숙소</b><span class="sep">·</span><span class="rt">U2 · 2정거장 · 4분</span><span class="sep">·</span><b>U2 Feldmoching 방향</b>으로 Hauptbahnhof → Königsplatz(473m) → <b>Theresienstraße</b>(564m). 캐리어가 있으니 이쪽이 낫습니다. 걸으면 1.5km·18분</li>
             <li class="pick"><b>숙소 → 브로이로슬</b><span class="sep">·</span><span class="rt">환승 1회 · 12~15분</span><span class="sep">·</span><b>U2로 Hauptbahnhof</b>(2정거장, 아까 반대 방향) → <b>한 층 위로 올라가서</b> U4·U5 → <b>Theresienwiese</b>(1정거장). U4·U5 승강장은 Bayerstraße 아래라 U1·U2보다 <b>위층</b>입니다<br>걸으면 2km·25분이라 큰 차이는 없습니다</li>
@@ -793,8 +842,8 @@
             <li class="pick"><b>새벽 2시 · 숙소로</b><span class="sep">·</span><span class="rt">도보 30분 또는 N27</span><span class="sep">·</span><b>1일권이 06:00까지 유효하니 요금은 이미 냈습니다.</b> 문제는 배차입니다 — 평일 나이트라인은 <b>01:30·02:30·03:30·04:30 한 시간 간격</b>. <b>N27이 뮐러슈트라세에 섭니다</b><br>02:00에 나오면 다음 차까지 30분 대기라 <b>걷는 게 빠릅니다</b>(2.4km). 타려면 <b>02:20쯤 나와서</b> 슈타후스 환승. 나오기 전에 <b>MVGO로 다음 차를 보고 결정</b>하세요</li>
           </ul>
 
-                    <details class="fold" open>
-            <summary class="subhead">숙소 근처 이른 저녁 · 막스포어슈타트<span class="cnt">2곳</span></summary>
+                    <details class="fold">
+            <summary>🍽️ 숙소 근처 이른 저녁 · 막스포어슈타트<span class="cnt">2곳</span></summary>
           <p style="font-size:14px;color:var(--ink-2);max-width:none;margin-bottom:14px"><b>텐트에서 제대로 먹으면 2인 €60~80</b>입니다(헨들 €15~18, 학세 €19~24). 숙소가 <b>LMU 대학가 한복판</b>이라 셸링·튀르켄 거리에 싼 집이 <b>도보 5~8분</b>에 몰려 있으니 여기서 배를 채우고 가세요. <b>빈속에 마스 2~3리터를 마시는 것보다 안전하기도 합니다.</b></p>
           <ul class="eats">
             <li class="pick"><a href="https://www.google.com/maps/search/?api=1&query=The%20Italian%20Shot%20Theresienstra%C3%9Fe%2040%20M%C3%BCnchen" target="_blank" rel="noopener">The Italian Shot</a><span class="sep">·</span><span class="rt">Maxvorstadt 지점</span><span class="sep">·</span>나폴리식 피자와 파스타. 피자 12종 이상에 채식 옵션도 있습니다. <b>월~일 12:00~01:00</b> · <b>Theresienstr. 40 — 숙소(70번지)와 같은 거리</b>, 도보 5분 · 20시부터 붐빔</li>
@@ -802,11 +851,11 @@
           </ul>
           </details>
 
-          <p class="subhead" style="margin-top:22px">월요일 · 로젤몬탁</p>
+          <p class="subhead" style="margin-top:22px">🍺 월요일 · 로젤몬탁</p>
                     <p style="font-size:14.5px;color:var(--ink-2)"><b>2026년부터 새로 생긴 날이고, 하필 두 분이 뮌헨에 있는 그 월요일입니다.</b> 40년 넘은 로자 존탁(9/20 일, 8,000명)이 자리가 모자라 월요일로 연장됐습니다. 주최는 로자 존탁과 같은 MLC 뮌헨.</p>
           <p style="font-size:14.5px;color:var(--ink-2)"><b>15:00부터 브로이로슬의 비어가르텐과 후방 구역</b>에서 열리는 <b>오픈 커뮤니티 모임</b>이라 <b>예약도 티켓도 필요 없습니다.</b> 텐트 안 테이블 잡기 싸움을 안 해도 됩니다. 14:46 도착 → 15:10 숙소에 짐만 → <b>15:50 도착</b>이면 시작에 맞습니다.</p>
 
-          <p class="subhead">저녁 흐름 · 19시에 나옵니다</p>
+          <p class="subhead">🌆 저녁 흐름 · 19시에 나옵니다</p>
           <ul class="spots">
             <li>
               <div class="pt"><a href="https://www.google.com/maps/search/?api=1&query=Br%C3%A4urosl%20Festzelt%20Theresienwiese%20M%C3%BCnchen" target="_blank" rel="noopener">브로이로슬</a><small>15:00~ · 비어가르텐·후방 구역</small></div>
@@ -841,16 +890,16 @@
             <li><b>텐트 파장 때 테레지엔비제역은 지옥입니다</b> — 중앙역까지 도보 15분이라 걷는 게 빠를 수 있습니다. 우버·FREE NOW는 시내 €15~25</li>
           </ul>
 
-          <p class="subhead" style="margin-top:26px">나머지 끼니 · 기차와 텐트</p>
+          <p class="subhead" style="margin-top:26px">🍱 나머지 끼니 · 기차와 텐트</p>
           <ul class="eats">
             <li><b>월 점심</b><span class="sep">·</span><span class="rt">기차에서</span><span class="sep">·</span>10:37 베를린 출발이라 <b>베를린 중앙역에서 사서 타세요.</b> ICE 식당칸은 비싸고 부실합니다</li>
             <li><b>월 텐트에서</b><span class="sep">·</span><span class="rt">가볍게</span><span class="sep">·</span>밥을 먹고 갔으면 <b>브레첼이나 오바츠다(€14)</b> 정도만. 브레첼은 텐트 안 €7~9인데 <b>야외 노점은 €5~6.50</b>입니다 · 마스 <b>€14.80~15.90</b>(2026 공식) · <b>현금 필수</b>, 텐트마다 카드가 다릅니다</li>
             <li class="pick"><b>화 저녁</b><span class="sep">·</span><span class="rt">기차에서 · 중앙역에서 조달</span><span class="sep">·</span>16:48~21:25 <b>4시간 37분</b>을 기차에서 씁니다. <b>16:15에 중앙역 도착하니 30분 안에 사서 타세요.</b> 취리히 환승이라 식당칸을 믿기 어렵습니다</li>
           </ul>
 
-          <p class="subhead major" style="margin-top:26px">화요일 오전 · 뮌헨 시내</p>
-                    <details class="fold" open>
-            <summary class="subhead">화요일 아침 · 숙소 근처<span class="cnt">3곳</span></summary>
+          <p class="subhead major" style="margin-top:26px">☀️ 화요일 오전 · 뮌헨 시내</p>
+                    <details class="fold">
+            <summary>☕ 화요일 아침 · 숙소 근처<span class="cnt">3곳</span></summary>
           <p style="font-size:14px;color:var(--ink-2);max-width:none;margin-bottom:14px">숙소가 에어비앤비라 조식이 없습니다. 그런데 <b>막스포어슈타트 카페는 대부분 09:00~10:00에 엽니다</b> — 09:00 출발이면 아래 두 곳 정도만 됩니다. 빵집(Bäckerei)은 06~07시에 여니 급하면 그쪽으로.</p>
           <ul class="eats">
             <li class="pick"><a href="https://www.google.com/maps/search/?api=1&query=Pavesi%20Caff%C3%A9%20T%C3%BCrkenstra%C3%9Fe%2067%20M%C3%BCnchen" target="_blank" rel="noopener">Pavesi Caffé</a><span class="sep">·</span><span class="rt">구글 4.3 · 리뷰 304</span><span class="sep">·</span><b>월~금 07:30</b>에 열어 이 동네에서 가장 이릅니다. 에스프레소·샌드위치·생과일주스 · 원두는 난니니, 빵은 율리우스 브란트너 · Türkenstr. 67</li>
@@ -859,7 +908,7 @@
           </ul>
           </details>
 
-          <p class="subhead">오전 코스 · 09:00 출발 기준</p>
+          <p class="subhead">📍 오전 코스 · 09:00 출발 기준</p>
           <p style="font-size:14.5px;color:var(--ink-2)"><b>09:20</b> 아이스바흐 서핑 → <b>09:50</b> 모노프테로스 → <b>10:15</b> 오데온 광장 → <b>11:00</b> 인형극 → 프라우엔키르헤 → <b>11:45</b> 알터 페터(€5) → <b>12:20</b> 빅투알리엔 점심 → <b>13:30</b> 아잠교회 → 숙소에서 짐 → 역</p>
           <p style="font-size:14.5px;color:var(--ink-2)"><b>영국정원은 375헥타르, 남북 5.5km라 다 못 돕니다.</b> 볼 건 <b>남쪽 끝 1.5km</b>에 다 몰려 있고 북쪽은 그냥 초원입니다. <b>아이스바흐 → 모노프테로스</b>(700m·10분)까지만 하고 빠지세요. 중국탑까지 가면 11시 인형극을 놓칩니다.</p>
           <ul class="eats">
@@ -869,8 +918,8 @@
             <li class="pick"><a href="https://www.google.com/maps/search/?api=1&query=Asamkirche%20Sendlinger%20Stra%C3%9Fe%2032%20M%C3%BCnchen" target="_blank" rel="noopener">아잠교회</a><span class="sep">·</span><span class="rt">무료</span><span class="sep">·</span>아삼 형제가 자기 집 옆에 자기 돈으로 지은 <b>로코코 개인 성당</b>. 작아서 <b>15분</b>인데 밀도가 압도적입니다. 4~10월 <b>09:00~19:00</b>(금요일만 13:00부터) · <b>미사 중엔 입장 불가</b> · Sendlinger Str. 32 — 마리엔플라츠에서 역·글로켄바흐 방향 길목입니다</li>
           </ul>
 
-                    <details class="fold" open>
-            <summary class="subhead">빅투알리엔에서 뭘 먹나<span class="cnt">4곳</span></summary>
+                    <details class="fold">
+            <summary>🥨 빅투알리엔에서 뭘 먹나<span class="cnt">4곳</span></summary>
           <p style="font-size:14.5px;color:var(--ink-2)">월~토 08:00~20:00 · 화요일이라 다 엽니다(월요일 휴무 점포가 꽤 있습니다).</p>
           <ul class="eats">
             <li class="pick"><a href="https://www.google.com/maps/search/?api=1&query=Caspar%20Plautz%20Viktualienmarkt%20M%C3%BCnchen" target="_blank" rel="noopener">카스파 플라우츠</a><span class="sep">·</span><span class="rt">€7.50~</span><span class="sep">·</span>구운 감자에 생채소와 토핑. <b>감자 20여 품종</b>을 거의 다 바이에른에서 받습니다. 시장에서 현지인이 제일 많이 가는 집 · <b>Abt. III, Stand 38</b> · <b>12:30~14:00은 20분 줄</b>이니 피하세요</li>
@@ -908,14 +957,14 @@
           <h3>밤에 도착해서 아침부터 움직입니다</h3>
           <div class="anchor">
             <span class="lbl">고정</span>
-            <ul>
-              <li><b>화</b> 21:25 <em>루체른 도착 (Gl. 3)</em></li>
-              <li><b>수</b> <em>세이버데이 패스 — 다음날 05:00까지 유효. 늦어도 괜찮습니다</em></li>
-              <li><b>수</b> <em>인터라켄 West 숙소 체크인</em></li>
+            <ul class="tl">
+              <li><span class="d">화</span><span class="t">21:25</span><span class="cat cat-move">이동</span><div class="c"><b>루체른 도착</b> · Gl. 3</div></li>
+              <li><span class="d">수</span><span class="t"></span><span class="cat cat-buy">패스</span><div class="c"><b>세이버데이 패스</b> — 다음날 05:00까지 유효</div></li>
+              <li><span class="d">수</span><span class="t"></span><span class="cat cat-stay">숙소</span><div class="c">인터라켄 West 숙소 체크인</div></li>
             </ul>
           </div>
 
-          <p class="subhead major">화요일 밤 · 도착</p>
+          <p class="subhead major">🌙 화요일 밤 · 도착</p>
           <ul class="checks">
             <li class="hot"><b>체크인은 숙소가 아니라 호텔에서</b> — 메인 건물인 <a href="https://www.google.com/maps/search/?api=1&query=Hotel%20Luzernerhof%20Alpenstrasse%203%206004%20Luzern" target="_blank" rel="noopener">호텔 루체르너호프</a>(<b>Alpenstrasse 3</b>, <b>041 418 47 47</b>)에서 받습니다. 숙소로 바로 가면 안 됩니다</li>
             <li><b>역 → 호텔 도보 7~10분</b>(600~800m) — 반호프플라츠에서 <b>제브뤼케 다리</b>를 건너 호수 북안을 따라 오른쪽 알펜슈트라세로. 21:25 도착이면 <b>21:45쯤 체크인</b>입니다</li>
@@ -927,8 +976,8 @@
             <li>루체른역 → 숙소 경로를 미리 봐두세요. 밤에 처음 가는 길입니다</li>
           </ul>
 
-          <p class="subhead major" id="d23" style="margin-top:26px">수요일 · 리기 → 골든패스 → 베른</p>
-          <p class="subhead" style="margin-top:20px">선택 1 · 올라갈 때</p>
+          <p class="subhead major" id="d23" style="margin-top:26px">⛰️ 수요일 · 리기 → 골든패스 → 베른</p>
+          <p class="subhead" style="margin-top:20px">⬆️ 선택 1 · 올라갈 때</p>
           <div class="scroll">
             <table style="min-width:560px">
               <thead>
@@ -948,7 +997,7 @@
             </table>
           </div>
 
-          <p class="subhead" style="margin-top:20px">정상에서</p>
+          <p class="subhead" style="margin-top:20px">🏔️ 정상에서</p>
           <div class="scroll">
             <table style="min-width:560px">
               <tbody>
@@ -960,7 +1009,7 @@
             </table>
           </div>
 
-          <p class="subhead" style="margin-top:20px">내려올 때 · 기차 하나</p>
+          <p class="subhead" style="margin-top:20px">⬇️ 내려올 때 · 기차 하나</p>
           <p style="font-size:14px;color:var(--ink-2);max-width:none;margin-bottom:12px"><b>리기 쿨름 → 아르트골다우 47분 → 기차 27~31분 → 루체른.</b> 배로 내려오면 루체른 12:47 도착이라 골든패스까지 19분뿐입니다.</p>
           <div class="scroll">
             <table style="min-width:520px">
@@ -979,7 +1028,7 @@
             </table>
           </div>
 
-          <p class="subhead" style="margin-top:20px">선택 2 · 인터라켄으로 가는 편</p>
+          <p class="subhead" style="margin-top:20px">🚆 선택 2 · 인터라켄으로 가는 편</p>
           <div class="scroll">
             <table style="min-width:560px">
               <thead>
@@ -1095,13 +1144,13 @@
               <li>밤 <em>짐 완전히 싸두기. 내일 07:20 출발</em></li>
             </ul>
           </div>
-          <p class="subhead major">오전 · 아직 그린델발트</p>
+          <p class="subhead major">☀️ 오전 · 아직 그린델발트</p>
           <ul class="checks">
             <li class="hot"><b>1 · 피르스트</b> <span class="walk">15분~2시간</span> — 어제 못 했으면 오늘 오전이 마지막 기회입니다</li>
             <li class="hot"><b>2 · 멘리헨 → 클라이네 샤이덱</b> <span class="walk mid">3시간</span> — 어제 피르스트를 했으면 오늘 이걸로. 둘 다 살립니다</li>
             <li><b>3 · 빙하 협곡 / 프핑스텍</b> <span class="walk">1~2시간</span> — 짧게 하나만</li>
           </ul>
-          <p class="subhead major">오후 · 인터라켄 복귀 후</p>
+          <p class="subhead major">🌆 오후 · 인터라켄 복귀 후</p>
           <ul class="checks">
             <li><b>4 · 뮈렌 · 김멜발트</b> <span class="walk">반나절</span> — 트뤼멜바흐를 붙이면 하나로 이어집니다</li>
             <li><b>5 · 튠 호수 / 브리엔츠 호수</b> <span class="walk">반나절</span> — 앉아 있는 게 전부라 마지막 날에 부담이 없습니다</li>
@@ -1127,7 +1176,7 @@
               <li>10:50 <em>Milano Centrale 도착 · 체크인 10시부터 가능</em></li>
             </ul>
           </div>
-          <p class="subhead">오후 흐름</p>
+          <p class="subhead">📍 오후 흐름</p>
           <p style="font-size:14.5px;color:var(--ink-2)">숙소에 짐 → 점심 → <b>두오모 내부</b> → <b>테라스(17:30~18:00 슬롯 추천)</b> → 갤러리아 → 루이니 판제로티 → <b>나빌리 운하 아페리티보</b></p>
           <div class="plans">
             <div class="plan pick">
